@@ -1,0 +1,12 @@
+PODS:
+  - HWDownSelectedView (1.0.1)
+
+DEPENDENCIES:
+  - HWDownSelectedView (~> 1.0.1)
+
+SPEC CHECKSUMS:
+  HWDownSelectedView: 950a2d2e5b0e5d9538b33873c3badf642e461b86
+
+PODFILE CHECKSUM: e506bcac84008aa5e3cd9003d5d096aa3ae17744
+
+COCOAPODS: 1.3.1
