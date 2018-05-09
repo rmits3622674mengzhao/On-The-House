@@ -1679,7 +1679,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXv-Xh-odj">
-                                                    <rect key="frame" x="15" y="0.0" width="360" height="44"/>
+                                                    <rect key="frame" x="15" y="0.0" width="360" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="Update My Profile">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1705,7 +1705,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ree-3F-w1m">
-                                                    <rect key="frame" x="15" y="0.0" width="360" height="44"/>
+                                                    <rect key="frame" x="15" y="0.0" width="360" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="Change Password">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>

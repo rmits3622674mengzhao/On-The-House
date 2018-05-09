@@ -23,12 +23,6 @@ class MyReservationTableViewController: UITableViewController{
             print("This is member ID: \(memberID)")
         }
         self.loadMyReservations()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = f[alse
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,14 +55,6 @@ class MyReservationTableViewController: UITableViewController{
             cell.nameCell.text = Reservations[indexPath.row]["event_name"] as? String
             cell.lbVenueName.text = Reservations[indexPath.row]["venue_name"] as? String
         }
-        
-        /*
-         if ((pastrReservations[indexPath.row]["has_rated"] as? Int) == 1){
-         cell.lbRating.text = "You has rated this event!"
-         }else{
-         cell.lbRating.text = "Please rate this event!"
-         }
-         */
         return cell
     }
     
