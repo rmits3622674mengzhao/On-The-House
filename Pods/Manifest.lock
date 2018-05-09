@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (4.7.1)
+  - CardIO (5.4.1)
+  - HWDownSelectedView (1.0.1)
+  - PayPal-iOS-SDK (2.18.1):
+    - PayPal-iOS-SDK/CardIO (= 2.18.1)
+    - PayPal-iOS-SDK/Core (= 2.18.1)
+  - PayPal-iOS-SDK/CardIO (2.18.1):
+    - CardIO (~> 5.4.1)
+  - PayPal-iOS-SDK/Core (2.18.1)
+  - SwiftyJSON (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - HWDownSelectedView (~> 1.0.1)
+  - PayPal-iOS-SDK (~> 2.18)
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - CardIO
+    - HWDownSelectedView
+    - PayPal-iOS-SDK
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
+  HWDownSelectedView: 950a2d2e5b0e5d9538b33873c3badf642e461b86
+  PayPal-iOS-SDK: 10654cd111e911a9807bddb96fae81aacb8e9915
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+
+PODFILE CHECKSUM: f0e9921803d9b5f4b1e4a9e0c71ab83f3a43d7cb
+
+COCOAPODS: 1.5.0
