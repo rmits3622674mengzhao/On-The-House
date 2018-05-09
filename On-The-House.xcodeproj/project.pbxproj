@@ -19,6 +19,7 @@
 		7A632494209D79D80075D282 /* SelectStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A632493209D79D80075D282 /* SelectStateTableViewCell.swift */; };
 		7A632496209D79F90075D282 /* SelectTimeZoneTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A632495209D79F90075D282 /* SelectTimeZoneTableViewController.swift */; };
 		7A632498209D7A0E0075D282 /* SelectTimeZoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A632497209D7A0E0075D282 /* SelectTimeZoneTableViewCell.swift */; };
+		7A63249B20A2C6660075D282 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63249A20A2C6660075D282 /* ChangePasswordViewController.swift */; };
 		7A69E3FF20883A2700E1F0D6 /* MyReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A69E3FE20883A2700E1F0D6 /* MyReservationTableViewCell.swift */; };
 		7A69E403208B07E600E1F0D6 /* MyOrderHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A69E402208B07E600E1F0D6 /* MyOrderHistoryTableViewController.swift */; };
 		7A69E405208B081500E1F0D6 /* MyOrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A69E404208B081500E1F0D6 /* MyOrderHistoryTableViewCell.swift */; };
@@ -102,6 +103,7 @@
 		7A632493209D79D80075D282 /* SelectStateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStateTableViewCell.swift; sourceTree = "<group>"; };
 		7A632495209D79F90075D282 /* SelectTimeZoneTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeZoneTableViewController.swift; sourceTree = "<group>"; };
 		7A632497209D7A0E0075D282 /* SelectTimeZoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeZoneTableViewCell.swift; sourceTree = "<group>"; };
+		7A63249A20A2C6660075D282 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		7A69E3FE20883A2700E1F0D6 /* MyReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationTableViewCell.swift; sourceTree = "<group>"; };
 		7A69E402208B07E600E1F0D6 /* MyOrderHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderHistoryTableViewController.swift; sourceTree = "<group>"; };
 		7A69E404208B081500E1F0D6 /* MyOrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -208,11 +210,11 @@
 		7A632485209D567B0075D282 /* Hamburger Menu */ = {
 			isa = PBXGroup;
 			children = (
-				7A63249920A2C04C0075D282 /* Change Password */,
 				7AB4CF24208C68AE00402FB1 /* HamburgerMenuTableViewController.swift */,
 				7A632486209D56CB0075D282 /* My Current Reservation */,
 				7A632487209D56FE0075D282 /* My Past Reservation */,
 				7A632488209D574B0075D282 /* My Membership */,
+				7A63249920A2C04C0075D282 /* Change Password */,
 				7A63247E209D3C730075D282 /* Update My Profile */,
 			);
 			name = "Hamburger Menu";
@@ -249,6 +251,7 @@
 		7A63249920A2C04C0075D282 /* Change Password */ = {
 			isa = PBXGroup;
 			children = (
+				7A63249A20A2C6660075D282 /* ChangePasswordViewController.swift */,
 			);
 			name = "Change Password";
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				7A632496209D79F90075D282 /* SelectTimeZoneTableViewController.swift in Sources */,
 				C0CF5023205CA6A9001E8163 /* ViewController.swift in Sources */,
 				7A69E403208B07E600E1F0D6 /* MyOrderHistoryTableViewController.swift in Sources */,
+				7A63249B20A2C6660075D282 /* ChangePasswordViewController.swift in Sources */,
 				7A821C132084B62F00454BEC /* AlertController.swift in Sources */,
 				C04BA616209999950077B076 /* MembershipInfoViewController.swift in Sources */,
 				7A821C112084B2D400454BEC /* NetworkProcessor.swift in Sources */,

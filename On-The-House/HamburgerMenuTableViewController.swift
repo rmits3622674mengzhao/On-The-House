@@ -142,6 +142,5 @@ class HamburgerMenuTableViewController: UITableViewController {
             }
         }
     }
- 
 }
 
