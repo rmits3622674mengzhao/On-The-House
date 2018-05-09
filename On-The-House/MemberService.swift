@@ -44,7 +44,6 @@ class MemberService {
                         if status == "success"{
                             if let memberDictionary = jsonDictionary?["member"] as? [String:Any]{
                                 let member = Member(memberDiction: memberDictionary)
-                                print(member.id)
                                 member.status = status
                                 completion(member)
                             }else{
@@ -73,21 +72,17 @@ class MemberService {
     
     func login(postBody:String,completion: @escaping (Member?) -> Void){
         if let memberURL = URL(string: "\(memberBaseURL!)/login"){
-            // URL memberURL = “url”;
-            // NetworkProcessor networkProcessor = New NetworkProcessor(memberURL);
-            // DICTIONARY : string[]
             let networkProcessor = NetworkProcessor(url: memberURL)
             
             networkProcessor.PostJSONFromURL(postString: postBody, completion: {(jsonDictionary) in
-                // ToDo some how prase jsondictionary into a swift object
-                // jsonDictionary : [String:Any]
-                // String statusText = jsonDictionary["status"]
-                // String idText = jsonDictionary["member"]["id"]
                 if let status = jsonDictionary?["status"] as? String{
                     if status == "success"{
                         if let memberDictionary = jsonDictionary?["member"] as? [String:Any]{
                             let member = Member(memberDiction: memberDictionary)
                             member.status = status
+                            //cat String from json to an integerArray
+                            let catIntArray:[Int] = (memberDictionary["categories"] as! String).components(separatedBy: ",").map { Int($0)!}
+                            member.categories = catIntArray
                             completion(member)
                         }else{
                             completion(nil)
@@ -106,7 +101,8 @@ class MemberService {
             )
         }
     }
-    //update service
+    
+    //Update user profile
     func updateUserProfile(memberID:String,postBody:String,completion: @escaping (Member?) -> Void){
         if let memberURL = URL(string: "http://ma.on-the-house.org/api/v1/member/\(memberID)"){
             let networkProcessor = NetworkProcessor(url: memberURL)

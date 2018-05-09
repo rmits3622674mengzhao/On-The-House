@@ -208,6 +208,7 @@
 		7A632485209D567B0075D282 /* Hamburger Menu */ = {
 			isa = PBXGroup;
 			children = (
+				7A63249920A2C04C0075D282 /* Change Password */,
 				7AB4CF24208C68AE00402FB1 /* HamburgerMenuTableViewController.swift */,
 				7A632486209D56CB0075D282 /* My Current Reservation */,
 				7A632487209D56FE0075D282 /* My Past Reservation */,
@@ -243,6 +244,13 @@
 				C04BA615209999950077B076 /* MembershipInfoViewController.swift */,
 			);
 			name = "My Membership";
+			sourceTree = "<group>";
+		};
+		7A63249920A2C04C0075D282 /* Change Password */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Change Password";
 			sourceTree = "<group>";
 		};
 		7A821C0D2084ACFD00454BEC /* Services */ = {

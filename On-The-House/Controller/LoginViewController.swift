@@ -19,7 +19,6 @@ class LoginViewController : UIViewController {
     @IBOutlet weak var PasswordInputBox: UITextField!
     
     var memberToken:Member?
-    
     override func viewDidLoad() {
         
         
@@ -27,7 +26,6 @@ class LoginViewController : UIViewController {
         PasswordInputBox.placeholder="Password"
         
         super.viewDidLoad()
-        //printMyOffer()
         
     }
     @IBAction func btnLogin(_ sender: Any) {
@@ -42,32 +40,37 @@ class LoginViewController : UIViewController {
             
             memberService.login(postBody: postBodys) { (member) in
                 self.memberToken = member
-                //Set user details to get it later in the application
-                UserDefaults.standard.set(self.memberToken?.id, forKey: "member_id")
-                UserDefaults.standard.set(self.memberToken?.first_name, forKey: "first_name")
-                UserDefaults.standard.set(self.memberToken?.last_name, forKey: "last_name")
-                UserDefaults.standard.set(self.memberToken?.zone_id, forKey: "zone_id")
-                UserDefaults.standard.set(self.memberToken?.email, forKey: "email")
-                UserDefaults.standard.set(self.memberToken?.nickname, forKey: "nickname")
-                UserDefaults.standard.set(self.memberToken?.zip, forKey: "zip")
-                UserDefaults.standard.set(self.memberToken?.membership_level_id, forKey: "membership_level_id")
-                UserDefaults.standard.set(self.memberToken?.title, forKey: "title")
-                UserDefaults.standard.set(self.memberToken?.age, forKey: "age")
-                UserDefaults.standard.set(self.memberToken?.phone, forKey: "phone")
-                UserDefaults.standard.set(self.memberToken?.address1, forKey: "address1")
-                UserDefaults.standard.set(self.memberToken?.address2, forKey: "address2")
-                UserDefaults.standard.set(self.memberToken?.city, forKey: "city")
-                UserDefaults.standard.set(self.memberToken?.timezone_id, forKey: "timezone_id")
-                UserDefaults.standard.set(self.memberToken?.country_id, forKey: "country_id")
-                UserDefaults.standard.set(self.memberToken?.focus_groups, forKey: "focus_groups")
-                UserDefaults.standard.set(self.memberToken?.paid_marketing, forKey: "paid_marketing")
-                UserDefaults.standard.set(self.memberToken?.newsletters, forKey: "newsletters")
-                UserDefaults.standard.set(true, forKey: "isLoggedIn")
-                UserDefaults.standard.synchronize()
+                if member?.status == "success"{
+                    //Set user details to get it later in the application
+                    UserDefaults.standard.set(self.memberToken?.id, forKey: "member_id")
+                    UserDefaults.standard.set(self.memberToken?.first_name, forKey: "first_name")
+                    UserDefaults.standard.set(self.memberToken?.last_name, forKey: "last_name")
+                    UserDefaults.standard.set(self.memberToken?.zone_id, forKey: "zone_id")
+                    UserDefaults.standard.set(self.memberToken?.email, forKey: "email")
+                    UserDefaults.standard.set(self.memberToken?.nickname, forKey: "nickname")
+                    UserDefaults.standard.set(self.memberToken?.zip, forKey: "zip")
+                    UserDefaults.standard.set(self.memberToken?.membership_level_id, forKey: "membership_level_id")
+                    UserDefaults.standard.set(self.memberToken?.title, forKey: "title")
+                    UserDefaults.standard.set(self.memberToken?.age, forKey: "age")
+                    UserDefaults.standard.set(self.memberToken?.phone, forKey: "phone")
+                    UserDefaults.standard.set(self.memberToken?.address1, forKey: "address1")
+                    UserDefaults.standard.set(self.memberToken?.address2, forKey: "address2")
+                    UserDefaults.standard.set(self.memberToken?.city, forKey: "city")
+                    UserDefaults.standard.set(self.memberToken?.timezone_id, forKey: "timezone_id")
+                    UserDefaults.standard.set(self.memberToken?.country_id, forKey: "country_id")
+                    UserDefaults.standard.set(self.memberToken?.focus_groups, forKey: "focus_groups")
+                    UserDefaults.standard.set(self.memberToken?.paid_marketing, forKey: "paid_marketing")
+                    UserDefaults.standard.set(self.memberToken?.newsletters, forKey: "newsletters")
+                    UserDefaults.standard.set(self.memberToken?.categories, forKey: "categories")
+                    UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                    UserDefaults.standard.synchronize()
+                }else{
+                    print("login failed!")
+                }
             }
         }
-        
     }
+    
     /*
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      if segue.identifier == "loginButton"{
