@@ -44,10 +44,12 @@ class SelectPreferedCategoriesInProfileTableViewController: UITableViewControlle
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "catCell", for: indexPath) as! PreferedCategoriesTableViewCell
         cell.lbCategory.text = CategoriesKeys[indexPath.row]
-        if (self.selectedCategories?.contains(DataTransition.categories[cell.lbCategory.text!]!))!{
-            cell.accessoryType = UITableViewCellAccessoryType.checkmark
-        }else{
-            cell.accessoryType = UITableViewCellAccessoryType.none
+        if (self.selectedCategories != nil){
+            if (self.selectedCategories?.contains(DataTransition.categories[cell.lbCategory.text!]!))!{
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            }else{
+                cell.accessoryType = UITableViewCellAccessoryType.none
+            }
         }
         return cell
     }

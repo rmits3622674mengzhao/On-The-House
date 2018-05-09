@@ -89,10 +89,14 @@ class UpdateUserProfileTableViewController: UITableViewController {
         //print selected categories to UI label
         var selectedCategoriesKeysArray: [String] = []
         selectedCategories = UserDefaults.standard.array(forKey: "categories") as? [Int]
-        for category in selectedCategories!{
-            selectedCategoriesKeysArray.append(DataTransition.getKey(id: category, dictionaries: DataTransition.categories))
+        if (selectedCategories != nil){
+            for category in selectedCategories!{
+                selectedCategoriesKeysArray.append(DataTransition.getKey(id: category, dictionaries: DataTransition.categories))
+            }
+            lbCategories.text = selectedCategoriesKeysArray.joined(separator: ",")
+        }else{
+            
         }
-        lbCategories.text = selectedCategoriesKeysArray.joined(separator: ",")
     }
     
     @IBAction func btnUpdate(_ sender: Any) {

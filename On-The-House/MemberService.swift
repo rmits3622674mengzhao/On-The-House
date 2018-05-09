@@ -81,8 +81,11 @@ class MemberService {
                             let member = Member(memberDiction: memberDictionary)
                             member.status = status
                             //cat String from json to an integerArray
-                            let catIntArray:[Int] = (memberDictionary["categories"] as! String).components(separatedBy: ",").map { Int($0)!}
-                            member.categories = catIntArray
+                            let catJson = memberDictionary["categories"] as! String
+                            if(catJson != ""){
+                                let catIntArray:[Int] = (memberDictionary["categories"] as! String).components(separatedBy: ",").map { Int($0)!}
+                                member.categories = catIntArray
+                            }
                             completion(member)
                         }else{
                             completion(nil)
