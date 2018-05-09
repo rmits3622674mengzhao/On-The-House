@@ -2,7 +2,7 @@
 //  PastOfferDetailViewController.swift
 //  On-The-House
 //
-//  Created by Dong Wang on 2018/4/26.
+//  Created by beier nie on 2018/4/26.
 //  Copyright © 2018年 RMIT. All rights reserved.
 //
 

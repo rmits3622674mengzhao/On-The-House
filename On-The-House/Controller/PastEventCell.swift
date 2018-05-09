@@ -2,7 +2,7 @@
 //  PastEventCell.swift
 //  On-The-House
 //
-//  Created by Dong Wang on 2018/4/20.
+//  Created by beier nie on 2018/4/20.
 //  Copyright © 2018年 RMIT. All rights reserved.
 //
 

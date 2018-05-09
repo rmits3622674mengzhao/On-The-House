@@ -55,6 +55,9 @@
 		C0F94DBE2076182600C5938B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DBD2076182600C5938B /* LoginViewController.swift */; };
 		C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DC520761A8200C5938B /* Offermodel.swift */; };
 		C0F94DC820761E1300C5938B /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DC720761E1300C5938B /* MyAccountViewController.swift */; };
+		C0FE2B6220A2FC95002FE0AB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */; };
+		C0FE2B6420A2FCC7002FE0AB /* SearchTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE2B6320A2FCC7002FE0AB /* SearchTableTableViewController.swift */; };
+		C0FE2B6620A2FDF7002FE0AB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE2B6520A2FDF7002FE0AB /* SearchTableViewCell.swift */; };
 		E78189F72078A49B003EC81D /* PastEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78189F62078A49B003EC81D /* PastEventTableViewController.swift */; };
 		E7A2DE32207DD8BE000B8CE8 /* CurrentEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */; };
 		E7A2DE34207DE89E000B8CE8 /* OfferTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2DE33207DE89E000B8CE8 /* OfferTableViewController.swift */; };
@@ -148,6 +151,9 @@
 		C0F94DBD2076182600C5938B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controller/LoginViewController.swift; sourceTree = "<group>"; };
 		C0F94DC520761A8200C5938B /* Offermodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Offermodel.swift; path = Model/Offermodel.swift; sourceTree = "<group>"; };
 		C0F94DC720761E1300C5938B /* MyAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAccountViewController.swift; path = Controller/MyAccountViewController.swift; sourceTree = "<group>"; };
+		C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C0FE2B6320A2FCC7002FE0AB /* SearchTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableTableViewController.swift; sourceTree = "<group>"; };
+		C0FE2B6520A2FDF7002FE0AB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		C4472D925F512B50D88D2682 /* Pods-On-The-House.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On-The-House.release.xcconfig"; path = "Pods/Target Support Files/Pods-On-The-House/Pods-On-The-House.release.xcconfig"; sourceTree = "<group>"; };
 		E78189F62078A49B003EC81D /* PastEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventTableViewController.swift; sourceTree = "<group>"; };
 		E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventCell.swift; sourceTree = "<group>"; };
@@ -358,6 +364,7 @@
 		C0CF50542061F6B4001E8163 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C0FE2B6020A2FC62002FE0AB /* Search Function */,
 				7A632485209D567B0075D282 /* Hamburger Menu */,
 				C0F94DBB2076171200C5938B /* RegisterViewController.swift */,
 				C0F94DBD2076182600C5938B /* LoginViewController.swift */,
@@ -373,6 +380,16 @@
 				C0E682F62099C77E0085329D /* PreferenceEventCell.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		C0FE2B6020A2FC62002FE0AB /* Search Function */ = {
+			isa = PBXGroup;
+			children = (
+				C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */,
+				C0FE2B6320A2FCC7002FE0AB /* SearchTableTableViewController.swift */,
+				C0FE2B6520A2FDF7002FE0AB /* SearchTableViewCell.swift */,
+			);
+			path = "Search Function";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -591,13 +608,16 @@
 				7AB4CF25208C68AE00402FB1 /* HamburgerMenuTableViewController.swift in Sources */,
 				C04BA614209999730077B076 /* MyMembershipHistoryTableViewCell.swift in Sources */,
 				C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */,
+				C0FE2B6220A2FC95002FE0AB /* SearchViewController.swift in Sources */,
 				E7A2DE34207DE89E000B8CE8 /* OfferTableViewController.swift in Sources */,
 				7A63248A209D5A690075D282 /* SelectTitleTableViewController.swift in Sources */,
 				7AF21567208D7DD1003A6790 /* OfferEventCell.swift in Sources */,
 				7A632490209D795D0075D282 /* SelectAgeGroupTableViewCell.swift in Sources */,
 				7A63248C209D5B900075D282 /* SelectTitleTableViewCell.swift in Sources */,
+				C0FE2B6420A2FCC7002FE0AB /* SearchTableTableViewController.swift in Sources */,
 				C0CF5029205CA6A9001E8163 /* On_The_House.xcdatamodeld in Sources */,
 				C04BA60E209998BD0077B076 /* DateFormat.swift in Sources */,
+				C0FE2B6620A2FDF7002FE0AB /* SearchTableViewCell.swift in Sources */,
 				C0E682F52099C0450085329D /* PreferencePageTableViewController.swift in Sources */,
 				7A632492209D79BA0075D282 /* SelectStateTableViewController.swift in Sources */,
 			);

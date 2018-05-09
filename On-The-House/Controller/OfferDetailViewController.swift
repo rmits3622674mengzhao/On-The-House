@@ -23,7 +23,9 @@ class OfferDetailViewController: UIViewController {
     @IBOutlet weak var EventDescription: UITextView!
     var offerDetail:OfferModel!
     var videoUrl: URL!
-    
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion:nil)
+    }
     
     
     

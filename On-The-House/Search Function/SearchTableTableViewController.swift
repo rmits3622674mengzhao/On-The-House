@@ -1,17 +1,26 @@
 //
-//  PastEventTableViewController.swift
+//  SearchedTableViewController.swift
 //  On-The-House
 //
-//  Created by beier nie on 2018/4/20.
+//  Created by beier nie on 2018/5/8.
 //  Copyright © 2018年 RMIT. All rights reserved.
 //
 
 import UIKit
 import os
 
-class PastEventTableViewController: UITableViewController {
+class SearchTableViewController: UITableViewController {
     
-    var PastOffer = [OfferModel]()
+    var postBody = [String: String]()
+    var dateItem = "" as String
+    var catagoryItem = [String]()
+    var stateItem = [String]()
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion:nil)
+    }
+    
+    var searchedOffer = [OfferModel]()
     // to implement the structure of resonpse json
     struct JsonRec : Decodable{
         let status : String
@@ -26,47 +35,65 @@ class PastEventTableViewController: UITableViewController {
     struct Events : Decodable{
         let id : String
         let name:String
+        let image: URL
         let description:String
         let rate: Int
+        let ourPrice : String
+        let admin : String
+        let membershipLevel: String
+        let adminFee: String
         
         enum CodingKeys : String, CodingKey {
             case id = "id"
             case name = "name"
+            case image = "image_url"
             case description = "description"
             case rate = "rating"
+            case ourPrice = "full_price_string"
+            case admin = "our_price_heading"
+            case membershipLevel = "membership_levels"
+            case adminFee = "our_price_string"
         }
     }
-
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        getConnect()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    
+    // generate post string
+    func getPostString(params:[String:Any]) -> String
+    {
+        var data = [String]()
+        for(key, value) in params
+        {
+            data.append(key + "=\(value)")
+        }
+        return data.map { String($0) }.joined(separator: "&")
+    }
+    
+    // generate post body
+    func generatePostBody(){
+        for i in stateItem{
+            postBody["zone_id[]"] = i
+        }
+        for j in catagoryItem{
+            postBody["category_id[]"] = j
+        }
+        print("----------")
+        print(postBody)
+        print("----------")
     }
     
     // to get current events
     func getConnect(){
         //         Post request
-        let urlString: String = "http://ma.on-the-house.org/api/v1/events/past"
+        let urlString: String = "http://ma.on-the-house.org/api/v1/events/current"
         guard let URLreq = URL(string: urlString) else {
             print("Error: cannot create URL")
             return
         }
         var postRequest = URLRequest(url: URLreq)
         postRequest.httpMethod = "POST"
-        let postBody: [String: Any] = ["page":1,"limit":10]
-        let postJson: Data
-        do {
-            postJson = try JSONSerialization.data(withJSONObject: postBody, options: [])
-            postRequest.httpBody = postJson
-        } catch {
-            print("Error: cannot create postJSON")
-            return
-        }
+        generatePostBody()
+        let postString = getPostString(params: postBody)
+        postRequest.httpBody = postString.data(using: .utf8)
         
         let session = URLSession.shared
         let semaphore = DispatchSemaphore(value: 0)
@@ -83,29 +110,33 @@ class PastEventTableViewController: UITableViewController {
             // parse the result as JSON
             guard let receivedData = try? JSONDecoder().decode(JsonRec.self, from: responseData) else{
                 print("Could not get JSON from responseData as dictionary")
+                
                 return
             }
             if receivedData.status == "success"{
                 for i in receivedData.events{
-                    // to get description without trailer url
-                    var tempStr="" as String
-                    let splitedArray = i.description.split(separator: "\r\n")
-                    for i in splitedArray{
-                        if (i == "Tralier" || i == "Tralier"){
-                            break
-                        }else{
-                            tempStr = tempStr+i
-                        }
+                    if let data = try? Data(contentsOf: i.image)
+                    {
+                        let image: UIImage = UIImage(data: data)!
+                        let offer1 = OfferModel(id: i.id, name: i.name, photo: image, description: i.description, rate: i.rate, ourPrice: i.ourPrice, admin: i.admin, membershipLevel: i.membershipLevel, adminFee: i.adminFee)
+                        self.searchedOffer.append(offer1)
                     }
-                    let offer1 = OfferModel(id: i.id, name: i.name, photo: #imageLiteral(resourceName: "Logo"), description: tempStr, rate: i.rate)
-                    self.PastOffer.append(offer1)
-                    
                 }
             }
             semaphore.signal()
         }
         task.resume()
         _ = semaphore.wait(timeout: .distantFuture)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getConnect()
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func didReceiveMemoryWarning() {
@@ -121,24 +152,20 @@ class PastEventTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (PastOffer.count == 0)
-        {
-            print("Error: failed to load data!")
-        }
         // #warning Incomplete implementation, return the number of rows
-        return PastOffer.count
+        return searchedOffer.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "PECELL"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PastEventCell else{
-            fatalError("The dequeued cell is not an instance of PastEventCell.")
+        let cellIdentifier = "SECELL"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SearchTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of OfferEventCell.")
         }
-        let pastEvents = PastOffer[indexPath.row]
-        cell.PastEventName.text = pastEvents.name
-        cell.PastEventDescription.text = pastEvents.description
-        cell.PastEventRatingControl.rating = pastEvents.rate
+        let searchedEvents = searchedOffer[indexPath.row]
+        cell.Name.text = searchedEvents.name
+        cell.EventImage.image = searchedEvents.photo
+        cell.Rate.rating  = searchedEvents.rate
         return cell
     }
     
@@ -147,20 +174,20 @@ class PastEventTableViewController: UITableViewController {
         //      Pass the selected object to the new view controller.
         super.prepare(for: segue, sender: sender)
         switch(segue.identifier ?? ""){
-        case"PastDetail":
-            os_log("Show Past Details.", log: OSLog.default, type: .debug)
-            guard let detailViewController = segue.destination as? PastOfferDetailViewController else {
+        case"SEeventsShow":
+            os_log("Show Searched events Details.", log: OSLog.default, type: .debug)
+            guard let detailViewController = segue.destination as? OfferDetailViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            guard let selectedEventCell = sender as? PastEventCell else {
+            guard let selectedEventCell = sender as? SearchTableViewCell else {
                 fatalError("Unexpected sender: \(sender)")
             }
             
             guard let indexPath = tableView.indexPath(for: selectedEventCell) else {
                 fatalError("The selected cell is not being displayed by the table")
             }
-            let selectedCell = PastOffer[indexPath.row]
-            detailViewController.pastOfferDetail = selectedCell
+            let selectedCell = searchedOffer[indexPath.row]
+            detailViewController.offerDetail = selectedCell
             
         default:
             print("Can't find the identifer")
@@ -214,3 +241,4 @@ class PastEventTableViewController: UITableViewController {
      */
     
 }
+
