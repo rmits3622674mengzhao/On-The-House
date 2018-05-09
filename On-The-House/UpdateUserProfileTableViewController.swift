@@ -227,7 +227,20 @@ class UpdateUserProfileTableViewController: UITableViewController {
             msgMessage = "Please enter your poscode!"
             self.showAlert(msgMessage: msgMessage)
             return false
+        }else if(lbTitle.text == "Select Title"){
+            msgMessage = "Please select your title!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }else if(lbAge.text == "Select Age Group"){
+            msgMessage = "Please select your age group!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }else if(lbCategories.text == "Select Categories"){
+            msgMessage = "Please select your prefered categories!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
         }
+        
         return true
     }
     override func didReceiveMemoryWarning() {
