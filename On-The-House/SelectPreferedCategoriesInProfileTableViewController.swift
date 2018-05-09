@@ -44,7 +44,7 @@ class SelectPreferedCategoriesInProfileTableViewController: UITableViewControlle
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "catCell", for: indexPath) as! PreferedCategoriesTableViewCell
         cell.lbCategory.text = CategoriesKeys[indexPath.row]
-        if (self.selectedCategories != nil){
+        if (self.selectedCategories != []){
             if(self.selectedCategories.contains(DataTransition.categories[cell.lbCategory.text!]!)){
                 cell.accessoryType = UITableViewCellAccessoryType.checkmark
             }else{
@@ -66,7 +66,7 @@ class SelectPreferedCategoriesInProfileTableViewController: UITableViewControlle
             selectedCategories.append(DataTransition.categories[currentCell.lbCategory.text!]!)
             UserDefaults.standard.set(selectedCategories, forKey: "categories")
         }
-        if (selectedCategories != nil){
+        if (selectedCategories != []){
             print(selectedCategories)
         }else{
             print("no cat selected")
