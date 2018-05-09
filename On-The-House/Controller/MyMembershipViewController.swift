@@ -14,6 +14,7 @@ class MyMembershipViewController: UIViewController, UITableViewDelegate, UITable
     var membership :[String: Any]?
     var membershipHistory :[[String: Any]]?
     var userFullName:String?
+    
     @IBOutlet weak var lbUserFullname: UILabel!
     @IBOutlet weak var lbCurrentMembership: UILabel!
     override func viewDidLoad() {
@@ -53,8 +54,24 @@ class MyMembershipViewController: UIViewController, UITableViewDelegate, UITable
             let endDate:String = DateFormat.getFormattedDate(dateToConvert: endDateAsDouble, format: "dd/MM/YYYY")
             cell.lbDuration.text = startDate + " - " + endDate
         }
+        
+        //let endDate:String = DateFormat.getFormattedDate(dateToConvert: membershipHistory![indexPath.row]["date_expires"].doubleValue, format: "dd/MM/YYYY")
+        
+        
         return cell
     }
+    
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
 
