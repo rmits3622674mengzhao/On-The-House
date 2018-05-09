@@ -66,7 +66,7 @@ class SelectPreferedCategoriesInProfileTableViewController: UITableViewControlle
             selectedCategories?.append(DataTransition.categories[currentCell.lbCategory.text!]!)
             UserDefaults.standard.set(selectedCategories, forKey: "categories")
         }
-        print(selectedCategories!)
+        //print(selectedCategories!)
         
     }
 }
