@@ -95,7 +95,7 @@ class UpdateUserProfileTableViewController: UITableViewController {
             }
             lbCategories.text = selectedCategoriesKeysArray.joined(separator: ",")
         }else{
-            
+            lbCategories.text = "Select Categories"
         }
     }
     

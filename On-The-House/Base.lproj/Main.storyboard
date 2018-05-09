@@ -2453,7 +2453,7 @@
                                         <rect key="frame" x="0.0" y="641" width="343" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lVJ-GH-06J" id="3kj-b8-fUs">
-                                            <rect key="frame" x="0.0" y="0.0" width="309" height="44.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="317" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zT5-mv-ddI">
