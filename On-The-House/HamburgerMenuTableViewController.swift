@@ -104,7 +104,7 @@ class HamburgerMenuTableViewController: UITableViewController {
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
     }
     
-    /*
+    
     //prepare data for My Membership screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "myMembership"{
@@ -142,6 +142,6 @@ class HamburgerMenuTableViewController: UITableViewController {
             }
         }
     }
-    */
+ 
 }
 

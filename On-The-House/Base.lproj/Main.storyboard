@@ -1822,11 +1822,11 @@
                         <outlet property="cellWelcomeMsg" destination="pq3-fE-pGo" id="z3q-iw-ICl"/>
                         <outlet property="lbUserName" destination="BqH-jL-hTh" id="Mt8-7f-ZON"/>
                         <segue destination="2fP-jt-ydV" kind="show" identifier="loginFirst" id="Na2-Rs-i2d"/>
-                        <segue destination="qno-zd-IT7" kind="show" identifier="myReservation" id="DbF-mw-eg1"/>
-                        <segue destination="ysc-dD-4BL" kind="show" identifier="myOrderHistory" id="rGX-Iw-G7O"/>
-                        <segue destination="DLj-K5-xwL" kind="show" identifier="myMembership" id="XJi-FQ-hfM"/>
-                        <segue destination="Otw-05-j4w" kind="show" identifier="updateMyProfile" id="04E-fz-99L"/>
-                        <segue destination="NIo-5p-2QU" kind="show" identifier="changePassword" id="C3E-3k-A1w"/>
+                        <segue destination="qno-zd-IT7" kind="show" identifier="myReservation" customClass="SWRevealViewControllerSeguePushController" id="DbF-mw-eg1"/>
+                        <segue destination="ysc-dD-4BL" kind="show" identifier="myOrderHistory" customClass="SWRevealViewControllerSeguePushController" id="rGX-Iw-G7O"/>
+                        <segue destination="DLj-K5-xwL" kind="show" identifier="myMembership" customClass="SWRevealViewControllerSeguePushController" id="XJi-FQ-hfM"/>
+                        <segue destination="Otw-05-j4w" kind="show" identifier="updateMyProfile" customClass="SWRevealViewControllerSeguePushController" id="04E-fz-99L"/>
+                        <segue destination="NIo-5p-2QU" kind="show" identifier="changePassword" customClass="SWRevealViewControllerSeguePushController" id="C3E-3k-A1w"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgm-qk-Vcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
