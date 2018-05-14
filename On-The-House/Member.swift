@@ -35,7 +35,7 @@ class Member {
     var categories: [Int]?
     
     var status: String?
-    var message: String?
+    var message: [String]?
     
     struct memberKeys {
         static let id = "id"

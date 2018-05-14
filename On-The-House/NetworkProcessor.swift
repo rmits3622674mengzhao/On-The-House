@@ -28,7 +28,7 @@ class NetworkProcessor
     // my understanding is that () is like a function you passed around
     // like array in JAVA
     typealias JSONDictionaryHandler = (([String:Any]?) -> Void)
-    
+        
     func downloadJSONFromURL(_ completion: @escaping JSONDictionaryHandler){
         // this is the request we used for api call
         let request = URLRequest(url: self.url)
@@ -99,6 +99,7 @@ class NetworkProcessor
         
         dataTask.resume()
     }
+    
     static var postStatus: String = ""
     static var errorMesg: String = ""
     //HTTP post method- universal return error messages from the server

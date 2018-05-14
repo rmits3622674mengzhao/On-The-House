@@ -71,33 +71,32 @@ class LoginViewController : UIViewController {
         }
     }
     
-    /*
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     if segue.identifier == "loginButton"{
-     self.setMember()
-     while memberToken?.status == nil {
-     }
-     if let status = memberToken?.status{
-     if status == "success"{
-     let nextView: MyAccountViewController = segue.destination as! MyAccountViewController
-     if let nickname = self.memberToken?.nickname{
-     //print(nickname)
-     nextView.nickName = nickname
-     // String "email=nazisanh@gmail.com"
-     }
-     }else if status == "error"{
-        let alertController = UIAlertController(title: "Error", message: "Your email or password is incorrect", preferredStyle: .alert)
-        
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertController.addAction(defaultAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-     }
-     }
-     }
-     }
-    */
-     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "loginButton"{
+            self.setMember()
+            while memberToken?.status == nil {
+            }
+            if let status = memberToken?.status{
+                if status == "success"{
+                    let nextView: MyAccountViewController = segue.destination as! MyAccountViewController
+                    if let nickname = self.memberToken?.nickname{
+                        //print(nickname)
+                        nextView.nickName = nickname
+                        // String "email=nazisanh@gmail.com"
+                    }
+                }else if status == "error"{
+                    let alertController = UIAlertController(title: "Error", message: "Your email or password is incorrect", preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
     
 }
 

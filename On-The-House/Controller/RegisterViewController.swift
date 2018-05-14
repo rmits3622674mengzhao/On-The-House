@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-
+var zoneIndex: Int = 0
 class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
     
@@ -29,6 +29,95 @@ class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     
+    
+    class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+        
+        var items:[String] = ["条目1","条目2","条目3","条目4","条目5"]
+        
+        //存储选中单元格的索引
+        var selectedIndexs = [Int]()
+        
+        var tableView:UITableView?
+        
+        override func loadView() {
+            super.loadView()
+        }
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            //创建表视图
+            self.tableView = UITableView(frame: self.view.frame, style:.plain)
+            self.tableView!.delegate = self
+            self.tableView!.dataSource = self
+            //创建一个重用的单元格
+            self.tableView!.register(UITableViewCell.self,
+                                     forCellReuseIdentifier: "SwiftCell")
+            self.view.addSubview(self.tableView!)
+        }
+        
+        //在本例中，只有一个分区
+        func numberOfSections(in tableView: UITableView) -> Int {
+            return 1;
+        }
+        
+        //返回表格行数（也就是返回控件数）
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return self.items.count
+        }
+        
+        //创建各单元显示内容(创建参数indexPath指定的单元）
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
+            -> UITableViewCell {
+                //为了提供表格显示性能，已创建完成的单元需重复使用
+                let identify:String = "SwiftCell"
+                //同一形式的单元格重复使用，在声明时已注册
+                let cell = tableView.dequeueReusableCell(withIdentifier: identify,
+                                                         for: indexPath) as UITableViewCell
+                
+                cell.textLabel?.text = self.items[indexPath.row]
+                
+                //判断是否选中（选中单元格尾部打勾）
+                if selectedIndexs.contains(indexPath.row) {
+                    cell.accessoryType = .checkmark
+                } else {
+                    cell.accessoryType = .none
+                }
+                
+                return cell
+        }
+        
+        // UITableViewDelegate 方法，处理列表项的选中事件
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            //判断该行原先是否选中
+            if let index = selectedIndexs.index(of: indexPath.row){
+                selectedIndexs.remove(at: index) //原来选中的取消选中
+            }else{
+                selectedIndexs.append(indexPath.row) //原来没选中的就选中
+            }
+            
+            ////刷新该行
+            self.tableView?.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
+        //确定按钮点击
+        @IBAction func btnClick(_ sender: AnyObject) {
+            print("选中项的索引为：", selectedIndexs)
+            print("选中项的值为：")
+            for index in selectedIndexs {
+                print(items[index])
+            }
+        }
+        
+        override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
+        }
+    }
+    
+    
+    
+    
+
     @IBOutlet var myView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,19 +146,25 @@ class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var StateLable: UILabel!
     
     
-    var pickerData: [String] = [String]()
-    let statechoices = ["New South Wales", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia", "Australian Capital Territory"]
-    let referencechoices = ["Friend","Twitter","Facebook","Forum","Website"]
+    var statechoices = ["Australian Capital Territory", "New South Wales", "North Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
+    
+    var stateId = ["210", "211", "212", "213", "214", "215", "216", "217"]
+    
+    
+    
+    
+    
+    
+    
     
     
     var memberToken:Member?
     
     var status:Bool?;
-    
+    //PostCodeBox.placeholder="POST CODE"
     func createApiCall(){
-        if let usernameT = UserNameBox.text, let firstNameT = FirstNameBox.text, let lastNameT = LastNameBox.text,let emailT = EmailBox.text, let passwordT = PasswordBox.text,  let passwordconfirmT = ConfirmPasswordBox.text,let _ = PostCodeBox.text{
-            let postBodys = "nickname=\(usernameT)&first_name=\(firstNameT)&last_name=\(lastNameT)&email=\(emailT)&password=\(passwordT)&password_confirm=\(passwordconfirmT)&terms=1&zone_id=211&country_id=13&timezone_id=108&zip=10001"
-            //let postBody = "email=nazisang@gmail.com&password=summer1993"
+        if let usernameT = UserNameBox.text, let firstNameT = FirstNameBox.text, let lastNameT = LastNameBox.text,let emailT = EmailBox.text, let passwordT = PasswordBox.text,  let passwordconfirmT = ConfirmPasswordBox.text,let zipId = PostCodeBox.text{
+            let postBodys = "nickname=\(usernameT)&first_name=\(firstNameT)&last_name=\(lastNameT)&email=\(emailT)&password=\(passwordT)&password_confirm=\(passwordconfirmT)&terms=1&zone_id=\(stateId[zoneIndex])&country_id=13&timezone_id=108&zip=\(zipId)"
             
             let memberService = MemberService()
             memberService.createMember(member: postBodys) { (member) in
@@ -84,17 +179,14 @@ class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerV
             
         }
     }
-    
-    
+
     
     @IBAction func createAccount(_ sender: Any) {
-        if let usernameT = UserNameBox.text, let firstNameT = FirstNameBox.text, let lastNameT = LastNameBox.text,let emailT = EmailBox.text, let passwordT = PasswordBox.text,  let passwordconfirmT = ConfirmPasswordBox.text,let _ = PostCodeBox.text{
-            let postBodys = "nickname=\(usernameT)&first_name=\(firstNameT)&last_name=\(lastNameT)&email=\(emailT)&password=\(passwordT)&password_confirm=\(passwordconfirmT)&terms=1&zone_id=211&country_id=13&timezone_id=108&zip=10001"
-            //let postBody = "email=nazisang@gmail.com&password=summer1993"
+        if let usernameT = UserNameBox.text, let firstNameT = FirstNameBox.text, let lastNameT = LastNameBox.text,let emailT = EmailBox.text, let passwordT = PasswordBox.text,  let passwordconfirmT = ConfirmPasswordBox.text,let zipId = PostCodeBox.text{
+            let postBodys = "nickname=\(usernameT)&first_name=\(firstNameT)&last_name=\(lastNameT)&email=\(emailT)&password=\(passwordT)&password_confirm=\(passwordconfirmT)&terms=1&zone_id=\(stateId[zoneIndex]))&country_id=13&timezone_id=108&zip=\(zipId)"
             
             let memberService = MemberService()
             memberService.createMember(member: postBodys) {(member) in
-                print("in")
                 self.memberToken = member
                 print(member?.status)
                 if member?.status == "success"{
@@ -102,16 +194,17 @@ class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerV
                 }else{
                     self.status = false
                 }
+                
                 if self.status == true{
-                    //UIAlertController.addAction(UIAlertControllerStyle.alert)
-                    if let id = member?.id{
-                        
-                        let button2Alert: UIAlertView = UIAlertView(title: "success", message: "\(id),Welcome to oth",delegate: nil, cancelButtonTitle: "OK")
-                        
-                        button2Alert.show()
-                    }
+                    let button2Alert: UIAlertView = UIAlertView(title: "Sign Up Successful", message: "Please log in",delegate: nil, cancelButtonTitle: "OK")
+                    
+                    button2Alert.show()
+                    
                 }else if self.status == false{
-                    let button2Alert: UIAlertView = UIAlertView(title: "fail", message: "sorry",delegate: nil, cancelButtonTitle: "OK")
+                    
+                    print("hello",member?.message)
+                    
+                    let button2Alert: UIAlertView = UIAlertView(title: "Sorry", message: member?.message?.description,delegate: nil, cancelButtonTitle: "OK")
                     button2Alert.show()
                 }else{
                     print("status is nil")
@@ -120,7 +213,6 @@ class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerV
             
         }
     }
-    
     
     @IBAction func stateSelect(_ sender: Any) {
         

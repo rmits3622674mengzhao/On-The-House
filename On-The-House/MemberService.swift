@@ -53,12 +53,16 @@ class MemberService {
                             print("error in")
                             let member = Member()
                             member.status = status
-                            member.message = "Your email address or password is incorrect"
+                            if let errormessage = jsonDictionary?["error"] as? [String:Any]{
+                                if let message = errormessage["messages"] as? [String]{
+                                    member.message = message
+                                }
+                            }
                             completion(member)
                         }else{
                             let member = Member()
                             member.status = "systemError"
-                            member.message = "System error please try gain"
+                            member.message = ["System error please try gain"]
                             completion(member)
                         }
                     }
@@ -94,7 +98,7 @@ class MemberService {
                         let member = Member()
                         member.status = status
                         if let message = jsonDictionary?["messages"] as? [String]{
-                            member.message = "Your email address or password is incorrect"
+                            member.message = ["Your email address or password is incorrect"]
                         }
                         completion(member)
                     }else{
@@ -123,7 +127,7 @@ class MemberService {
                         let member = Member()
                         member.status = status
                         if let message = jsonDictionary?["messages"] as? [String]{
-                            member.message = "Your email address or password is incorrect"
+                            member.message = ["Your email address or password is incorrect"]
                         }
                         completion(member)
                     }else{
