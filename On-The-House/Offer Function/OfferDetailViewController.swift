@@ -2,13 +2,14 @@
 //  OfferDetailViewController.swift
 //  On-The-House
 //
-//  Created by beier nie on 18/4/18.
+//  Created by beier nie on 14/5/18.
 //  Copyright © 2018 RMIT. All rights reserved.
 //
 
 import UIKit
 
 class OfferDetailViewController: UIViewController {
+
     @IBOutlet weak var OurPriceLabel: UILabel!
     @IBOutlet weak var Member: UILabel!
     @IBOutlet weak var AdminFee: UILabel!
@@ -23,9 +24,6 @@ class OfferDetailViewController: UIViewController {
     @IBOutlet weak var EventDescription: UITextView!
     var offerDetail:OfferModel!
     var videoUrl: URL!
-    @IBAction func backButton(_ sender: Any) {
-        self.dismiss(animated: true, completion:nil)
-    }
     
     
     
@@ -110,7 +108,8 @@ class OfferDetailViewController: UIViewController {
         //
         //            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         //            self.present(alert, animated: true, completion: nil)
-
+        
     }
 }
+
 

@@ -2,14 +2,14 @@
 //  PastOfferDetailViewController.swift
 //  On-The-House
 //
-//  Created by beier nie on 2018/4/26.
-//  Copyright © 2018年 RMIT. All rights reserved.
+//  Created by beier nie on 14/5/18.
+//  Copyright © 2018 RMIT. All rights reserved.
 //
 
 import UIKit
 
 class PastOfferDetailViewController: UIViewController {
-   
+
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var Rate: RatingControl!
     @IBOutlet weak var Description: UITextView!
@@ -32,4 +32,5 @@ class PastOfferDetailViewController: UIViewController {
     
     
 }
+
 

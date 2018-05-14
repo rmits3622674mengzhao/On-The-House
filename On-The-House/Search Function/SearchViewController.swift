@@ -9,99 +9,46 @@
 import UIKit
 import os
 
-class SearchViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
+class SearchViewController: UIViewController{
     
+    let formatter = DateFormatter()
+    let defaults = UserDefaults.standard
     var catagoryItem = [String]()
     var stateItem = [String]()
     var categoryKey = [String]()
     var stateKey = [String]()
-    var dateItem = "" as String
+    var dateKey = [String]()
+    var dateItem :String!
     
-    func getDate(){
-        //         to get current date as yyyy-mm-dd
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let dateString = formatter.string(from: Date())
-        dateItem = dateString
-    }
-    
-    @IBOutlet var sView: UIView!
     
     
     @IBOutlet weak var dateButton: UIButton!
-    
     @IBOutlet weak var categoryButton: UIButton!
     
     @IBOutlet weak var stateButton: UIButton!
     
     @IBOutlet weak var applyButton: UIButton!
     
-    @IBOutlet weak var dateData: UIPickerView!
     
-    let datechoices = ["Today","This Weekend", "Next 7 Days","Next Month"]
-    
-    
-    func getCategory() {
+    func getName() {
+        catagoryItem=defaults.object(forKey: "SavedCateArray") as? [String] ?? [String]()
         if (catagoryItem.count>0){
             let stringArray = catagoryItem.map{ String($0) }
             let string = stringArray.joined(separator: "-")
             categoryButton.setTitle(string, for: .normal)
         }
-    }
-    
-    func getState() {
+        stateItem = defaults.object(forKey: "SavedStateArray") as? [String] ?? [String]()
         if stateItem.count>0{
             let stringArray = stateItem.map{ String($0) }
             let string = stringArray.joined(separator: "-")
             stateButton.setTitle(string, for: .normal)
         }
-    }
-    
-    @IBAction func dateDone(_ sender: Any) {
-        getDate()
-        let title = datechoices[dateData.selectedRow(inComponent: 0)]
-        dateButton.setTitle(title, for: .normal)
-        displayPickerView(false)
-    }
-    
-    @IBAction func dateSelect(_ sender: Any) {
-        displayPickerView(true)
-    }
-    func displayPickerView(_ show: Bool){
-        for c in view.constraints{
-            if c.identifier == "bottom"{
-                c.constant = (show) ? -10 : 173
-                break
-            }
-        }
-        UIView.animate(withDuration: 0.5){
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        view.addSubview(sView)
-        sView.translatesAutoresizingMaskIntoConstraints = false
-        sView.heightAnchor.constraint(equalToConstant: 173).isActive = true
-        sView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-        sView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
-        let c =  sView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 173)
-        c.identifier = "bottom"
-        c.isActive = true
-        sView.layer.cornerRadius = 10
         
-        super.viewWillAppear(animated)
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return datechoices.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return datechoices[row]
+        dateItem = defaults.string(forKey: "SavedDate") as? String
+        if dateItem != nil{
+            let string = dateItem
+            dateButton.setTitle(string, for: .normal)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -111,19 +58,26 @@ class SearchViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
         switch(segue.identifier ?? ""){
         case"SEshow":
             os_log("Show searched events.", log: OSLog.default, type: .debug)
-            guard let searchedController = segue.destination as? SearchTableViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
+            
+            let searchedController = segue.destination as? UINavigationController
+            guard
+                let nextView = searchedController?.topViewController as? OfferTableViewController else {
+                    fatalError("Unexpected destination: \(segue.destination)")
             }
             getKey()
-            searchedController.stateItem = stateKey
-            searchedController.catagoryItem = categoryKey
+            nextView.stateItem = stateKey
+            nextView.catagoryItem = categoryKey
+            nextView.dateItem = dateKey
+            let domain = Bundle.main.bundleIdentifier!
+            UserDefaults.standard.removePersistentDomain(forName: domain)
+            UserDefaults.standard.synchronize()
         default:
             print("Can't find the identifer")
             break
         }
     }
     
-    //get category key or state key
+    //get category key , state key ,date
     func getKey(){
         if catagoryItem.count>0{
             
@@ -138,13 +92,26 @@ class SearchViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
                 stateKey.append(String(statekey))
             }
         }
+        if dateItem != ""{
+            switch dateItem{
+            case "Today":
+                dateKey = getCurrentDate()
+            case "This Weekend":
+                dateKey = getCurrentWeekend()
+            case "Next 7 Days":
+                dateKey = nextSevenDays()
+            case "Next Month":
+                dateKey = nextMonth()
+            default:
+                print ("Error!")
+                break
+            }
+        }
     }
     
     override func viewDidLoad() {
-        getState()
-        getCategory()
+        getName()
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -153,8 +120,73 @@ class SearchViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
         // Dispose of any resources that can be recreated.
     }
     
+    //get current date
+    func getCurrentDate() -> [String]{
+        
+        var today: [String] = []
+        //         to get current date as yyyy-mm-dd
+        formatter.dateFormat = "yyyy-MM-dd"
+        let currentDate = formatter.string(from: Date())
+        today.append(currentDate)
+        return today
+        
+    }
     
+    //get current weekend
+    func getCurrentWeekend() -> [String] {
+        
+        var weekend:[String] = []
+        let date = Date()
+        let component = Calendar.Component.weekday
+        let cal = Calendar.current
+        let currentWeekday = cal.component(component, from: date)
+        
+        let saturday = cal.date(byAdding: component, value: 6 - currentWeekday + 1, to: date)
+        let sunday = cal.date(byAdding: component, value: 7 - currentWeekday + 1, to: date)
+        
+        
+        formatter.dateFormat = "yyyy"
+        let Syear = formatter.string(from: saturday!)
+        let Sunyear = formatter.string(from: sunday!)
+        formatter.dateFormat = "MM"
+        let Smonth = formatter.string(from: saturday!)
+        let Sunmonth = formatter.string(from: sunday!)
+        formatter.dateFormat = "dd"
+        let Sday = formatter.string(from: saturday!)
+        let SuDay = formatter.string(from: sunday!)
+        
+        let sate = "\(Syear)-\(Smonth)-\(Sday)"
+        let sun = "\(Sunyear)-\(Sunmonth)-\(SuDay)"
+        weekend.append(sate)
+        weekend.append(sun)
+        return weekend
+    }
     
+    func nextSevenDays() -> [String] {
+        
+        var sevenDays:[String] = []
+        let endDay = Calendar.current.date(byAdding: .day, value: 7, to: Date())
+        let date = Date()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let start = formatter.string(from: date)
+        let end = formatter.string(from: endDay!)
+        sevenDays.append(start)
+        sevenDays.append(end)
+        return sevenDays
+    }
+    
+    func nextMonth() -> [String] {
+        
+        var nextMonth:[String] = []
+        let endMonth = Calendar.current.date(byAdding: .month, value: 1, to: Date())
+        let date = Date()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let start = formatter.string(from: date)
+        let end = formatter.string(from: endMonth!)
+        nextMonth.append(start)
+        nextMonth.append(end)
+        return nextMonth
+        
+    }
     
 }
-

@@ -1,21 +1,16 @@
 //
-//  CurrentEvents.swift
+//  CategoryEventCell.swift
 //  On-The-House
 //
-//  Created by beier nie on 2018/4/11.
-//  Copyright © 2018年 RMIT. All rights reserved.
+//  Created by beier nie on 14/5/18.
+//  Copyright © 2018 RMIT. All rights reserved.
 //
 
 import UIKit
 
-class OfferEventCell: UITableViewCell {
-    //MARK: Properties
+class CategoryEventCell: UITableViewCell {
     
-    @IBOutlet weak var NameLabel: UILabel!
-    @IBOutlet weak var ImageView: UIImageView!
-    @IBOutlet weak var ratingControl: RatingControl!
-    
-    
+    @IBOutlet weak var CategoryLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,7 +18,9 @@ class OfferEventCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
         // Configure the view for the selected state
     }
+    
 }
 

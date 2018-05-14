@@ -2,7 +2,7 @@
 //  OfferTableViewController.swift
 //  On-The-House
 //
-//  Created by beier nie on 22/3/18.
+//  Created by beier nie on 14/5/18.
 //  Copyright © 2018 RMIT. All rights reserved.
 //
 
@@ -11,6 +11,14 @@ import os
 
 class OfferTableViewController: UITableViewController {
     
+    
+    var postBody = [String: String]()
+    var dateItem = [String]()
+    var refresher:UIRefreshControl!
+    var catagoryItem = [String]()
+    var stateItem = [String]()
+    var loadPage = 1 as Int
+    var MAXPAGE = 100000 as Int
     @IBOutlet weak var menuButton: UIBarButtonItem!
     func sideMenus() {
         
@@ -27,10 +35,12 @@ class OfferTableViewController: UITableViewController {
     struct JsonRec : Decodable{
         let status : String
         let events: [Events]
+        let events_total : Int
         
         enum CodingKeys : String, CodingKey{
             case status = "status"
             case events = "events"
+            case events_total = "events_total"
         }
     }
     
@@ -57,23 +67,69 @@ class OfferTableViewController: UITableViewController {
             case adminFee = "our_price_string"
         }
     }
-
+    
+    // generate post string
+    func getPostString(params:[String:Any]) -> String
+    {
+        var data = [String]()
+        for(key, value) in params
+        {
+            data.append(key + "=\(value)")
+        }
+        return data.map { String($0) }.joined(separator: "&")
+    }
+    // generate post body
+    func generatePostBody(genePage:String){
+        postBody["page"] = genePage
+        postBody["limit"] = "10"
+        if dateItem.count == 1{
+            postBody["date"] = "range"
+            postBody["date_from"] = dateItem[0]
+            postBody["date_to"] = dateItem[0]
+        }
+        if dateItem.count>1{
+            postBody["date"] = "range"
+            postBody["date_from"] = dateItem[0]
+            postBody["date_to"] = dateItem[1]
+        }
+        for i in stateItem{
+            postBody["zone_id[]"] = i
+        }
+        for j in catagoryItem{
+            postBody["category_id[]"] = j
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenus()
-        getConnect()
+        if loadPage == 1{
+            getConnect(tempPage: String(loadPage))
+        }
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh!")
+        refresher.addTarget(self, action: #selector(PastEventTableViewController.getFreser), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refresher)
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    @objc func getFreser(){
+        if loadPage * 10 < MAXPAGE{
+            loadPage = loadPage+1
+            getConnect(tempPage: String(loadPage))
+            tableView.reloadData()
+        }else{
+            refresher.attributedTitle = NSAttributedString(string: "No new data!")
+        }
+        refresher.endRefreshing()
+        
+    }
+    
     // to get current events
-    func getConnect(){
-        //         to get current date as yyyy-mm-dd
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let dateString = formatter.string(from: Date())
+    func getConnect(tempPage:String){
         //         Post request
         let urlString: String = "http://ma.on-the-house.org/api/v1/events/current"
         guard let URLreq = URL(string: urlString) else {
@@ -82,16 +138,9 @@ class OfferTableViewController: UITableViewController {
         }
         var postRequest = URLRequest(url: URLreq)
         postRequest.httpMethod = "POST"
-        //        let postBody: [String: Any] = ["page":1,"limit":10,"date":dateString,"category_id":[5,15,38],"zone_id":[16,18,22]]
-        let postBody: [String: Any] = ["page":1,"limit":10]
-        let postJson: Data
-        do {
-            postJson = try JSONSerialization.data(withJSONObject: postBody, options: [])
-            postRequest.httpBody = postJson
-        } catch {
-            print("Error: cannot create postJSON")
-            return
-        }
+        generatePostBody(genePage:tempPage)
+        let postString = getPostString(params: postBody)
+        postRequest.httpBody = postString.data(using: .utf8)
         
         let session = URLSession.shared
         let semaphore = DispatchSemaphore(value: 0)
@@ -111,6 +160,7 @@ class OfferTableViewController: UITableViewController {
                 return
             }
             if receivedData.status == "success"{
+                self.MAXPAGE = receivedData.events_total
                 for i in receivedData.events{
                     if let data = try? Data(contentsOf: i.image)
                     {
@@ -198,7 +248,7 @@ class OfferTableViewController: UITableViewController {
         //
         //            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         //            self.present(alert, animated: true, completion: nil)
-
+        
     }
     
 }
