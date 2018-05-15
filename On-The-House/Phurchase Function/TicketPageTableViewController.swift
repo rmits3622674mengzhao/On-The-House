@@ -10,7 +10,9 @@ import UIKit
 
 class TicketPageTableViewController: UITableViewController {
 
-    
+    override func viewDidLoad() {
+        
+    }
    
 }
 

@@ -64,7 +64,7 @@ class SearchViewController: UIViewController{
                 let nextView = searchedController?.topViewController as? OfferTableViewController else {
                     fatalError("Unexpected destination: \(segue.destination)")
             }
-            getKey()
+            getKeys()
             nextView.stateItem = stateKey
             nextView.catagoryItem = categoryKey
             nextView.dateItem = dateKey
@@ -78,7 +78,7 @@ class SearchViewController: UIViewController{
     }
     
     //get category key , state key ,date
-    func getKey(){
+    func getKeys(){
         if catagoryItem.count>0{
             
             for i in catagoryItem{
@@ -190,3 +190,4 @@ class SearchViewController: UIViewController{
     }
     
 }
+

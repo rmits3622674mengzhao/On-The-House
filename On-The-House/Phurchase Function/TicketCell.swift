@@ -28,7 +28,7 @@ class TicketCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        quantity.placeholder = "Done"
         // Configure the view for the selected state
     }
 

@@ -65,7 +65,6 @@
 		C0F94DBC2076171200C5938B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DBB2076171200C5938B /* RegisterViewController.swift */; };
 		C0F94DBE2076182600C5938B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DBD2076182600C5938B /* LoginViewController.swift */; };
 		C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DC520761A8200C5938B /* Offermodel.swift */; };
-		C0F94DC820761E1300C5938B /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DC720761E1300C5938B /* MyAccountViewController.swift */; };
 		C0FE2B6220A2FC95002FE0AB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */; };
 		E7A2DE32207DD8BE000B8CE8 /* CurrentEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */; };
 /* End PBXBuildFile section */
@@ -168,7 +167,6 @@
 		C0F94DBB2076171200C5938B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controller/RegisterViewController.swift; sourceTree = "<group>"; };
 		C0F94DBD2076182600C5938B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controller/LoginViewController.swift; sourceTree = "<group>"; };
 		C0F94DC520761A8200C5938B /* Offermodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Offermodel.swift; path = Model/Offermodel.swift; sourceTree = "<group>"; };
-		C0F94DC720761E1300C5938B /* MyAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAccountViewController.swift; path = Controller/MyAccountViewController.swift; sourceTree = "<group>"; };
 		C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C4472D925F512B50D88D2682 /* Pods-On-The-House.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On-The-House.release.xcconfig"; path = "Pods/Target Support Files/Pods-On-The-House/Pods-On-The-House.release.xcconfig"; sourceTree = "<group>"; };
 		E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventCell.swift; sourceTree = "<group>"; };
@@ -405,7 +403,6 @@
 				7A632485209D567B0075D282 /* Hamburger Menu */,
 				C0F94DBB2076171200C5938B /* RegisterViewController.swift */,
 				C0F94DBD2076182600C5938B /* LoginViewController.swift */,
-				C0F94DC720761E1300C5938B /* MyAccountViewController.swift */,
 				E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */,
 				7A821C122084B62F00454BEC /* AlertController.swift */,
 				C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */,
@@ -617,7 +614,6 @@
 				7A821C132084B62F00454BEC /* AlertController.swift in Sources */,
 				C04BA616209999950077B076 /* MembershipInfoViewController.swift in Sources */,
 				7A821C112084B2D400454BEC /* NetworkProcessor.swift in Sources */,
-				C0F94DC820761E1300C5938B /* MyAccountViewController.swift in Sources */,
 				C08095D520AAB83000C6E54C /* TicketCell.swift in Sources */,
 				7A63248E209D727A0075D282 /* SelectAgeGroupTableViewController.swift in Sources */,
 				C0B6D5B520A944A200FF4EEE /* PastOfferDetailViewController.swift in Sources */,
