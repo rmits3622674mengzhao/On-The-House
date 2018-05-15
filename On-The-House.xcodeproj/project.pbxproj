@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04402B9420A979D9002F2567 /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402B9320A979D9002F2567 /* PaymentService.swift */; };
+		04402B9620A97B08002F2567 /* PaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04402B9520A97B08002F2567 /* PaymentResponse.swift */; };
 		0BB4C761899A69CB3D4DE4A3 /* libPods-On-The-House.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9E4CC6B18334656D373CD1 /* libPods-On-The-House.a */; };
 		7A632480209D3CA80075D282 /* UpdateUserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63247F209D3CA80075D282 /* UpdateUserProfileTableViewController.swift */; };
 		7A632482209D3F360075D282 /* PreferedCategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A632481209D3F360075D282 /* PreferedCategoriesTableViewCell.swift */; };
@@ -91,6 +93,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04402B9320A979D9002F2567 /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
+		04402B9520A97B08002F2567 /* PaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResponse.swift; sourceTree = "<group>"; };
 		1D0D815C9D9A595B9C8FA1EB /* Pods-On-The-House.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On-The-House.debug.xcconfig"; path = "Pods/Target Support Files/Pods-On-The-House/Pods-On-The-House.debug.xcconfig"; sourceTree = "<group>"; };
 		7A63247F209D3CA80075D282 /* UpdateUserProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserProfileTableViewController.swift; sourceTree = "<group>"; };
 		7A632481209D3F360075D282 /* PreferedCategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferedCategoriesTableViewCell.swift; sourceTree = "<group>"; };
@@ -180,6 +184,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04402B9220A9784A002F2567 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				04402B9320A979D9002F2567 /* PaymentService.swift */,
+			);
+			name = Payment;
+			sourceTree = "<group>";
+		};
+		04402B9720A99C7B002F2567 /* PaypalAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PaypalAuthentication;
+			sourceTree = "<group>";
+		};
 		3A6138ADA8DBFEED66278A77 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +278,7 @@
 		7A821C0D2084ACFD00454BEC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				04402B9220A9784A002F2567 /* Payment */,
 				7A821C0E2084AD1E00454BEC /* MemberService.swift */,
 				7A821C102084B2D400454BEC /* NetworkProcessor.swift */,
 				C04BA60D209998BD0077B076 /* DateFormat.swift */,
@@ -351,6 +371,7 @@
 				7A821C0B208499D000454BEC /* Member.swift */,
 				7AF21564208D7DAC003A6790 /* RatingControl.swift */,
 				7AF21566208D7DD1003A6790 /* OfferEventCell.swift */,
+				04402B9520A97B08002F2567 /* PaymentResponse.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -358,6 +379,7 @@
 		C0CF50542061F6B4001E8163 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				04402B9720A99C7B002F2567 /* PaypalAuthentication */,
 				7A632485209D567B0075D282 /* Hamburger Menu */,
 				C0F94DBB2076171200C5938B /* RegisterViewController.swift */,
 				C0F94DBD2076182600C5938B /* LoginViewController.swift */,
@@ -537,10 +559,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-On-The-House/Pods-On-The-House-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Braintree/Braintree-UI-Localization.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Braintree/Braintree-Drop-In-Localization.bundle",
 				"${PODS_ROOT}/HWDownSelectedView/HWDownSelectedTF/Resources/arrow_up@2x.png",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Braintree-UI-Localization.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Braintree-Drop-In-Localization.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow_up@2x.png",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,8 +615,10 @@
 				7A69E405208B081500E1F0D6 /* MyOrderHistoryTableViewCell.swift in Sources */,
 				C0344CD52091A1E500DA4911 /* ForgetPasswordViewController.swift in Sources */,
 				7AB4CF25208C68AE00402FB1 /* HamburgerMenuTableViewController.swift in Sources */,
+				04402B9620A97B08002F2567 /* PaymentResponse.swift in Sources */,
 				C04BA614209999730077B076 /* MyMembershipHistoryTableViewCell.swift in Sources */,
 				C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */,
+				04402B9420A979D9002F2567 /* PaymentService.swift in Sources */,
 				E7A2DE34207DE89E000B8CE8 /* OfferTableViewController.swift in Sources */,
 				7A63248A209D5A690075D282 /* SelectTitleTableViewController.swift in Sources */,
 				7AF21567208D7DD1003A6790 /* OfferEventCell.swift in Sources */,
