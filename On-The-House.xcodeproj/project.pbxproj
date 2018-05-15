@@ -37,6 +37,9 @@
 		C04BA612209999570077B076 /* MyMembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA611209999570077B076 /* MyMembershipViewController.swift */; };
 		C04BA614209999730077B076 /* MyMembershipHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA613209999730077B076 /* MyMembershipHistoryTableViewCell.swift */; };
 		C04BA616209999950077B076 /* MembershipInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA615209999950077B076 /* MembershipInfoViewController.swift */; };
+		C08095D320AAB31D00C6E54C /* TicketPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08095D220AAB31D00C6E54C /* TicketPageTableViewController.swift */; };
+		C08095D520AAB83000C6E54C /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08095D420AAB83000C6E54C /* TicketCell.swift */; };
+		C08095D720AABE1000C6E54C /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08095D620AABE1000C6E54C /* TicketModel.swift */; };
 		C0B6D5AF20A9437D00FF4EEE /* OfferTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6D5AE20A9437D00FF4EEE /* OfferTableViewController.swift */; };
 		C0B6D5B120A943FD00FF4EEE /* OfferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6D5B020A943FD00FF4EEE /* OfferDetailViewController.swift */; };
 		C0B6D5B320A9443C00FF4EEE /* OfferEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6D5B220A9443C00FF4EEE /* OfferEventCell.swift */; };
@@ -130,6 +133,9 @@
 		C04BA611209999570077B076 /* MyMembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyMembershipViewController.swift; path = Controller/MyMembershipViewController.swift; sourceTree = "<group>"; };
 		C04BA613209999730077B076 /* MyMembershipHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyMembershipHistoryTableViewCell.swift; path = Controller/MyMembershipHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		C04BA615209999950077B076 /* MembershipInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MembershipInfoViewController.swift; path = Controller/MembershipInfoViewController.swift; sourceTree = "<group>"; };
+		C08095D220AAB31D00C6E54C /* TicketPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TicketPageTableViewController.swift; path = "Phurchase Function/TicketPageTableViewController.swift"; sourceTree = "<group>"; };
+		C08095D420AAB83000C6E54C /* TicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TicketCell.swift; path = "Phurchase Function/TicketCell.swift"; sourceTree = "<group>"; };
+		C08095D620AABE1000C6E54C /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TicketModel.swift; path = Model/TicketModel.swift; sourceTree = "<group>"; };
 		C0B6D5AE20A9437D00FF4EEE /* OfferTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OfferTableViewController.swift; path = "Offer Function/OfferTableViewController.swift"; sourceTree = "<group>"; };
 		C0B6D5B020A943FD00FF4EEE /* OfferDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OfferDetailViewController.swift; path = "Offer Function/OfferDetailViewController.swift"; sourceTree = "<group>"; };
 		C0B6D5B220A9443C00FF4EEE /* OfferEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OfferEventCell.swift; path = "Offer Function/OfferEventCell.swift"; sourceTree = "<group>"; };
@@ -289,6 +295,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C08095D120AAB2CB00C6E54C /* Purchase Function */ = {
+			isa = PBXGroup;
+			children = (
+				C08095D220AAB31D00C6E54C /* TicketPageTableViewController.swift */,
+				C08095D420AAB83000C6E54C /* TicketCell.swift */,
+			);
+			name = "Purchase Function";
+			sourceTree = "<group>";
+		};
 		C0B6D5AD20A9431D00FF4EEE /* Offer Function */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +391,7 @@
 				C0F94DC520761A8200C5938B /* Offermodel.swift */,
 				7A821C0B208499D000454BEC /* Member.swift */,
 				7AF21564208D7DAC003A6790 /* RatingControl.swift */,
+				C08095D620AABE1000C6E54C /* TicketModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -383,6 +399,7 @@
 		C0CF50542061F6B4001E8163 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C08095D120AAB2CB00C6E54C /* Purchase Function */,
 				C0B6D5AD20A9431D00FF4EEE /* Offer Function */,
 				C0FE2B6020A2FC62002FE0AB /* Search Function */,
 				7A632485209D567B0075D282 /* Hamburger Menu */,
@@ -594,12 +611,14 @@
 			files = (
 				7A632496209D79F90075D282 /* SelectTimeZoneTableViewController.swift in Sources */,
 				C0CF5023205CA6A9001E8163 /* ViewController.swift in Sources */,
+				C08095D320AAB31D00C6E54C /* TicketPageTableViewController.swift in Sources */,
 				7A69E403208B07E600E1F0D6 /* MyOrderHistoryTableViewController.swift in Sources */,
 				7A63249B20A2C6660075D282 /* ChangePasswordViewController.swift in Sources */,
 				7A821C132084B62F00454BEC /* AlertController.swift in Sources */,
 				C04BA616209999950077B076 /* MembershipInfoViewController.swift in Sources */,
 				7A821C112084B2D400454BEC /* NetworkProcessor.swift in Sources */,
 				C0F94DC820761E1300C5938B /* MyAccountViewController.swift in Sources */,
+				C08095D520AAB83000C6E54C /* TicketCell.swift in Sources */,
 				7A63248E209D727A0075D282 /* SelectAgeGroupTableViewController.swift in Sources */,
 				C0B6D5B520A944A200FF4EEE /* PastOfferDetailViewController.swift in Sources */,
 				C0B6D5BF20A9476000FF4EEE /* CategoryPageTableViewController.swift in Sources */,
@@ -610,6 +629,7 @@
 				C04BA610209998D70077B076 /* DataTransition.swift in Sources */,
 				C0B6D5C320A947B900FF4EEE /* DateTableViewController.swift in Sources */,
 				C0B6D5B720A944E200FF4EEE /* PastEventCell.swift in Sources */,
+				C08095D720AABE1000C6E54C /* TicketModel.swift in Sources */,
 				7A821C0F2084AD1E00454BEC /* MemberService.swift in Sources */,
 				C0B6D5B320A9443C00FF4EEE /* OfferEventCell.swift in Sources */,
 				C0F94DBC2076171200C5938B /* RegisterViewController.swift in Sources */,
