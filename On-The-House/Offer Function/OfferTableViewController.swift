@@ -68,6 +68,14 @@ class OfferTableViewController: UITableViewController {
         }
     }
     
+    struct JsonError : Decodable{
+        let status : String
+        enum CodingKeys : String, CodingKey{
+            case status = "status"
+        }
+    }
+    
+    
     // generate post string
     func getPostString(params:[String:Any]) -> String
     {
@@ -154,19 +162,27 @@ class OfferTableViewController: UITableViewController {
                 print("Error: did not receive data")
                 return
             }
-            // parse the result as JSON
-            guard let receivedData = try? JSONDecoder().decode(JsonRec.self, from: responseData) else{
-                print("Could not get JSON from responseData as dictionary")
+            
+            // firstly check if the resonse is sucessful
+            guard let checkStatus = try? JSONDecoder().decode(JsonError.self, from: responseData) else{
+                print("Response Error!")
                 return
             }
-            if receivedData.status == "success"{
-                self.MAXPAGE = receivedData.events_total
-                for i in receivedData.events{
-                    if let data = try? Data(contentsOf: i.image)
-                    {
-                        let image: UIImage = UIImage(data: data)!
-                        let offer1 = OfferModel(id: i.id, name: i.name, photo: image, description: i.description, rate: i.rate, ourPrice: i.ourPrice, admin: i.admin, membershipLevel: i.membershipLevel, adminFee: i.adminFee)
-                        self.offer.append(offer1)
+            if checkStatus.status == "success"{
+                // parse the result as JSON
+                guard let receivedData = try? JSONDecoder().decode(JsonRec.self, from: responseData) else{
+                    print("Could not get JSON from responseData as dictionary")
+                    return
+                }
+                if receivedData.status == "success"{
+                    self.MAXPAGE = receivedData.events_total
+                    for i in receivedData.events{
+                        if let data = try? Data(contentsOf: i.image)
+                        {
+                            let image: UIImage = UIImage(data: data)!
+                            let offer1 = OfferModel(id: i.id, name: i.name, photo: image, description: i.description, rate: i.rate, ourPrice: i.ourPrice, admin: i.admin, membershipLevel: i.membershipLevel, adminFee: i.adminFee)
+                            self.offer.append(offer1)
+                        }
                     }
                 }
             }
@@ -187,10 +203,6 @@ class OfferTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (offer.count == 0)
-        {
-            print("Error: failed to load data!")
-        }
         // #warning Incomplete implementation, return the number of rows
         return offer.count
     }

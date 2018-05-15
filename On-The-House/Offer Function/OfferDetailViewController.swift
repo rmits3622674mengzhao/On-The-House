@@ -9,7 +9,6 @@
 import UIKit
 
 class OfferDetailViewController: UIViewController {
-
     @IBOutlet weak var OurPriceLabel: UILabel!
     @IBOutlet weak var Member: UILabel!
     @IBOutlet weak var AdminFee: UILabel!
@@ -24,7 +23,6 @@ class OfferDetailViewController: UIViewController {
     @IBOutlet weak var EventDescription: UITextView!
     var offerDetail:OfferModel!
     var videoUrl: URL!
-    
     
     
     override func viewDidLoad() {
@@ -69,16 +67,7 @@ class OfferDetailViewController: UIViewController {
         }
         EventDescription.text  = tempStr
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    // matches video url
+    
     func matches(for regex: String, in text: String) -> [String] {
         do {
             let regex = try NSRegularExpression(pattern: regex)
@@ -111,5 +100,4 @@ class OfferDetailViewController: UIViewController {
         
     }
 }
-
 

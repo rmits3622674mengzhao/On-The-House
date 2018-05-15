@@ -64,8 +64,6 @@
 		C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DC520761A8200C5938B /* Offermodel.swift */; };
 		C0F94DC820761E1300C5938B /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DC720761E1300C5938B /* MyAccountViewController.swift */; };
 		C0FE2B6220A2FC95002FE0AB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */; };
-		C0FE2B6420A2FCC7002FE0AB /* SearchTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE2B6320A2FCC7002FE0AB /* SearchTableTableViewController.swift */; };
-		C0FE2B6620A2FDF7002FE0AB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE2B6520A2FDF7002FE0AB /* SearchTableViewCell.swift */; };
 		E7A2DE32207DD8BE000B8CE8 /* CurrentEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -166,8 +164,6 @@
 		C0F94DC520761A8200C5938B /* Offermodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Offermodel.swift; path = Model/Offermodel.swift; sourceTree = "<group>"; };
 		C0F94DC720761E1300C5938B /* MyAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAccountViewController.swift; path = Controller/MyAccountViewController.swift; sourceTree = "<group>"; };
 		C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		C0FE2B6320A2FCC7002FE0AB /* SearchTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableTableViewController.swift; sourceTree = "<group>"; };
-		C0FE2B6520A2FDF7002FE0AB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		C4472D925F512B50D88D2682 /* Pods-On-The-House.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On-The-House.release.xcconfig"; path = "Pods/Target Support Files/Pods-On-The-House/Pods-On-The-House.release.xcconfig"; sourceTree = "<group>"; };
 		E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -406,8 +402,6 @@
 			isa = PBXGroup;
 			children = (
 				C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */,
-				C0FE2B6320A2FCC7002FE0AB /* SearchTableTableViewController.swift */,
-				C0FE2B6520A2FDF7002FE0AB /* SearchTableViewCell.swift */,
 				C0B6D5BA20A9470600FF4EEE /* StatePageTableViewController.swift */,
 				C0B6D5BC20A9472E00FF4EEE /* StateEvenetCell.swift */,
 				C0B6D5BE20A9476000FF4EEE /* CategoryPageTableViewController.swift */,
@@ -646,10 +640,8 @@
 				7A63248A209D5A690075D282 /* SelectTitleTableViewController.swift in Sources */,
 				7A632490209D795D0075D282 /* SelectAgeGroupTableViewCell.swift in Sources */,
 				7A63248C209D5B900075D282 /* SelectTitleTableViewCell.swift in Sources */,
-				C0FE2B6420A2FCC7002FE0AB /* SearchTableTableViewController.swift in Sources */,
 				C0CF5029205CA6A9001E8163 /* On_The_House.xcdatamodeld in Sources */,
 				C04BA60E209998BD0077B076 /* DateFormat.swift in Sources */,
-				C0FE2B6620A2FDF7002FE0AB /* SearchTableViewCell.swift in Sources */,
 				C0E682F52099C0450085329D /* PreferencePageTableViewController.swift in Sources */,
 				7A632492209D79BA0075D282 /* SelectStateTableViewController.swift in Sources */,
 			);
