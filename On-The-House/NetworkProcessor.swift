@@ -128,6 +128,7 @@ class NetworkProcessor
                     
                     for m in mesg {
                         message.append(m.string!)
+                        print(m)
                     }
                     compeletion(nil)
                 }

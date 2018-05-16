@@ -1765,7 +1765,7 @@
                         <segue destination="qno-zd-IT7" kind="show" identifier="myReservation" customClass="SWRevealViewControllerSeguePushController" id="DbF-mw-eg1"/>
                         <segue destination="ysc-dD-4BL" kind="show" identifier="myOrderHistory" customClass="SWRevealViewControllerSeguePushController" id="rGX-Iw-G7O"/>
                         <segue destination="DLj-K5-xwL" kind="show" identifier="myMembership" customClass="SWRevealViewControllerSeguePushController" id="XJi-FQ-hfM"/>
-                        <segue destination="Otw-05-j4w" kind="show" identifier="updateMyProfile" customClass="SWRevealViewControllerSeguePushController" id="04E-fz-99L"/>
+                        <segue destination="Otw-05-j4w" kind="show" identifier="updateMyProfile" id="04E-fz-99L"/>
                         <segue destination="NIo-5p-2QU" kind="show" identifier="changePassword" customClass="SWRevealViewControllerSeguePushController" id="C3E-3k-A1w"/>
                     </connections>
                 </tableViewController>
@@ -1868,7 +1868,7 @@
         <!--Change Password-->
         <scene sceneID="RTa-4R-Ysn">
             <objects>
-                <viewController id="abm-0h-Hk7" sceneMemberID="viewController">
+                <viewController id="abm-0h-Hk7" customClass="ChangePasswordViewController" customModule="On_The_House" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zE0-HK-ziz"/>
                         <viewControllerLayoutGuide type="bottom" id="Dc2-ag-ZOM"/>
@@ -1877,15 +1877,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2br-G0-Vqh">
-                                <rect key="frame" x="166" y="114" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vgo-7i-qLb">
+                                <rect key="frame" x="26" y="94" width="323" height="120"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="roG-aw-jkP">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lnp-tH-yEC">
+                                        <rect key="frame" x="0.0" y="45" width="323" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYY-D2-ZJ2">
+                                        <rect key="frame" x="0.0" y="90" width="323" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Update password">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UpdatePasswordAction:" destination="abm-0h-Hk7" eventType="touchUpInside" id="WIb-BC-mgh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="aWk-CA-0jf"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="vgo-7i-qLb" secondAttribute="trailing" constant="10" id="HWZ-mw-MuL"/>
+                            <constraint firstItem="vgo-7i-qLb" firstAttribute="leading" secondItem="rrp-e1-ZPK" secondAttribute="leadingMargin" constant="10" id="VAl-U2-XsO"/>
+                            <constraint firstItem="vgo-7i-qLb" firstAttribute="top" secondItem="zE0-HK-ziz" secondAttribute="bottom" constant="30" id="pDf-es-et3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Change Password" id="qbS-eI-aZO">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="backButton" id="12C-lo-yZ7">
@@ -1895,10 +1923,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tfConfirmPassword" destination="Lnp-tH-yEC" id="XDo-6N-bHV"/>
+                        <outlet property="tfnewPassword" destination="roG-aw-jkP" id="x7T-JB-LXE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eil-2y-FPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4742" y="-2607"/>
+            <point key="canvasLocation" x="4741.6000000000004" y="-2607.3463268365817"/>
         </scene>
         <!--Update User Profile Table View Controller-->
         <scene sceneID="UZs-Dw-3d5">
@@ -2057,14 +2089,14 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="R0t-QS-ZW6">
                                                     <rect key="frame" x="0.0" y="0.0" width="309" height="44.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBs-Ky-iEM">
-                                                            <rect key="frame" x="0.0" y="0.0" width="216.5" height="44.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Age group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBs-Ky-iEM">
+                                                            <rect key="frame" x="0.0" y="0.0" width="164.5" height="44.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Age" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9T-mV-LIJ">
-                                                            <rect key="frame" x="226.5" y="0.0" width="82.5" height="44.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Age Group" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9T-mV-LIJ">
+                                                            <rect key="frame" x="174.5" y="0.0" width="134.5" height="44.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -2361,7 +2393,7 @@
                                         <rect key="frame" x="0.0" y="641" width="343" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lVJ-GH-06J" id="3kj-b8-fUs">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="44.5"/>
+
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zT5-mv-ddI">

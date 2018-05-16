@@ -12,7 +12,7 @@ class SelectPreferedCategoriesInProfileTableViewController: UITableViewControlle
     
     var memberToken:Member?
     //contain selected value
-    var selectedCategories: [Int]?
+    var selectedCategories: [Int] = []
     //contain all keys in categories array
     var CategoriesKeys: [String] = Array(DataTransition.categories.keys)
     
@@ -44,8 +44,8 @@ class SelectPreferedCategoriesInProfileTableViewController: UITableViewControlle
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "catCell", for: indexPath) as! PreferedCategoriesTableViewCell
         cell.lbCategory.text = CategoriesKeys[indexPath.row]
-        if (self.selectedCategories != nil){
-            if (self.selectedCategories?.contains(DataTransition.categories[cell.lbCategory.text!]!))!{
+        if (self.selectedCategories != []){
+            if(self.selectedCategories.contains(DataTransition.categories[cell.lbCategory.text!]!)){
                 cell.accessoryType = UITableViewCellAccessoryType.checkmark
             }else{
                 cell.accessoryType = UITableViewCellAccessoryType.none
@@ -56,16 +56,17 @@ class SelectPreferedCategoriesInProfileTableViewController: UITableViewControlle
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentCell = tableView.cellForRow(at: indexPath) as! PreferedCategoriesTableViewCell
-        let index = selectedCategories?.index(of: DataTransition.categories[currentCell.lbCategory.text!]!)
+        let index = selectedCategories.index(of: DataTransition.categories[currentCell.lbCategory.text!]!)
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
-            selectedCategories?.remove(at: index!)
+            selectedCategories.remove(at: index!)
             UserDefaults.standard.set(selectedCategories, forKey: "categories")
         }else{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
-            selectedCategories?.append(DataTransition.categories[currentCell.lbCategory.text!]!)
+            selectedCategories.append(DataTransition.categories[currentCell.lbCategory.text!]!)
             UserDefaults.standard.set(selectedCategories, forKey: "categories")
         }
+
         
         
     }

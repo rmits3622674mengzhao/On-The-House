@@ -95,11 +95,16 @@ class UpdateUserProfileTableViewController: UITableViewController {
             }
             lbCategories.text = selectedCategoriesKeysArray.joined(separator: ",")
         }else{
-            
+            lbCategories.text = "Select Categories"
         }
     }
     
     @IBAction func btnUpdate(_ sender: Any) {
+        if(validation()){
+            self.postUpdatedProfile()
+        }
+    }
+    func postUpdatedProfile(){
         let stateID = DataTransition.states[lbState.text!]
         let timezoneID = DataTransition.timezones[lbTimeZone.text!]
         //focus group
@@ -167,11 +172,76 @@ class UpdateUserProfileTableViewController: UITableViewController {
                     UserDefaults.standard.set(paidMarketing, forKey: "paid_marketing")
                     UserDefaults.standard.set(newsLetters, forKey: "newsletters")
                     UserDefaults.standard.set(self.selectedCategories, forKey: "categories")
+                    //show successfull message
+                    let successfullyMsg = UIAlertController(title: "Success", message: "Your profile is updated successfully!", preferredStyle: .alert)
+                    successfullyMsg.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(successfullyMsg, animated: true, completion: nil)
                 }else{
                     print("Fail to load json")
                 }
             })
         }
+    }
+    func showAlert(msgMessage:String){
+        let alert = UIAlertController(title: "Error", message: msgMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func isValidEmail(testStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
+    func validation() -> Bool{
+        var msgMessage = ""
+        if(isValidEmail(testStr:tfEmail.text!) == false || tfEmail.text == ""){
+            msgMessage = "Invalid Email address!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }else if(tfNickName.text == ""){
+            msgMessage = "Please enter your nickname!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }else if(tfFirstName.text == ""){
+            msgMessage = "Please enter your first name!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }else if(tfLastName.text == ""){
+            msgMessage = "Please enter your last name!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }else if(tfLastName.text == ""){
+            msgMessage = "Please enter your last name!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }else if(tfAddress1.text == ""){
+            msgMessage = "Please enter your address!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }else if(tfCity.text == ""){
+            msgMessage = "Please enter your city!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }else if(tfPostcode.text == ""){
+            msgMessage = "Please enter your poscode!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }else if(lbTitle.text == "Select Title"){
+            msgMessage = "Please select your title!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }else if(lbAge.text == "Select Age Group"){
+            msgMessage = "Please select your age group!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }else if(lbCategories.text == "Select Categories"){
+            msgMessage = "Please select your prefered categories!"
+            self.showAlert(msgMessage: msgMessage)
+            return false
+        }
+        
+        return true
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

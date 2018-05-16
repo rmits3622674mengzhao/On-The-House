@@ -232,8 +232,8 @@
 				7A632486209D56CB0075D282 /* My Current Reservation */,
 				7A632487209D56FE0075D282 /* My Past Reservation */,
 				7A632488209D574B0075D282 /* My Membership */,
-				7A63249920A2C04C0075D282 /* Change Password */,
 				7A63247E209D3C730075D282 /* Update My Profile */,
+				7A63249920A2C04C0075D282 /* Change Password */,
 			);
 			name = "Hamburger Menu";
 			sourceTree = "<group>";
