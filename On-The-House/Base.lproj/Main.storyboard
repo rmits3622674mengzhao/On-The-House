@@ -1145,7 +1145,6 @@
                                         </state>
                                         <connections>
                                             <action selector="createAccount:" destination="oF7-4h-Sie" eventType="touchUpInside" id="5NP-Re-q0Z"/>
-                                            <segue destination="2fP-jt-ydV" kind="presentation" id="HPk-AE-Y0D"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2949,7 +2948,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="04E-fz-99L"/>
-        <segue reference="jCf-jD-yoP"/>
-        <segue reference="hhn-u5-bh9"/>
+        <segue reference="chn-I8-gB7"/>
+        <segue reference="m0n-dz-YVn"/>
     </inferredMetricsTieBreakers>
 </document>
