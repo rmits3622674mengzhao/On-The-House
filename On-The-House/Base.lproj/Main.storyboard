@@ -688,6 +688,11 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="hamburger_icon" id="coD-nQ-e0g">
                             <color key="tintColor" red="0.91372549020000005" green="0.52941176469999995" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Back" id="glZ-xu-jU6">
+                            <connections>
+                                <segue destination="pdc-Vo-FVk" kind="presentation" id="zNb-3I-6PB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="coD-nQ-e0g" id="ffU-jI-7UX"/>
@@ -2393,7 +2398,7 @@
                                         <rect key="frame" x="0.0" y="641" width="343" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lVJ-GH-06J" id="3kj-b8-fUs">
-
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zT5-mv-ddI">
@@ -2939,7 +2944,7 @@
                                                             <constraint firstItem="fao-e8-JFB" firstAttribute="leading" secondItem="ruG-TD-lBx" secondAttribute="trailing" id="fJD-7D-JHq"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4RY-fp-ahf">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4RY-fp-ahf">
                                                         <rect key="frame" x="0.0" y="120" width="290" height="160"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="160" id="s4x-oU-94U"/>
@@ -3118,16 +3123,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="JJs-YS-TNi">
-                                <rect key="frame" x="32" y="144" width="311" height="394"/>
+                                <rect key="frame" x="32" y="144" width="311" height="443"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am going to at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1x-9Z-Y1t">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qf-J3-M7c">
-                                        <rect key="frame" x="0.0" y="60.5" width="311" height="31"/>
+                                        <rect key="frame" x="0.0" y="69" width="311" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="DATE">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3137,13 +3142,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am looking for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4o-S2-7Zc">
-                                        <rect key="frame" x="0.0" y="121.5" width="311" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="137.5" width="311" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVE-Ze-xxo">
-                                        <rect key="frame" x="0.0" y="182" width="311" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="206.5" width="311" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="CATEGORY">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3153,13 +3158,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am at  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVy-Nj-U28">
-                                        <rect key="frame" x="0.0" y="242.5" width="311" height="31"/>
+                                        <rect key="frame" x="0.0" y="275.5" width="311" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M8-E8-K7y">
-                                        <rect key="frame" x="0.0" y="303.5" width="311" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="344" width="311" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="STATE">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3169,7 +3174,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVQ-l4-gZj">
-                                        <rect key="frame" x="0.0" y="364" width="311" height="30"/>
+                                        <rect key="frame" x="0.0" y="413" width="311" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="APPLY">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3197,7 +3202,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="search" id="xA2-eb-GqL"/>
-                    <navigationItem key="navigationItem" title="Search" id="nw0-vg-WHB"/>
+                    <navigationItem key="navigationItem" title="Search" id="nw0-vg-WHB">
+                        <barButtonItem key="rightBarButtonItem" title="Back" id="IDC-mb-c0J">
+                            <connections>
+                                <segue destination="JAb-Es-179" kind="presentation" id="2CX-o5-WAp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="categoryButton" destination="OVE-Ze-xxo" id="Wvb-va-Wlv"/>
                         <outlet property="dateButton" destination="5Qf-J3-M7c" id="K2D-9G-x9C"/>
@@ -3371,10 +3382,9 @@
         <image name="ticket" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dw4-Ik-J7x"/>
         <segue reference="04E-fz-99L"/>
-        <segue reference="AgR-MU-B0I"/>
-        <segue reference="YkG-Mi-roD"/>
+        <segue reference="2CX-o5-WAp"/>
+        <segue reference="zNb-3I-6PB"/>
         <segue reference="iLZ-sQ-ox2"/>
         <segue reference="r3G-eh-jyG"/>
     </inferredMetricsTieBreakers>
