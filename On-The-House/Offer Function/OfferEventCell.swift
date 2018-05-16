@@ -12,6 +12,7 @@ class OfferEventCell: UITableViewCell {
 
     //MARK: Properties
     
+    @IBOutlet weak var MemberLabel: UILabel!
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!

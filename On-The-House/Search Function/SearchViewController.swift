@@ -92,7 +92,7 @@ class SearchViewController: UIViewController{
                 stateKey.append(String(statekey))
             }
         }
-        if dateItem != ""{
+        if dateItem != nil{
             switch dateItem{
             case "Today":
                 dateKey = getCurrentDate()

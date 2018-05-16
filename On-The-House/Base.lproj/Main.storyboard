@@ -652,11 +652,20 @@
                                                 <constraint firstAttribute="width" constant="108" id="6PN-e5-pBS"/>
                                             </constraints>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gold Member Only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KA-6v-iJQ">
+                                            <rect key="frame" x="16.5" y="61.5" width="143.5" height="20.5"/>
+                                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="VQj-dS-hYN" firstAttribute="leading" secondItem="7KA-6v-iJQ" secondAttribute="trailing" constant="-160" id="5VQ-YU-94J"/>
                                         <constraint firstItem="VQj-dS-hYN" firstAttribute="leading" secondItem="w7z-5k-5n9" secondAttribute="leading" id="9FE-5A-p6w"/>
                                         <constraint firstItem="zFd-cX-rMb" firstAttribute="leading" secondItem="w7z-5k-5n9" secondAttribute="leadingMargin" constant="5" id="Cgb-fu-nxP"/>
                                         <constraint firstItem="WKU-mA-GaQ" firstAttribute="centerY" secondItem="zFd-cX-rMb" secondAttribute="centerY" id="FNV-8b-y2Z"/>
+                                        <constraint firstItem="VQj-dS-hYN" firstAttribute="top" secondItem="7KA-6v-iJQ" secondAttribute="bottom" constant="-21" id="FyT-ZG-cq3"/>
                                         <constraint firstItem="Lco-od-CHs" firstAttribute="top" secondItem="VQj-dS-hYN" secondAttribute="bottom" constant="10" id="UBr-Rp-jNH"/>
                                         <constraint firstItem="Lco-od-CHs" firstAttribute="centerX" secondItem="w7z-5k-5n9" secondAttribute="centerX" id="VqY-3l-lkh"/>
                                         <constraint firstItem="VQj-dS-hYN" firstAttribute="top" secondItem="zFd-cX-rMb" secondAttribute="bottom" constant="10" id="Woa-u0-ic6"/>
@@ -673,6 +682,7 @@
                                 </accessibility>
                                 <connections>
                                     <outlet property="ImageView" destination="VQj-dS-hYN" id="Quq-SD-gLc"/>
+                                    <outlet property="MemberLabel" destination="7KA-6v-iJQ" id="WEw-ef-WX7"/>
                                     <outlet property="NameLabel" destination="zFd-cX-rMb" id="RRA-9k-2SN"/>
                                     <outlet property="ratingControl" destination="WKU-mA-GaQ" id="fMy-z8-3dL"/>
                                     <segue destination="p0Z-KV-bm0" kind="push" identifier="ShowDetail" id="mDa-ly-Zoy"/>

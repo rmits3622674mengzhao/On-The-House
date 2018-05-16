@@ -215,6 +215,11 @@ class OfferTableViewController: UITableViewController {
         cell.NameLabel.text = offerEvents.name
         cell.ImageView.image = offerEvents.photo
         cell.ratingControl.rating  = offerEvents.rate
+        if offerEvents.membershipLevel.contains("Bronze") {
+        cell.MemberLabel.isHidden = true
+        }else{
+            cell.MemberLabel.isHidden = false
+        }
         return cell
     }
     
