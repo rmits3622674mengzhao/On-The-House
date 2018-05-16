@@ -68,7 +68,6 @@
                                         </state>
                                         <connections>
                                             <action selector="btnLogin:" destination="2fP-jt-ydV" eventType="touchUpInside" id="83O-Hy-VYx"/>
-                                            <segue destination="JAb-Es-179" kind="show" identifier="loginButton" id="Q0S-3q-rIf"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Apq-vQ-xI2">
@@ -132,8 +131,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="EmailInputBox" destination="h27-bl-4Xg" id="jan-e6-Vpa"/>
-                        <outlet property="PasswordInputBox" destination="dRe-YU-fOD" id="vo7-lb-2XX"/>
+                        <outlet property="EmailInputBox" destination="h27-bl-4Xg" id="V4z-1E-QNy"/>
+                        <outlet property="PasswordInputBox" destination="dRe-YU-fOD" id="hQw-LC-ZNI"/>
+                        <segue destination="JAb-Es-179" kind="show" identifier="loginSuccess" id="zC7-d6-hE7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiG-2T-iuN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3089,13 +3089,13 @@
                                 <rect key="frame" x="32" y="144" width="311" height="394"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am going to at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1x-9Z-Y1t">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="30.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qf-J3-M7c">
-                                        <rect key="frame" x="0.0" y="61" width="311" height="30"/>
+                                        <rect key="frame" x="0.0" y="60.5" width="311" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="DATE">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3105,13 +3105,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am looking for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4o-S2-7Zc">
-                                        <rect key="frame" x="0.0" y="121" width="311" height="31"/>
+                                        <rect key="frame" x="0.0" y="121.5" width="311" height="30.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVE-Ze-xxo">
-                                        <rect key="frame" x="0.0" y="182" width="311" height="31"/>
+                                        <rect key="frame" x="0.0" y="182" width="311" height="30.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="CATEGORY">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3121,13 +3121,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am at  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVy-Nj-U28">
-                                        <rect key="frame" x="0.0" y="243" width="311" height="30"/>
+                                        <rect key="frame" x="0.0" y="242.5" width="311" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M8-E8-K7y">
-                                        <rect key="frame" x="0.0" y="303" width="311" height="31"/>
+                                        <rect key="frame" x="0.0" y="303.5" width="311" height="30.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="STATE">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3339,8 +3339,9 @@
         <image name="ticket" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="dw4-Ik-J7x"/>
         <segue reference="04E-fz-99L"/>
-        <segue reference="umL-bg-FCW"/>
+        <segue reference="AgR-MU-B0I"/>
         <segue reference="YkG-Mi-roD"/>
         <segue reference="iLZ-sQ-ox2"/>
         <segue reference="r3G-eh-jyG"/>
