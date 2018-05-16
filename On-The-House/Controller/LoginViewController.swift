@@ -67,9 +67,12 @@ class LoginViewController : UIViewController {
                         self.performSegue(withIdentifier: "loginSuccess", sender: self)
                     }
                 }else{
-                    print("login failed!")
-                    let msgMessage = "Wrong Usename or password!"
-                    self.showAlert(msgMessage: msgMessage)
+                    OperationQueue.main.addOperation {
+                        print("login failed!")
+                        let msgMessage = "Wrong Usename or password!"
+                        self.showAlert(msgMessage: msgMessage)
+                    }
+                    
                 }
             }
         }
