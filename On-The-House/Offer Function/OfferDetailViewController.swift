@@ -2,7 +2,7 @@
 //  OfferDetailViewController.swift
 //  On-The-House
 //
-//  Created by beier nie on 18/4/18.
+//  Created by beier nie on 14/5/18.
 //  Copyright © 2018 RMIT. All rights reserved.
 //
 
@@ -23,8 +23,6 @@ class OfferDetailViewController: UIViewController {
     @IBOutlet weak var EventDescription: UITextView!
     var offerDetail:OfferModel!
     var videoUrl: URL!
-    
-    
     
     
     override func viewDidLoad() {
@@ -69,16 +67,7 @@ class OfferDetailViewController: UIViewController {
         }
         EventDescription.text  = tempStr
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    // matches video url
+    
     func matches(for regex: String, in text: String) -> [String] {
         do {
             let regex = try NSRegularExpression(pattern: regex)
@@ -108,7 +97,7 @@ class OfferDetailViewController: UIViewController {
         //
         //            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         //            self.present(alert, animated: true, completion: nil)
-
+        
     }
 }
 

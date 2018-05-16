@@ -66,11 +66,7 @@ class SelectPreferedCategoriesInProfileTableViewController: UITableViewControlle
             selectedCategories.append(DataTransition.categories[currentCell.lbCategory.text!]!)
             UserDefaults.standard.set(selectedCategories, forKey: "categories")
         }
-        if (selectedCategories != []){
-            print(selectedCategories)
-        }else{
-            print("no cat selected")
-        }
+
         
         
     }

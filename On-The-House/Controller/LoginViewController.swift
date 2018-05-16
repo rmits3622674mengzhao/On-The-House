@@ -13,8 +13,9 @@ class LoginViewController : UIViewController {
     
     
     
-    @IBOutlet weak var EmailInputBox: UITextField!
+
     
+    @IBOutlet weak var EmailInputBox: UITextField!
     
     @IBOutlet weak var PasswordInputBox: UITextField!
     
@@ -28,10 +29,8 @@ class LoginViewController : UIViewController {
         super.viewDidLoad()
         
     }
-    @IBAction func btnLogin(_ sender: Any) {
-        setMember()
-    }
-    func setMember() {
+    
+    @IBAction func btnLogin(_ sender: UIButton) {
         if let usernameT = EmailInputBox.text, let passwordT = PasswordInputBox.text{
             let postBodys = "email=\(usernameT)&password=\(passwordT)"
             //let postBody = "email=nazisang@gmail.com&password=summer1993"
@@ -64,40 +63,25 @@ class LoginViewController : UIViewController {
                     UserDefaults.standard.set(self.memberToken?.categories, forKey: "categories")
                     UserDefaults.standard.set(true, forKey: "isLoggedIn")
                     UserDefaults.standard.synchronize()
+                    OperationQueue.main.addOperation {
+                        self.performSegue(withIdentifier: "loginSuccess", sender: self)
+                    }
                 }else{
                     print("login failed!")
+                    let msgMessage = "Wrong Usename or password!"
+                    self.showAlert(msgMessage: msgMessage)
                 }
             }
         }
+        
     }
     
-    /*
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     if segue.identifier == "loginButton"{
-     self.setMember()
-     while memberToken?.status == nil {
-     }
-     if let status = memberToken?.status{
-     if status == "success"{
-     let nextView: MyAccountViewController = segue.destination as! MyAccountViewController
-     if let nickname = self.memberToken?.nickname{
-     //print(nickname)
-     nextView.nickName = nickname
-     // String "email=nazisanh@gmail.com"
-     }
-     }else if status == "error"{
-        let alertController = UIAlertController(title: "Error", message: "Your email or password is incorrect", preferredStyle: .alert)
-        
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertController.addAction(defaultAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-     }
-     }
-     }
-     }
-    */
-     
+    func showAlert(msgMessage:String){
+        let alert = UIAlertController(title: "Error", message: msgMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
 }
 
