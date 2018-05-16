@@ -99,6 +99,7 @@ class NetworkProcessor
         
         dataTask.resume()
     }
+    
     static var postStatus: String = ""
     static var errorMesg: String = ""
     //HTTP post method- universal return error messages from the server
@@ -128,7 +129,6 @@ class NetworkProcessor
                     
                     for m in mesg {
                         message.append(m.string!)
-                        print(m)
                     }
                     compeletion(nil)
                 }
