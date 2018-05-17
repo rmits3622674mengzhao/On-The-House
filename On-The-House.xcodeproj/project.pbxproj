@@ -40,6 +40,7 @@
 		C08095D320AAB31D00C6E54C /* TicketPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08095D220AAB31D00C6E54C /* TicketPageTableViewController.swift */; };
 		C08095D520AAB83000C6E54C /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08095D420AAB83000C6E54C /* TicketCell.swift */; };
 		C08095D720AABE1000C6E54C /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08095D620AABE1000C6E54C /* TicketModel.swift */; };
+		C08095D920AC156000C6E54C /* TermAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08095D820AC156000C6E54C /* TermAndConditionViewController.swift */; };
 		C0B6D5AF20A9437D00FF4EEE /* OfferTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6D5AE20A9437D00FF4EEE /* OfferTableViewController.swift */; };
 		C0B6D5B120A943FD00FF4EEE /* OfferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6D5B020A943FD00FF4EEE /* OfferDetailViewController.swift */; };
 		C0B6D5B320A9443C00FF4EEE /* OfferEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6D5B220A9443C00FF4EEE /* OfferEventCell.swift */; };
@@ -62,6 +63,7 @@
 		C0CF5044205CA6A9001E8163 /* On_The_HouseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CF5043205CA6A9001E8163 /* On_The_HouseUITests.swift */; };
 		C0E682F52099C0450085329D /* PreferencePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E682F42099C0450085329D /* PreferencePageTableViewController.swift */; };
 		C0E682F72099C77E0085329D /* PreferenceEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E682F62099C77E0085329D /* PreferenceEventCell.swift */; };
+		C0E8F53E20AD5C3700A0441F /* APIconnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8F53D20AD5C3700A0441F /* APIconnection.swift */; };
 		C0F94DBC2076171200C5938B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DBB2076171200C5938B /* RegisterViewController.swift */; };
 		C0F94DBE2076182600C5938B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DBD2076182600C5938B /* LoginViewController.swift */; };
 		C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DC520761A8200C5938B /* Offermodel.swift */; };
@@ -135,6 +137,7 @@
 		C08095D220AAB31D00C6E54C /* TicketPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TicketPageTableViewController.swift; path = "Phurchase Function/TicketPageTableViewController.swift"; sourceTree = "<group>"; };
 		C08095D420AAB83000C6E54C /* TicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TicketCell.swift; path = "Phurchase Function/TicketCell.swift"; sourceTree = "<group>"; };
 		C08095D620AABE1000C6E54C /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TicketModel.swift; path = Model/TicketModel.swift; sourceTree = "<group>"; };
+		C08095D820AC156000C6E54C /* TermAndConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TermAndConditionViewController.swift; path = Controller/TermAndConditionViewController.swift; sourceTree = "<group>"; };
 		C0B6D5AE20A9437D00FF4EEE /* OfferTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OfferTableViewController.swift; path = "Offer Function/OfferTableViewController.swift"; sourceTree = "<group>"; };
 		C0B6D5B020A943FD00FF4EEE /* OfferDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OfferDetailViewController.swift; path = "Offer Function/OfferDetailViewController.swift"; sourceTree = "<group>"; };
 		C0B6D5B220A9443C00FF4EEE /* OfferEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OfferEventCell.swift; path = "Offer Function/OfferEventCell.swift"; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 		C0CF505A20620639001E8163 /* On-The-House-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "On-The-House-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		C0E682F42099C0450085329D /* PreferencePageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreferencePageTableViewController.swift; path = Controller/PreferencePageTableViewController.swift; sourceTree = "<group>"; };
 		C0E682F62099C77E0085329D /* PreferenceEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreferenceEventCell.swift; path = Controller/PreferenceEventCell.swift; sourceTree = "<group>"; };
+		C0E8F53D20AD5C3700A0441F /* APIconnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIconnection.swift; path = Model/APIconnection.swift; sourceTree = "<group>"; };
 		C0F94DBB2076171200C5938B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controller/RegisterViewController.swift; sourceTree = "<group>"; };
 		C0F94DBD2076182600C5938B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controller/LoginViewController.swift; sourceTree = "<group>"; };
 		C0F94DC520761A8200C5938B /* Offermodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Offermodel.swift; path = Model/Offermodel.swift; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 		C0B6D5AD20A9431D00FF4EEE /* Offer Function */ = {
 			isa = PBXGroup;
 			children = (
+				C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */,
 				C0B6D5AE20A9437D00FF4EEE /* OfferTableViewController.swift */,
 				C0B6D5B020A943FD00FF4EEE /* OfferDetailViewController.swift */,
 				C0B6D5B220A9443C00FF4EEE /* OfferEventCell.swift */,
@@ -390,6 +395,7 @@
 				7A821C0B208499D000454BEC /* Member.swift */,
 				7AF21564208D7DAC003A6790 /* RatingControl.swift */,
 				C08095D620AABE1000C6E54C /* TicketModel.swift */,
+				C0E8F53D20AD5C3700A0441F /* APIconnection.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 				C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */,
 				C0E682F42099C0450085329D /* PreferencePageTableViewController.swift */,
 				C0E682F62099C77E0085329D /* PreferenceEventCell.swift */,
+				C08095D820AC156000C6E54C /* TermAndConditionViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -415,7 +422,6 @@
 		C0FE2B6020A2FC62002FE0AB /* Search Function */ = {
 			isa = PBXGroup;
 			children = (
-				C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */,
 				C0B6D5BA20A9470600FF4EEE /* StatePageTableViewController.swift */,
 				C0B6D5BC20A9472E00FF4EEE /* StateEvenetCell.swift */,
 				C0B6D5BE20A9476000FF4EEE /* CategoryPageTableViewController.swift */,
@@ -622,6 +628,7 @@
 				C04BA612209999570077B076 /* MyMembershipViewController.swift in Sources */,
 				C0E682F72099C77E0085329D /* PreferenceEventCell.swift in Sources */,
 				C0F94DBE2076182600C5938B /* LoginViewController.swift in Sources */,
+				C0E8F53E20AD5C3700A0441F /* APIconnection.swift in Sources */,
 				C04BA610209998D70077B076 /* DataTransition.swift in Sources */,
 				C0B6D5C320A947B900FF4EEE /* DateTableViewController.swift in Sources */,
 				C0B6D5B720A944E200FF4EEE /* PastEventCell.swift in Sources */,
@@ -657,6 +664,7 @@
 				7A632490209D795D0075D282 /* SelectAgeGroupTableViewCell.swift in Sources */,
 				7A63248C209D5B900075D282 /* SelectTitleTableViewCell.swift in Sources */,
 				C0CF5029205CA6A9001E8163 /* On_The_House.xcdatamodeld in Sources */,
+				C08095D920AC156000C6E54C /* TermAndConditionViewController.swift in Sources */,
 				C04BA60E209998BD0077B076 /* DateFormat.swift in Sources */,
 				C0E682F52099C0450085329D /* PreferencePageTableViewController.swift in Sources */,
 				7A632492209D79BA0075D282 /* SelectStateTableViewController.swift in Sources */,

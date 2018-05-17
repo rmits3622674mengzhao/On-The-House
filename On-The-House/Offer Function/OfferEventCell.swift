@@ -11,11 +11,14 @@ import UIKit
 class OfferEventCell: UITableViewCell {
 
     //MARK: Properties
-    
+    let apiConnection = APIconnection()
     @IBOutlet weak var MemberLabel: UILabel!
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
+    
+    @IBOutlet weak var ticketBtn: UIButton!
+    @IBOutlet weak var upgradeBtn: UIButton!
     
     
     override func awakeFromNib() {
