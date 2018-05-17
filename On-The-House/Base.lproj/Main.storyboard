@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JAb-Es-179">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JAb-Es-179">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1131,6 +1131,7 @@
                         <outlet property="LastNameBox" destination="XC3-8p-PfO" id="xkv-kY-E9d"/>
                         <outlet property="PasswordBox" destination="Yfu-co-IEx" id="XW7-Eu-dZW"/>
                         <outlet property="PostCodeBox" destination="XI3-Rw-CL1" id="taK-8u-uQi"/>
+                        <outlet property="QuetioansLable" destination="xby-kg-xzn" id="vrF-3a-ptV"/>
                         <outlet property="StateLable" destination="VEc-mq-hfX" id="bhi-H3-165"/>
                         <outlet property="UserNameBox" destination="OWO-fR-0gl" id="aee-Rf-0Ai"/>
                         <outlet property="myView" destination="QVW-Rr-bNX" id="gah-2m-RVq"/>
@@ -2393,11 +2394,11 @@
                                         <rect key="frame" x="0.0" y="641" width="343" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lVJ-GH-06J" id="3kj-b8-fUs">
-
+                                            <rect key="frame" x="0.0" y="0.0" width="317" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zT5-mv-ddI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="44.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="317" height="44.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interested categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mm-V9-oJq">
                                                             <rect key="frame" x="0.0" y="0.0" width="162.5" height="44.5"/>
@@ -2406,7 +2407,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Select categories" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bh-L7-qBF">
-                                                            <rect key="frame" x="172.5" y="0.0" width="137.5" height="44.5"/>
+                                                            <rect key="frame" x="172.5" y="0.0" width="144.5" height="44.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -3371,7 +3372,6 @@
         <image name="ticket" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dw4-Ik-J7x"/>
         <segue reference="04E-fz-99L"/>
         <segue reference="AgR-MU-B0I"/>
         <segue reference="YkG-Mi-roD"/>

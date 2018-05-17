@@ -25,7 +25,7 @@ class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         StateLable.text = statechoices[row]
-        
+        zoneIndex=row
     }
     
     
@@ -58,7 +58,7 @@ class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var ConfirmPasswordBox: UITextField!
     @IBOutlet weak var PostCodeBox: UITextField!
     @IBOutlet weak var StateLable: UILabel!
-    
+    @IBOutlet weak var QuetioansLable: UILabel!
     
     var statechoices = ["Australian Capital Territory", "New South Wales", "North Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
     
