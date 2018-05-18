@@ -10,6 +10,9 @@ import UIKit
 
 class ReviewTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lbNickName: UILabel!
+    @IBOutlet weak var stackRating: RatingControl!
+    @IBOutlet weak var lbComments: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

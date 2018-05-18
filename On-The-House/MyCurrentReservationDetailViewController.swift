@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyCurrentReservationDetailViewController: UIViewController {
+class MyCurrentReservationDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var reviewTableView: UITableView!
     @IBOutlet weak var lbEventName: UILabel!
     @IBOutlet weak var lbDate: UILabel!
@@ -46,6 +46,8 @@ class MyCurrentReservationDetailViewController: UIViewController {
         {
             self.memberID = member_id
         }
+        reviewTableView.dataSource = self
+        reviewTableView.delegate = self
         lbEventName.text = eventName
         lbDate.text = eventDate
         lbTicketQty.text = ticketQty
@@ -172,12 +174,12 @@ class MyCurrentReservationDetailViewController: UIViewController {
             network.PostJSONFromURL(postString: postBodys) { (jsonDictionary) in
                 if let status = jsonDictionary?["status"] as? String{
                     if status == "success"{
-                        self.rating = (jsonDictionary?["rating"] as? [[String: Any]])!
+                        self.rating = (jsonDictionary?["ratings"] as? [[String: Any]])!
+                        DispatchQueue.main.async{
+                            self.reviewTableView.reloadData()
+                        }
                     }else if status == "error"{
                         print("fail to cancel ticket")
-                        OperationQueue.main.addOperation {
-                            self.showAlert(title: "Failed", msgMessage: "Unknown error, failed to cancel your ticket!")
-                        }
                     }
                 }
             }
@@ -197,9 +199,16 @@ class MyCurrentReservationDetailViewController: UIViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        reviewTableView.dataSource = self as! UITableViewDataSource
-        let cell = reviewTableView.dequeueReusableCell(withIdentifier: "myMemHis", for: indexPath) as! MyMembershipHistoryTableViewCell
-        //cell.lbMembershipName.text = rating![indexPath.row]["rating"] as? Int
+        reviewTableView.dataSource = self
+        let cell = reviewTableView.dequeueReusableCell(withIdentifier: "ratingStars", for: indexPath) as! ReviewTableViewCell
+        cell.lbNickName.text = rating[indexPath.row]["member_nickname"] as? String
+        cell.lbComments.text = rating[indexPath.row]["comments"] as? String
+        print(rating[indexPath.row]["comments"] as? String)
+        if let rateString = rating[indexPath.row]["rating"] as? String{
+            cell.stackRating.rating  = Int(rateString)!
+        }
+        
+        
         
         return cell
     }
