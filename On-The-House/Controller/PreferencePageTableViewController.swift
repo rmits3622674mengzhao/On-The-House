@@ -17,7 +17,9 @@ class PreferencePageTableViewController: UITableViewController {
     var preferenceList:NSArray = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        preferenceList = ["Friend","LinkedIN","Facebook","Forum","Website","Yelp"]
+        preferenceList = ["If Google Search, what did you search for?", "Friend" , "Newsletter", "Twitter", "Facebook" , "LinkedIN" , "Forum" , "If Blog, what blog was it?", "Footy Funatics", "Toorak Times", "Only Melbourne Website", "Yelp"  , "Good Weekend website"
+        ]
+        
         
     }
 

@@ -25,7 +25,7 @@ class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         StateLable.text = statechoices[row]
-        
+        zoneIndex=row
     }
     
     
@@ -58,13 +58,13 @@ class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var ConfirmPasswordBox: UITextField!
     @IBOutlet weak var PostCodeBox: UITextField!
     @IBOutlet weak var StateLable: UILabel!
-    
+    @IBOutlet weak var QuetioansLable: UILabel!
     
     var statechoices = ["Australian Capital Territory", "New South Wales", "North Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
     
     var stateId = ["210", "211", "212", "213", "214", "215", "216", "217"]
     
-    
+    var timezone = ["103", "108", "101", "102", "100", "105", "106", "92"]
     
     
     
@@ -78,7 +78,7 @@ class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     //PostCodeBox.placeholder="POST CODE"
     func createApiCall(){
         if let usernameT = UserNameBox.text, let firstNameT = FirstNameBox.text, let lastNameT = LastNameBox.text,let emailT = EmailBox.text, let passwordT = PasswordBox.text,  let passwordconfirmT = ConfirmPasswordBox.text,let zipId = PostCodeBox.text{
-            let postBodys = "nickname=\(usernameT)&first_name=\(firstNameT)&last_name=\(lastNameT)&email=\(emailT)&password=\(passwordT)&password_confirm=\(passwordconfirmT)&terms=1&zone_id=\(stateId[zoneIndex])&country_id=13&timezone_id=108&zip=\(zipId)"
+            let postBodys = "nickname=\(usernameT)&first_name=\(firstNameT)&last_name=\(lastNameT)&email=\(emailT)&password=\(passwordT)&password_confirm=\(passwordconfirmT)&terms=1&zone_id=\(stateId[zoneIndex])&country_id=13&timezone_id=\(timezone[zoneIndex])&zip=\(zipId)"
             
             let memberService = MemberService()
             memberService.createMember(member: postBodys) { (member) in
@@ -97,7 +97,7 @@ class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerV
     
     @IBAction func createAccount(_ sender: Any) {
         if let usernameT = UserNameBox.text, let firstNameT = FirstNameBox.text, let lastNameT = LastNameBox.text,let emailT = EmailBox.text, let passwordT = PasswordBox.text,  let passwordconfirmT = ConfirmPasswordBox.text,let zipId = PostCodeBox.text{
-            let postBodys = "nickname=\(usernameT)&first_name=\(firstNameT)&last_name=\(lastNameT)&email=\(emailT)&password=\(passwordT)&password_confirm=\(passwordconfirmT)&terms=1&zone_id=\(stateId[zoneIndex]))&country_id=13&timezone_id=108&zip=\(zipId)"
+            let postBodys = "nickname=\(usernameT)&first_name=\(firstNameT)&last_name=\(lastNameT)&email=\(emailT)&password=\(passwordT)&password_confirm=\(passwordconfirmT)&terms=1&zone_id=\(stateId[zoneIndex]))&country_id=13&timezone_id=\(timezone[zoneIndex])&zip=\(zipId)"
             
             let memberService = MemberService()
             memberService.createMember(member: postBodys) {(member) in

@@ -1353,6 +1353,7 @@
                         <outlet property="LastNameBox" destination="XC3-8p-PfO" id="xkv-kY-E9d"/>
                         <outlet property="PasswordBox" destination="Yfu-co-IEx" id="XW7-Eu-dZW"/>
                         <outlet property="PostCodeBox" destination="XI3-Rw-CL1" id="taK-8u-uQi"/>
+                        <outlet property="QuetioansLable" destination="xby-kg-xzn" id="vrF-3a-ptV"/>
                         <outlet property="StateLable" destination="VEc-mq-hfX" id="bhi-H3-165"/>
                         <outlet property="UserNameBox" destination="OWO-fR-0gl" id="aee-Rf-0Ai"/>
                         <outlet property="myView" destination="QVW-Rr-bNX" id="gah-2m-RVq"/>
