@@ -26,6 +26,10 @@ class RatingViewController: UIViewController {
             self.memberID = member_id
         }
         comments = commentsTextView.text
+        checkHasRated()
+    }
+    
+    func checkHasRated(){
         if (hasRated == 0){
             wholeRatingStack.isHidden = false
             lbThankYou.isHidden = true
@@ -33,7 +37,6 @@ class RatingViewController: UIViewController {
             wholeRatingStack.isHidden = true
             lbThankYou.isHidden = false
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,9 +48,8 @@ class RatingViewController: UIViewController {
         if (ratingStack.starsRating >= 1){
             rateEvent()
         }else{
-            let msgMessage = "Invalid rating point!"
             OperationQueue.main.addOperation {
-                self.showAlert(msgMessage: msgMessage)
+                self.showAlert(msgMessage: "Invalid rating point!")
             }
         }
     }
@@ -71,6 +73,9 @@ class RatingViewController: UIViewController {
                         }
                     }else if status == "error"{
                         print("fail to load json")
+                        OperationQueue.main.addOperation {
+                            self.showAlert(msgMessage: "Unknown error. Failed to post your review.")
+                        }
                     }
                 }
             }

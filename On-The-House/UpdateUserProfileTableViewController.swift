@@ -175,7 +175,10 @@ class UpdateUserProfileTableViewController: UITableViewController {
                     //show successfull message
                     let successfullyMsg = UIAlertController(title: "Success", message: "Your profile is updated successfully!", preferredStyle: .alert)
                     successfullyMsg.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(successfullyMsg, animated: true, completion: nil)
+                    OperationQueue.main.addOperation {
+                        self.present(successfullyMsg, animated: true, completion: nil)
+                    }
+                    
                 }else{
                     print("Fail to load json")
                 }
@@ -194,50 +197,38 @@ class UpdateUserProfileTableViewController: UITableViewController {
         return emailTest.evaluate(with: testStr)
     }
     func validation() -> Bool{
-        var msgMessage = ""
         if(isValidEmail(testStr:tfEmail.text!) == false || tfEmail.text == ""){
-            msgMessage = "Invalid Email address!"
-            self.showAlert(msgMessage: msgMessage)
+            self.showAlert(msgMessage: "Invalid Email address!")
             return false
         }else if(tfNickName.text == ""){
-            msgMessage = "Please enter your nickname!"
-            self.showAlert(msgMessage: msgMessage)
+            self.showAlert(msgMessage: "Please enter your nickname!")
             return false
         }else if(tfFirstName.text == ""){
-            msgMessage = "Please enter your first name!"
-            self.showAlert(msgMessage: msgMessage)
+            self.showAlert(msgMessage: "Please enter your first name!")
             return false
         }else if(tfLastName.text == ""){
-            msgMessage = "Please enter your last name!"
-            self.showAlert(msgMessage: msgMessage)
+            self.showAlert(msgMessage: "Please enter your last name!")
             return false
         }else if(tfLastName.text == ""){
-            msgMessage = "Please enter your last name!"
-            self.showAlert(msgMessage: msgMessage)
+            self.showAlert(msgMessage: "Please enter your last name!")
             return false
         }else if(tfAddress1.text == ""){
-            msgMessage = "Please enter your address!"
-            self.showAlert(msgMessage: msgMessage)
+            self.showAlert(msgMessage: "Please enter your address!")
             return false
         }else if(tfCity.text == ""){
-            msgMessage = "Please enter your city!"
-            self.showAlert(msgMessage: msgMessage)
+            self.showAlert(msgMessage: "Please enter your city!")
             return false
         }else if(tfPostcode.text == ""){
-            msgMessage = "Please enter your poscode!"
-            self.showAlert(msgMessage: msgMessage)
+            self.showAlert(msgMessage: "Please enter your poscode!")
             return false
         }else if(lbTitle.text == "Select Title"){
-            msgMessage = "Please select your title!"
-            self.showAlert(msgMessage: msgMessage)
+            self.showAlert(msgMessage: "Please select your title!")
             return false
         }else if(lbAge.text == "Select Age Group"){
-            msgMessage = "Please select your age group!"
-            self.showAlert(msgMessage: msgMessage)
+            self.showAlert(msgMessage: "Please select your age group!")
             return false
         }else if(lbCategories.text == "Select Categories"){
-            msgMessage = "Please select your prefered categories!"
-            self.showAlert(msgMessage: msgMessage)
+            self.showAlert(msgMessage: "Please select your prefered categories!")
             return false
         }
         

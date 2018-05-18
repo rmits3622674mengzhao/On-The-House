@@ -117,21 +117,23 @@ class MyCurrentReservationDetailViewController: UIViewController {
             network.PostJSONFromURL(postString: postBodys) { (jsonDictionary) in
                 if let status = jsonDictionary?["status"] as? String{
                     if status == "success"{
-                        let msgMessage = "Your ticket has been canceled!"
                         OperationQueue.main.addOperation {
-                            self.showAlert(msgMessage: msgMessage)
+                            self.showAlert(title: "Success", msgMessage: "Your ticket has been canceled!")
                             self.cancelBtn.isHidden = true
                         }
                     }else if status == "error"{
-                        print("fail to load reservations")
+                        print("fail to cancel ticket")
+                        OperationQueue.main.addOperation {
+                            self.showAlert(title: "Failed", msgMessage: "Unknown error, failed to cancel your ticket!")
+                        }
                     }
                 }
             }
         }
     }
     
-    func showAlert(msgMessage:String){
-        let alert = UIAlertController(title: "Success", message: msgMessage, preferredStyle: .alert)
+    func showAlert(title:String, msgMessage:String){
+        let alert = UIAlertController(title: title, message: msgMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
