@@ -32,6 +32,8 @@
 		7AB4CF25208C68AE00402FB1 /* HamburgerMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4CF24208C68AE00402FB1 /* HamburgerMenuTableViewController.swift */; };
 		7AD7FEA220AD722B0041F231 /* MyCurrentReservationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA120AD722B0041F231 /* MyCurrentReservationDetailViewController.swift */; };
 		7AD7FEA420AE5AF70041F231 /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA320AE5AF70041F231 /* VenueModel.swift */; };
+		7AD7FEA620AE90FA0041F231 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA520AE90FA0041F231 /* RatingController.swift */; };
+		7AD7FEA820AE92350041F231 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA720AE92350041F231 /* RatingViewController.swift */; };
 		7AF21565208D7DAC003A6790 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF21564208D7DAC003A6790 /* RatingControl.swift */; };
 		C0344CD52091A1E500DA4911 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */; };
 		C04BA60E209998BD0077B076 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA60D209998BD0077B076 /* DateFormat.swift */; };
@@ -128,6 +130,8 @@
 		7AB4CF24208C68AE00402FB1 /* HamburgerMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuTableViewController.swift; sourceTree = "<group>"; };
 		7AD7FEA120AD722B0041F231 /* MyCurrentReservationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCurrentReservationDetailViewController.swift; sourceTree = "<group>"; };
 		7AD7FEA320AE5AF70041F231 /* VenueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
+		7AD7FEA520AE90FA0041F231 /* RatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
+		7AD7FEA720AE92350041F231 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		7AF21564208D7DAC003A6790 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = Model/RatingControl.swift; sourceTree = "<group>"; };
 		BA9E4CC6B18334656D373CD1 /* libPods-On-The-House.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-On-The-House.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForgetPasswordViewController.swift; path = Controller/ForgetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +261,8 @@
 			children = (
 				7A69E402208B07E600E1F0D6 /* MyOrderHistoryTableViewController.swift */,
 				7A69E404208B081500E1F0D6 /* MyOrderHistoryTableViewCell.swift */,
+				7AD7FEA520AE90FA0041F231 /* RatingController.swift */,
+				7AD7FEA720AE92350041F231 /* RatingViewController.swift */,
 			);
 			name = "My Past Reservation";
 			sourceTree = "<group>";
@@ -639,6 +645,7 @@
 				C0B6D5BD20A9472E00FF4EEE /* StateEvenetCell.swift in Sources */,
 				7A632482209D3F360075D282 /* PreferedCategoriesTableViewCell.swift in Sources */,
 				7A632484209D3F9D0075D282 /* SelectPreferedCategoriesInProfileTableViewController.swift in Sources */,
+				7AD7FEA820AE92350041F231 /* RatingViewController.swift in Sources */,
 				7A632494209D79D80075D282 /* SelectStateTableViewCell.swift in Sources */,
 				7A821C0C208499D000454BEC /* Member.swift in Sources */,
 				7AB01F70208732D7009B93DF /* SWRevealViewController.m in Sources */,
@@ -647,6 +654,7 @@
 				7A69E3FF20883A2700E1F0D6 /* MyReservationTableViewCell.swift in Sources */,
 				7A632498209D7A0E0075D282 /* SelectTimeZoneTableViewCell.swift in Sources */,
 				7AF21565208D7DAC003A6790 /* RatingControl.swift in Sources */,
+				7AD7FEA620AE90FA0041F231 /* RatingController.swift in Sources */,
 				7A69E405208B081500E1F0D6 /* MyOrderHistoryTableViewCell.swift in Sources */,
 				C0344CD52091A1E500DA4911 /* ForgetPasswordViewController.swift in Sources */,
 				C0B6D5C120A9479500FF4EEE /* CategoryEventCell.swift in Sources */,

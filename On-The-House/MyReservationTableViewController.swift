@@ -69,6 +69,12 @@ class MyReservationTableViewController: UITableViewController{
             detailView.ticketQty = (self.Reservations[(indexPath?.row)!]["num_tickets"] as? String)!
             detailView.venueName = (self.Reservations[(indexPath?.row)!]["venue_name"] as? String)!
             detailView.venueID = (self.Reservations[(indexPath?.row)!]["venue_id"] as? String)!
+            detailView.eventID = (self.Reservations[(indexPath?.row)!]["event_id"] as? String)!
+            detailView.canRate = (self.Reservations[(indexPath?.row)!]["can_rate"] as? Int)!
+            detailView.hasRated = (self.Reservations[(indexPath?.row)!]["has_rated"] as? Int)!
+            detailView.canCancel = (self.Reservations[(indexPath?.row)!]["can_cancel"] as? Int)!
+            detailView.reservationID = (self.Reservations[(indexPath?.row)!]["reservation_id"] as? String)!
+            detailView.isExpired = false
         }
     }
     
