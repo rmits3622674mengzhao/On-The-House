@@ -9,6 +9,7 @@
 import UIKit
 
 class MyCurrentReservationDetailViewController: UIViewController {
+    @IBOutlet weak var reviewTableView: UITableView!
     @IBOutlet weak var lbEventName: UILabel!
     @IBOutlet weak var lbDate: UILabel!
     @IBOutlet weak var lbTicketQty: UILabel!
@@ -38,6 +39,7 @@ class MyCurrentReservationDetailViewController: UIViewController {
     var reservationID:String?
     var venue: VenueModel?
     var memberID:String?
+    var rating:[[String:Any]] = [[:]]
     override func viewDidLoad() {
         super.viewDidLoad()
         if let member_id = UserDefaults.standard.string(forKey: "member_id")
@@ -55,6 +57,7 @@ class MyCurrentReservationDetailViewController: UIViewController {
         checkHasRated()
         checkIsExpired()
         checkCanCancel()
+        loadReviews()
     }
     func loadVenueDetail(){
         if let memberURL = URL(string: "http://ma.on-the-house.org/api/v1/venue/\(venueID!)"){
@@ -160,6 +163,45 @@ class MyCurrentReservationDetailViewController: UIViewController {
         }else{
             lbExpiredTicket.isHidden = true
         }
+    }
+    
+    func loadReviews(){
+        let postBodys = "event_id=\(eventID!)"
+        if let memberURL = URL(string: "http://ma.on-the-house.org/api/v1/event/ratings"){
+            let network = NetworkProcessor(url: memberURL)
+            network.PostJSONFromURL(postString: postBodys) { (jsonDictionary) in
+                if let status = jsonDictionary?["status"] as? String{
+                    if status == "success"{
+                        self.rating = (jsonDictionary?["rating"] as? [[String: Any]])!
+                    }else if status == "error"{
+                        print("fail to cancel ticket")
+                        OperationQueue.main.addOperation {
+                            self.showAlert(title: "Failed", msgMessage: "Unknown error, failed to cancel your ticket!")
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.rating.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Reviews"
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        reviewTableView.dataSource = self as! UITableViewDataSource
+        let cell = reviewTableView.dequeueReusableCell(withIdentifier: "myMemHis", for: indexPath) as! MyMembershipHistoryTableViewCell
+        //cell.lbMembershipName.text = rating![indexPath.row]["rating"] as? Int
+        
+        return cell
     }
 
     override func didReceiveMemoryWarning() {

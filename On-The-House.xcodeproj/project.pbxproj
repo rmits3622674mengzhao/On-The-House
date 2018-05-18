@@ -34,6 +34,7 @@
 		7AD7FEA420AE5AF70041F231 /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA320AE5AF70041F231 /* VenueModel.swift */; };
 		7AD7FEA620AE90FA0041F231 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA520AE90FA0041F231 /* RatingController.swift */; };
 		7AD7FEA820AE92350041F231 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA720AE92350041F231 /* RatingViewController.swift */; };
+		7AD7FEAC20AEC4B60041F231 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEAB20AEC4B60041F231 /* ReviewTableViewCell.swift */; };
 		7AF21565208D7DAC003A6790 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF21564208D7DAC003A6790 /* RatingControl.swift */; };
 		C0344CD52091A1E500DA4911 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */; };
 		C04BA60E209998BD0077B076 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA60D209998BD0077B076 /* DateFormat.swift */; };
@@ -132,6 +133,7 @@
 		7AD7FEA320AE5AF70041F231 /* VenueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
 		7AD7FEA520AE90FA0041F231 /* RatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
 		7AD7FEA720AE92350041F231 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		7AD7FEAB20AEC4B60041F231 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		7AF21564208D7DAC003A6790 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = Model/RatingControl.swift; sourceTree = "<group>"; };
 		BA9E4CC6B18334656D373CD1 /* libPods-On-The-House.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-On-The-House.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForgetPasswordViewController.swift; path = Controller/ForgetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				7AB01F7220882DB0009B93DF /* MyReservationTableViewController.swift */,
 				7A69E3FE20883A2700E1F0D6 /* MyReservationTableViewCell.swift */,
 				7AD7FEA120AD722B0041F231 /* MyCurrentReservationDetailViewController.swift */,
+				7AD7FEAB20AEC4B60041F231 /* ReviewTableViewCell.swift */,
 			);
 			name = "My Current Reservation";
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				7AB01F7320882DB0009B93DF /* MyReservationTableViewController.swift in Sources */,
 				C04BA612209999570077B076 /* MyMembershipViewController.swift in Sources */,
 				C0E682F72099C77E0085329D /* PreferenceEventCell.swift in Sources */,
+				7AD7FEAC20AEC4B60041F231 /* ReviewTableViewCell.swift in Sources */,
 				C0F94DBE2076182600C5938B /* LoginViewController.swift in Sources */,
 				C04BA610209998D70077B076 /* DataTransition.swift in Sources */,
 				C0B6D5C320A947B900FF4EEE /* DateTableViewController.swift in Sources */,
