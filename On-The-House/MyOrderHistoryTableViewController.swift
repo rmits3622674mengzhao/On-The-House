@@ -71,6 +71,18 @@ class MyOrderHistoryTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "myPastReservationDetail"){
+            let detailView = segue.destination as! MyCurrentReservationDetailViewController
+            let indexPath = self.tableView.indexPathForSelectedRow
+            detailView.eventName = (self.pastReservations[(indexPath?.row)!]["event_name"] as? String)!
+            detailView.eventDate = (self.pastReservations[(indexPath?.row)!]["date"] as? String)!
+            detailView.ticketQty = (self.pastReservations[(indexPath?.row)!]["num_tickets"] as? String)!
+            detailView.venueName = (self.pastReservations[(indexPath?.row)!]["venue_name"] as? String)!
+            detailView.venueID = (self.pastReservations[(indexPath?.row)!]["venue_id"] as? String)!
+        }
+    }
+    
     func loadMyReservations(){
         let postBodys = "member_id=\(memberID)"
         if let memberURL = URL(string: "http://ma.on-the-house.org/api/v1/member/reservations/past"){

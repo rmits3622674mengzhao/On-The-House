@@ -224,15 +224,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyOrderHisCell" rowHeight="122" id="beG-mw-Rlk" customClass="MyOrderHistoryTableViewCell" customModule="On_The_House" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MyOrderHisCell" rowHeight="122" id="beG-mw-Rlk" customClass="MyOrderHistoryTableViewCell" customModule="On_The_House" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="122"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beG-mw-Rlk" id="URV-56-eIs">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="121.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="121.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q55-QC-hGD">
-                                            <rect key="frame" x="10" y="5" width="360" height="112"/>
+                                            <rect key="frame" x="15" y="5" width="326" height="112"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4c-Jo-rv7">
                                                     <rect key="frame" x="0.0" y="0.0" width="98" height="23"/>
@@ -254,8 +254,11 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwp-LO-HKk">
-                                            <rect key="frame" x="73" y="52.5" width="95" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwp-LO-HKk">
+                                            <rect key="frame" x="78" y="52.5" width="250" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="250" id="co3-9V-S5b"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.1125872462" green="0.1125872462" blue="0.1125872462" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
@@ -264,9 +267,9 @@
                                     <constraints>
                                         <constraint firstItem="mwp-LO-HKk" firstAttribute="top" secondItem="tqd-oj-eVO" secondAttribute="top" id="E8D-qV-AaU"/>
                                         <constraint firstItem="q55-QC-hGD" firstAttribute="top" secondItem="URV-56-eIs" secondAttribute="top" constant="5" id="Nht-4D-8i6"/>
-                                        <constraint firstAttribute="trailing" secondItem="q55-QC-hGD" secondAttribute="trailing" constant="5" id="XSM-iu-aes"/>
+                                        <constraint firstAttribute="trailing" secondItem="q55-QC-hGD" secondAttribute="trailing" id="XSM-iu-aes"/>
                                         <constraint firstAttribute="bottom" secondItem="q55-QC-hGD" secondAttribute="bottom" constant="5" id="b1N-0c-rMz"/>
-                                        <constraint firstItem="q55-QC-hGD" firstAttribute="leading" secondItem="URV-56-eIs" secondAttribute="leading" constant="10" id="bU8-ux-H7T"/>
+                                        <constraint firstItem="q55-QC-hGD" firstAttribute="leading" secondItem="URV-56-eIs" secondAttribute="leading" constant="15" id="bU8-ux-H7T"/>
                                         <constraint firstItem="mwp-LO-HKk" firstAttribute="leading" secondItem="tqd-oj-eVO" secondAttribute="trailing" constant="10" id="oj6-3l-6GW"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -275,7 +278,7 @@
                                     <outlet property="lbEventVenue" destination="mwp-LO-HKk" id="l9q-OX-pWX"/>
                                     <outlet property="lbRating" destination="gvt-vx-Z95" id="gyR-tc-Qfr"/>
                                     <outlet property="lbVenueLabel" destination="tqd-oj-eVO" id="h73-r6-VUj"/>
-                                    <segue destination="U7a-3g-Nsr" kind="show" id="CWa-AV-m0B"/>
+                                    <segue destination="rBN-Ik-mqR" kind="show" identifier="myPastReservationDetail" id="TiH-lk-mo8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -296,24 +299,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lHY-Ug-Wsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3809" y="-5055"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="8up-A4-33U">
-            <objects>
-                <viewController id="U7a-3g-Nsr" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="s2u-IT-ug9"/>
-                        <viewControllerLayoutGuide type="bottom" id="hU5-34-eMY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Pf5-xO-uNI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vnJ-7m-dlp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4638" y="-5055"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G5a-oM-X2q">
@@ -457,7 +442,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="603"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iTL-p4-Zvv">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="433.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="468.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mo-MU-jfd">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="26.5"/>
@@ -559,6 +544,16 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuW-Vm-tUQ">
+                                                        <rect key="frame" x="10" y="438.5" width="354" height="30"/>
+                                                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Rate this event">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="0bq-f6-we6" kind="show" id="wQX-tl-jJ5"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="nHL-Pk-lOw" firstAttribute="leading" secondItem="iTL-p4-Zvv" secondAttribute="leading" constant="10" id="2Op-eD-f7M"/>
@@ -566,6 +561,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="3oe-qi-kyq" secondAttribute="trailing" constant="10" id="A5H-6U-OwQ"/>
                                                     <constraint firstAttribute="trailing" secondItem="0tg-hN-2fH" secondAttribute="trailing" constant="10" id="A98-AJ-9dv"/>
                                                     <constraint firstAttribute="trailing" secondItem="bIl-AB-E59" secondAttribute="trailing" constant="10" id="Bdv-h6-fwM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="WuW-Vm-tUQ" secondAttribute="trailing" constant="10" id="GQP-HC-JGJ"/>
                                                     <constraint firstItem="0tg-hN-2fH" firstAttribute="leading" secondItem="iTL-p4-Zvv" secondAttribute="leading" constant="10" id="GTo-Ji-3sP"/>
                                                     <constraint firstAttribute="trailing" secondItem="Xzn-1I-qKO" secondAttribute="trailing" constant="10" id="I9I-qt-xNK"/>
                                                     <constraint firstItem="Hl4-fL-VxC" firstAttribute="leading" secondItem="iTL-p4-Zvv" secondAttribute="leading" constant="10" id="IRS-GU-GwF"/>
@@ -586,6 +582,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="nHL-Pk-lOw" secondAttribute="trailing" constant="10" id="gkd-cD-L4p"/>
                                                     <constraint firstItem="9Mo-MU-jfd" firstAttribute="leading" secondItem="iTL-p4-Zvv" secondAttribute="leading" id="hIj-E5-5GD"/>
                                                     <constraint firstItem="uYN-oK-fJr" firstAttribute="leading" secondItem="iTL-p4-Zvv" secondAttribute="leading" constant="10" id="iEL-U6-sAx"/>
+                                                    <constraint firstItem="WuW-Vm-tUQ" firstAttribute="leading" secondItem="iTL-p4-Zvv" secondAttribute="leading" constant="10" id="ill-ZU-eRl"/>
                                                     <constraint firstItem="ui9-BU-BpU" firstAttribute="leading" secondItem="iTL-p4-Zvv" secondAttribute="leading" constant="10" id="isw-va-kld"/>
                                                     <constraint firstItem="qfx-tu-SNW" firstAttribute="leading" secondItem="iTL-p4-Zvv" secondAttribute="leading" constant="10" id="k7A-pp-Yb3"/>
                                                     <constraint firstItem="kGB-XZ-4t4" firstAttribute="leading" secondItem="iTL-p4-Zvv" secondAttribute="leading" constant="10" id="mh4-AT-9wU"/>
@@ -639,6 +636,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fS-c8-X2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4638" y="-5833"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gyY-ok-C0g">
+            <objects>
+                <viewController id="0bq-f6-we6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b4I-dA-fdG"/>
+                        <viewControllerLayoutGuide type="bottom" id="diI-DY-SrV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hXc-EB-Dda">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B32-7g-TKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4638" y="-5055"/>
         </scene>
         <!--PastOffer-->
         <scene sceneID="kay-Yk-pxw">
@@ -3597,6 +3612,7 @@
         <segue reference="04E-fz-99L"/>
         <segue reference="uMy-or-Fjm"/>
         <segue reference="YkG-Mi-roD"/>
+        <segue reference="TiH-lk-mo8"/>
         <segue reference="iLZ-sQ-ox2"/>
         <segue reference="uGw-6e-8xa"/>
     </inferredMetricsTieBreakers>
