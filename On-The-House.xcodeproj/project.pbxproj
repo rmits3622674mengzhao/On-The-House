@@ -30,6 +30,8 @@
 		7AB01F70208732D7009B93DF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB01F6E208732D6009B93DF /* SWRevealViewController.m */; };
 		7AB01F7320882DB0009B93DF /* MyReservationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB01F7220882DB0009B93DF /* MyReservationTableViewController.swift */; };
 		7AB4CF25208C68AE00402FB1 /* HamburgerMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4CF24208C68AE00402FB1 /* HamburgerMenuTableViewController.swift */; };
+		7AD7FEA220AD722B0041F231 /* MyCurrentReservationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA120AD722B0041F231 /* MyCurrentReservationDetailViewController.swift */; };
+		7AD7FEA420AE5AF70041F231 /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA320AE5AF70041F231 /* VenueModel.swift */; };
 		7AF21565208D7DAC003A6790 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF21564208D7DAC003A6790 /* RatingControl.swift */; };
 		C0344CD52091A1E500DA4911 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */; };
 		C04BA60E209998BD0077B076 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA60D209998BD0077B076 /* DateFormat.swift */; };
@@ -124,6 +126,8 @@
 		7AB01F6F208732D6009B93DF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
 		7AB01F7220882DB0009B93DF /* MyReservationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationTableViewController.swift; sourceTree = "<group>"; };
 		7AB4CF24208C68AE00402FB1 /* HamburgerMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuTableViewController.swift; sourceTree = "<group>"; };
+		7AD7FEA120AD722B0041F231 /* MyCurrentReservationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCurrentReservationDetailViewController.swift; sourceTree = "<group>"; };
+		7AD7FEA320AE5AF70041F231 /* VenueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
 		7AF21564208D7DAC003A6790 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = Model/RatingControl.swift; sourceTree = "<group>"; };
 		BA9E4CC6B18334656D373CD1 /* libPods-On-The-House.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-On-The-House.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForgetPasswordViewController.swift; path = Controller/ForgetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 			children = (
 				7AB01F7220882DB0009B93DF /* MyReservationTableViewController.swift */,
 				7A69E3FE20883A2700E1F0D6 /* MyReservationTableViewCell.swift */,
+				7AD7FEA120AD722B0041F231 /* MyCurrentReservationDetailViewController.swift */,
 			);
 			name = "My Current Reservation";
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				7A821C0B208499D000454BEC /* Member.swift */,
 				7AF21564208D7DAC003A6790 /* RatingControl.swift */,
 				C08095D620AABE1000C6E54C /* TicketModel.swift */,
+				7AD7FEA320AE5AF70041F231 /* VenueModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -653,6 +659,7 @@
 				C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */,
 				C0FE2B6220A2FC95002FE0AB /* SearchViewController.swift in Sources */,
 				C0B6D5B920A9464F00FF4EEE /* PastEventTableViewController.swift in Sources */,
+				7AD7FEA420AE5AF70041F231 /* VenueModel.swift in Sources */,
 				7A63248A209D5A690075D282 /* SelectTitleTableViewController.swift in Sources */,
 				7A632490209D795D0075D282 /* SelectAgeGroupTableViewCell.swift in Sources */,
 				7A63248C209D5B900075D282 /* SelectTitleTableViewCell.swift in Sources */,
@@ -660,6 +667,7 @@
 				C04BA60E209998BD0077B076 /* DateFormat.swift in Sources */,
 				C0E682F52099C0450085329D /* PreferencePageTableViewController.swift in Sources */,
 				7A632492209D79BA0075D282 /* SelectStateTableViewController.swift in Sources */,
+				7AD7FEA220AD722B0041F231 /* MyCurrentReservationDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,7 +42,7 @@ class NetworkProcessor
                         if let data = data{
                             do {
                                 let jsonDictionary =  try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-                                
+                                print("responseString = \(jsonDictionary)")
                                 completion(jsonDictionary as? [String:Any])
                             }catch let error as NSError{
                                 print("\(error.localizedDescription)")

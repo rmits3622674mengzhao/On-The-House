@@ -11,10 +11,12 @@ import UIKit
 
 class MyReservationTableViewController: UITableViewController{
     
-    var offerToken:OfferModel?
+    //var offerToken:OfferModel?
     var Reservations :[[String: Any]] = [[:]]
+    var Venue : [String:Any] = [:]
     var memberID = ""
     var noReservation = true
+    var venueToken:VenueModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         if let member_id = UserDefaults.standard.string(forKey: "member_id")
@@ -58,6 +60,18 @@ class MyReservationTableViewController: UITableViewController{
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "myReservationDetail"){
+            let detailView = segue.destination as! MyCurrentReservationDetailViewController
+            let indexPath = self.tableView.indexPathForSelectedRow
+            detailView.eventName = (self.Reservations[(indexPath?.row)!]["event_name"] as? String)!
+            detailView.eventDate = (self.Reservations[(indexPath?.row)!]["date"] as? String)!
+            detailView.ticketQty = (self.Reservations[(indexPath?.row)!]["num_tickets"] as? String)!
+            detailView.venueName = (self.Reservations[(indexPath?.row)!]["venue_name"] as? String)!
+            detailView.venueID = (self.Reservations[(indexPath?.row)!]["venue_id"] as? String)!
+        }
+    }
+    
     func loadMyReservations(){
         let postBodys = "member_id=\(memberID)"
         if let memberURL = URL(string: "http://ma.on-the-house.org/api/v1/member/reservations"){
@@ -73,7 +87,7 @@ class MyReservationTableViewController: UITableViewController{
                             self.tableView.reloadData()
                         }
                     }else if status == "error"{
-                        print("fail to load json")
+                        print("fail to load reservations")
                     }
                 }
             }
