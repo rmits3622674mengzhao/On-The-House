@@ -44,8 +44,7 @@ class MyCurrentReservationDetailViewController: UIViewController {
                 if let status = jsonDictionary?["status"] as? String{
                     if status == "success"{
                         if let venueDictionary = jsonDictionary?["venue"] as? [String:Any]{
-                            let venue = VenueModel(venueDiction: venueDictionary)
-                            self.venue = venue
+                            self.venue = venue = VenueModel(venueDiction: venueDictionary)
                             if let add1 = self.venue?.address1, let add2 = self.venue?.address2, let city = self.venue?.city, let zone = self.venue?.zone_name, let zip = self.venue?.zip, let country = self.venue?.country_name{
                                 DispatchQueue.main.async{
                                     self.lbAddress.text = "\(add1) \(add2)"
