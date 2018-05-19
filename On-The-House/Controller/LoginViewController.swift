@@ -36,7 +36,6 @@ class LoginViewController : UIViewController {
             //let postBody = "email=nazisang@gmail.com&password=summer1993"
             //print(postBodys)
             let memberService = MemberService()
-            
             memberService.login(postBody: postBodys) { (member) in
                 self.memberToken = member
                 if member?.status == "success"{
@@ -66,6 +65,7 @@ class LoginViewController : UIViewController {
                     OperationQueue.main.addOperation {
                         self.performSegue(withIdentifier: "loginSuccess", sender: self)
                     }
+                    self.loadMembership(memberID: (self.memberToken?.id)!)
                 }else{
                     OperationQueue.main.addOperation {
                         print("login failed!")
@@ -83,6 +83,24 @@ class LoginViewController : UIViewController {
         let alert = UIAlertController(title: "Error", message: msgMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    var membership :[String: Any] = [:]
+    func loadMembership(memberID:String){
+        let postBodys = "member_id=\(memberID)"
+        if let memberURL = URL(string: "http://ma.on-the-house.org/api/v1/member/membership"){
+            let network = NetworkProcessor(url: memberURL)
+            network.PostJSONFromURL(postString: postBodys) { (jsonDictionary) in
+                if let status = jsonDictionary?["status"] as? String{
+                    if status == "success"{
+                        self.membership = (jsonDictionary?["membership"] as? [String: Any])!
+                        UserDefaults.standard.set(self.membership["membership_level_name"], forKey: "membership_level_name")
+                    }else if status == "error"{
+                        print("fail to load json")
+                    }
+                }
+            }
+        }
     }
     
     

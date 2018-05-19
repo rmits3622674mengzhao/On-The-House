@@ -12,7 +12,7 @@ import os
 class DateTableViewController: UITableViewController {
     
     var selectDate = 0 as Int
-    var checkDate = "" as String
+    var checkDate :String!
     var datechoices:NSArray = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,7 @@ class DateTableViewController: UITableViewController {
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
+            checkDate = nil
             selectDate = 0
         }else{
             if selectDate == 0{
@@ -81,6 +82,11 @@ class DateTableViewController: UITableViewController {
         }
     }
     
+    func showAlert(msgMessage:String){
+        let alert = UIAlertController(title: "Error", message: msgMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -127,3 +133,4 @@ class DateTableViewController: UITableViewController {
      */
     
 }
+

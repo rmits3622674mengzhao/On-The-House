@@ -1,24 +1,16 @@
-//
-//  OfferTableViewController.swift
-//  On-The-House
-//
-//  Created by beier nie on 14/5/18.
-//  Copyright © 2018 RMIT. All rights reserved.
-//
-
 import UIKit
 import os
 
 class OfferTableViewController: UITableViewController {
     
-    
-    var postBody = [String: String]()
+    let urlString: String = "http://ma.on-the-house.org/api/v1/events/current"
+    let apiConnection = APIconnection()
     var dateItem = [String]()
     var refresher:UIRefreshControl!
     var catagoryItem = [String]()
     var stateItem = [String]()
     var loadPage = 1 as Int
-    var MAXPAGE = 100000 as Int
+     var islogedIn:Bool?
     @IBOutlet weak var menuButton: UIBarButtonItem!
     func sideMenus() {
         
@@ -30,93 +22,41 @@ class OfferTableViewController: UITableViewController {
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
-    var offer = [OfferModel]()
-    // to implement the structure of resonpse json
-    struct JsonRec : Decodable{
-        let status : String
-        let events: [Events]
-        let events_total : Int
-        
-        enum CodingKeys : String, CodingKey{
-            case status = "status"
-            case events = "events"
-            case events_total = "events_total"
-        }
-    }
     
-    struct Events : Decodable{
-        let id : String
-        let name:String
-        let image: URL
-        let description:String
-        let rate: Int
-        let ourPrice : String
-        let admin : String
-        let membershipLevel: String
-        let adminFee: String
-        
-        enum CodingKeys : String, CodingKey {
-            case id = "id"
-            case name = "name"
-            case image = "image_url"
-            case description = "description"
-            case rate = "rating"
-            case ourPrice = "full_price_string"
-            case admin = "our_price_heading"
-            case membershipLevel = "membership_levels"
-            case adminFee = "our_price_string"
-        }
-    }
-    
-    struct JsonError : Decodable{
-        let status : String
-        enum CodingKeys : String, CodingKey{
-            case status = "status"
-        }
-    }
-    
-    
-    // generate post string
-    func getPostString(params:[String:Any]) -> String
-    {
-        var data = [String]()
-        for(key, value) in params
-        {
-            data.append(key + "=\(value)")
-        }
-        return data.map { String($0) }.joined(separator: "&")
-    }
     // generate post body
-    func generatePostBody(genePage:String){
-        postBody["page"] = genePage
-        postBody["limit"] = "10"
+    func generatePostBody(genePage:String) ->[String: String] {
+        var tempPostBody = [String: String]()
+        tempPostBody["page"] = genePage
+        tempPostBody["limit"] = "10"
         if dateItem.count == 1{
-            postBody["date"] = "range"
-            postBody["date_from"] = dateItem[0]
-            postBody["date_to"] = dateItem[0]
+            tempPostBody["date"] = "range"
+            tempPostBody["date_from"] = dateItem[0]
+            tempPostBody["date_to"] = dateItem[0]
         }
         if dateItem.count>1{
-            postBody["date"] = "range"
-            postBody["date_from"] = dateItem[0]
-            postBody["date_to"] = dateItem[1]
+            tempPostBody["date"] = "range"
+            tempPostBody["date_from"] = dateItem[0]
+            tempPostBody["date_to"] = dateItem[1]
         }
         for i in stateItem{
-            postBody["zone_id[]"] = i
+            tempPostBody["zone_id[]"] = i
         }
         for j in catagoryItem{
-            postBody["category_id[]"] = j
+            tempPostBody["category_id[]"] = j
         }
+        return tempPostBody
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        islogedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
         sideMenus()
         if loadPage == 1{
-            getConnect(tempPage: String(loadPage))
+            apiConnection.getConnect(urlString: urlString, postBody: generatePostBody(genePage: String(loadPage)), method: "currentEvent")
         }
         refresher = UIRefreshControl()
         refresher.attributedTitle = NSAttributedString(string: "Pull to refresh!")
-        refresher.addTarget(self, action: #selector(PastEventTableViewController.getFreser), for: UIControlEvents.valueChanged)
+        refresher.addTarget(self, action: #selector(OfferTableViewController.getFreser), for: UIControlEvents.valueChanged)
         tableView.addSubview(refresher)
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -125,9 +65,9 @@ class OfferTableViewController: UITableViewController {
     }
     
     @objc func getFreser(){
-        if loadPage * 10 < MAXPAGE{
+        if loadPage * 10 < apiConnection.MAXPAGE{
             loadPage = loadPage+1
-            getConnect(tempPage: String(loadPage))
+            apiConnection.getConnect(urlString: urlString , postBody: generatePostBody(genePage: String(loadPage)), method: "currentEvent")
             tableView.reloadData()
         }else{
             refresher.attributedTitle = NSAttributedString(string: "No new data!")
@@ -135,6 +75,7 @@ class OfferTableViewController: UITableViewController {
         refresher.endRefreshing()
         
     }
+<<<<<<< HEAD
     
     // to get current events
     func getConnect(tempPage:String){
@@ -147,7 +88,7 @@ class OfferTableViewController: UITableViewController {
         }
         var postRequest = URLRequest(url: URLreq)
         postRequest.httpMethod = "POST"
-        generatePostBody(genePage:tempPage)
+        let postBody = generatePostBody(genePage:tempPage)
         let postString = getPostString(params: postBody)
         postRequest.httpBody = postString.data(using: .utf8)
         
@@ -200,6 +141,8 @@ class OfferTableViewController: UITableViewController {
         task.resume()
         _ = semaphore.wait(timeout: .distantFuture)
     }
+=======
+>>>>>>> 3969463f4a08845f04cf8f6b3d68e47d20366804
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -213,20 +156,47 @@ class OfferTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return offer.count
+        return apiConnection.offer.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "CECell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? OfferEventCell  else {
             fatalError("The dequeued cell is not an instance of OfferEventCell.")
         }
-        let offerEvents = offer[indexPath.row]
+        let offerEvents = apiConnection.offer[indexPath.row]
         cell.NameLabel.text = offerEvents.name
         cell.ImageView.image = offerEvents.photo
         cell.ratingControl.rating  = offerEvents.rate
+        
+        if offerEvents.membershipLevel.contains("Bronze") {
+            cell.MemberLabel.isHidden = true
+        }else{
+            cell.MemberLabel.isHidden = false
+        }
+         islogedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        if let membershipName = UserDefaults.standard.string(forKey:"membership_level_name"), let logincheck = islogedIn{
+            if logincheck  && membershipName == "Bronze"{
+                print(membershipName)
+            cell.loginBtn.isHidden = true
+                if offerEvents.membershipLevel.contains("Bronze"){
+                    cell.upgradeBtn.isHidden = true
+                }else{cell.ticketBtn.isHidden = true}
+        }else if logincheck  && membershipName == "Gold"{
+            cell.loginBtn.isHidden = true
+            cell.upgradeBtn.isHidden = true
+            
+            }else {
+                cell.ticketBtn.isHidden = true
+                cell.upgradeBtn.isHidden = true
+            }
+            
+        }
+       
         return cell
+        
     }
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //      Get the new view controller using segue.destinationViewController.
         //      Pass the selected object to the new view controller.
@@ -244,9 +214,9 @@ class OfferTableViewController: UITableViewController {
             guard let indexPath = tableView.indexPath(for: selectedEventCell) else {
                 fatalError("The selected cell is not being displayed by the table")
             }
-            let selectedCellImage = offer[indexPath.row]
+            let selectedCellImage = apiConnection.offer[indexPath.row]
             detailViewController.offerDetail = selectedCellImage
-            
+    
         default:
             print("Can't find the identifer")
             break

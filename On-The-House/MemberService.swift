@@ -99,7 +99,7 @@ class MemberService {
                         let member = Member()
                         member.status = status
                         if let message = jsonDictionary?["messages"] as? [String]{
-                            member.message = ["Your email address or password is incorrect"]
+                            member.message = message
                         }
                         completion(member)
                     }else{
@@ -128,7 +128,7 @@ class MemberService {
                         let member = Member()
                         member.status = status
                         if let message = jsonDictionary?["messages"] as? [String]{
-                            member.message = ["Your email address or password is incorrect"]
+                            member.message = message
                         }
                         completion(member)
                     }else{

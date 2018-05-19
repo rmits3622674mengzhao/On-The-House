@@ -30,6 +30,11 @@
 		7AB01F70208732D7009B93DF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB01F6E208732D6009B93DF /* SWRevealViewController.m */; };
 		7AB01F7320882DB0009B93DF /* MyReservationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB01F7220882DB0009B93DF /* MyReservationTableViewController.swift */; };
 		7AB4CF25208C68AE00402FB1 /* HamburgerMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4CF24208C68AE00402FB1 /* HamburgerMenuTableViewController.swift */; };
+		7AD7FEA220AD722B0041F231 /* MyCurrentReservationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA120AD722B0041F231 /* MyCurrentReservationDetailViewController.swift */; };
+		7AD7FEA420AE5AF70041F231 /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA320AE5AF70041F231 /* VenueModel.swift */; };
+		7AD7FEA620AE90FA0041F231 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA520AE90FA0041F231 /* RatingController.swift */; };
+		7AD7FEA820AE92350041F231 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA720AE92350041F231 /* RatingViewController.swift */; };
+		7AD7FEAC20AEC4B60041F231 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEAB20AEC4B60041F231 /* ReviewTableViewCell.swift */; };
 		7AF21565208D7DAC003A6790 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF21564208D7DAC003A6790 /* RatingControl.swift */; };
 		C0344CD52091A1E500DA4911 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */; };
 		C04BA60E209998BD0077B076 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA60D209998BD0077B076 /* DateFormat.swift */; };
@@ -40,6 +45,7 @@
 		C08095D320AAB31D00C6E54C /* TicketPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08095D220AAB31D00C6E54C /* TicketPageTableViewController.swift */; };
 		C08095D520AAB83000C6E54C /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08095D420AAB83000C6E54C /* TicketCell.swift */; };
 		C08095D720AABE1000C6E54C /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08095D620AABE1000C6E54C /* TicketModel.swift */; };
+		C08095D920AC156000C6E54C /* TermAndConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08095D820AC156000C6E54C /* TermAndConditionViewController.swift */; };
 		C0B6D5AF20A9437D00FF4EEE /* OfferTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6D5AE20A9437D00FF4EEE /* OfferTableViewController.swift */; };
 		C0B6D5B120A943FD00FF4EEE /* OfferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6D5B020A943FD00FF4EEE /* OfferDetailViewController.swift */; };
 		C0B6D5B320A9443C00FF4EEE /* OfferEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6D5B220A9443C00FF4EEE /* OfferEventCell.swift */; };
@@ -62,6 +68,7 @@
 		C0CF5044205CA6A9001E8163 /* On_The_HouseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CF5043205CA6A9001E8163 /* On_The_HouseUITests.swift */; };
 		C0E682F52099C0450085329D /* PreferencePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E682F42099C0450085329D /* PreferencePageTableViewController.swift */; };
 		C0E682F72099C77E0085329D /* PreferenceEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E682F62099C77E0085329D /* PreferenceEventCell.swift */; };
+		C0E8F53E20AD5C3700A0441F /* APIconnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8F53D20AD5C3700A0441F /* APIconnection.swift */; };
 		C0F94DBC2076171200C5938B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DBB2076171200C5938B /* RegisterViewController.swift */; };
 		C0F94DBE2076182600C5938B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DBD2076182600C5938B /* LoginViewController.swift */; };
 		C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DC520761A8200C5938B /* Offermodel.swift */; };
@@ -124,6 +131,11 @@
 		7AB01F6F208732D6009B93DF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
 		7AB01F7220882DB0009B93DF /* MyReservationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationTableViewController.swift; sourceTree = "<group>"; };
 		7AB4CF24208C68AE00402FB1 /* HamburgerMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuTableViewController.swift; sourceTree = "<group>"; };
+		7AD7FEA120AD722B0041F231 /* MyCurrentReservationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCurrentReservationDetailViewController.swift; sourceTree = "<group>"; };
+		7AD7FEA320AE5AF70041F231 /* VenueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
+		7AD7FEA520AE90FA0041F231 /* RatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
+		7AD7FEA720AE92350041F231 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		7AD7FEAB20AEC4B60041F231 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		7AF21564208D7DAC003A6790 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = Model/RatingControl.swift; sourceTree = "<group>"; };
 		BA9E4CC6B18334656D373CD1 /* libPods-On-The-House.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-On-The-House.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForgetPasswordViewController.swift; path = Controller/ForgetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +147,7 @@
 		C08095D220AAB31D00C6E54C /* TicketPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TicketPageTableViewController.swift; path = "Phurchase Function/TicketPageTableViewController.swift"; sourceTree = "<group>"; };
 		C08095D420AAB83000C6E54C /* TicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TicketCell.swift; path = "Phurchase Function/TicketCell.swift"; sourceTree = "<group>"; };
 		C08095D620AABE1000C6E54C /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TicketModel.swift; path = Model/TicketModel.swift; sourceTree = "<group>"; };
+		C08095D820AC156000C6E54C /* TermAndConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TermAndConditionViewController.swift; path = Controller/TermAndConditionViewController.swift; sourceTree = "<group>"; };
 		C0B6D5AE20A9437D00FF4EEE /* OfferTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OfferTableViewController.swift; path = "Offer Function/OfferTableViewController.swift"; sourceTree = "<group>"; };
 		C0B6D5B020A943FD00FF4EEE /* OfferDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OfferDetailViewController.swift; path = "Offer Function/OfferDetailViewController.swift"; sourceTree = "<group>"; };
 		C0B6D5B220A9443C00FF4EEE /* OfferEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OfferEventCell.swift; path = "Offer Function/OfferEventCell.swift"; sourceTree = "<group>"; };
@@ -164,6 +177,7 @@
 		C0CF505A20620639001E8163 /* On-The-House-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "On-The-House-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		C0E682F42099C0450085329D /* PreferencePageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreferencePageTableViewController.swift; path = Controller/PreferencePageTableViewController.swift; sourceTree = "<group>"; };
 		C0E682F62099C77E0085329D /* PreferenceEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreferenceEventCell.swift; path = Controller/PreferenceEventCell.swift; sourceTree = "<group>"; };
+		C0E8F53D20AD5C3700A0441F /* APIconnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIconnection.swift; path = Model/APIconnection.swift; sourceTree = "<group>"; };
 		C0F94DBB2076171200C5938B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controller/RegisterViewController.swift; sourceTree = "<group>"; };
 		C0F94DBD2076182600C5938B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controller/LoginViewController.swift; sourceTree = "<group>"; };
 		C0F94DC520761A8200C5938B /* Offermodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Offermodel.swift; path = Model/Offermodel.swift; sourceTree = "<group>"; };
@@ -243,6 +257,8 @@
 			children = (
 				7AB01F7220882DB0009B93DF /* MyReservationTableViewController.swift */,
 				7A69E3FE20883A2700E1F0D6 /* MyReservationTableViewCell.swift */,
+				7AD7FEA120AD722B0041F231 /* MyCurrentReservationDetailViewController.swift */,
+				7AD7FEAB20AEC4B60041F231 /* ReviewTableViewCell.swift */,
 			);
 			name = "My Current Reservation";
 			sourceTree = "<group>";
@@ -252,6 +268,8 @@
 			children = (
 				7A69E402208B07E600E1F0D6 /* MyOrderHistoryTableViewController.swift */,
 				7A69E404208B081500E1F0D6 /* MyOrderHistoryTableViewCell.swift */,
+				7AD7FEA520AE90FA0041F231 /* RatingController.swift */,
+				7AD7FEA720AE92350041F231 /* RatingViewController.swift */,
 			);
 			name = "My Past Reservation";
 			sourceTree = "<group>";
@@ -305,6 +323,7 @@
 		C0B6D5AD20A9431D00FF4EEE /* Offer Function */ = {
 			isa = PBXGroup;
 			children = (
+				C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */,
 				C0B6D5AE20A9437D00FF4EEE /* OfferTableViewController.swift */,
 				C0B6D5B020A943FD00FF4EEE /* OfferDetailViewController.swift */,
 				C0B6D5B220A9443C00FF4EEE /* OfferEventCell.swift */,
@@ -390,6 +409,8 @@
 				7A821C0B208499D000454BEC /* Member.swift */,
 				7AF21564208D7DAC003A6790 /* RatingControl.swift */,
 				C08095D620AABE1000C6E54C /* TicketModel.swift */,
+				C0E8F53D20AD5C3700A0441F /* APIconnection.swift */,
+				7AD7FEA320AE5AF70041F231 /* VenueModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -408,6 +429,7 @@
 				C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */,
 				C0E682F42099C0450085329D /* PreferencePageTableViewController.swift */,
 				C0E682F62099C77E0085329D /* PreferenceEventCell.swift */,
+				C08095D820AC156000C6E54C /* TermAndConditionViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -415,7 +437,6 @@
 		C0FE2B6020A2FC62002FE0AB /* Search Function */ = {
 			isa = PBXGroup;
 			children = (
-				C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */,
 				C0B6D5BA20A9470600FF4EEE /* StatePageTableViewController.swift */,
 				C0B6D5BC20A9472E00FF4EEE /* StateEvenetCell.swift */,
 				C0B6D5BE20A9476000FF4EEE /* CategoryPageTableViewController.swift */,
@@ -621,7 +642,9 @@
 				7AB01F7320882DB0009B93DF /* MyReservationTableViewController.swift in Sources */,
 				C04BA612209999570077B076 /* MyMembershipViewController.swift in Sources */,
 				C0E682F72099C77E0085329D /* PreferenceEventCell.swift in Sources */,
+				7AD7FEAC20AEC4B60041F231 /* ReviewTableViewCell.swift in Sources */,
 				C0F94DBE2076182600C5938B /* LoginViewController.swift in Sources */,
+				C0E8F53E20AD5C3700A0441F /* APIconnection.swift in Sources */,
 				C04BA610209998D70077B076 /* DataTransition.swift in Sources */,
 				C0B6D5C320A947B900FF4EEE /* DateTableViewController.swift in Sources */,
 				C0B6D5B720A944E200FF4EEE /* PastEventCell.swift in Sources */,
@@ -633,6 +656,7 @@
 				C0B6D5BD20A9472E00FF4EEE /* StateEvenetCell.swift in Sources */,
 				7A632482209D3F360075D282 /* PreferedCategoriesTableViewCell.swift in Sources */,
 				7A632484209D3F9D0075D282 /* SelectPreferedCategoriesInProfileTableViewController.swift in Sources */,
+				7AD7FEA820AE92350041F231 /* RatingViewController.swift in Sources */,
 				7A632494209D79D80075D282 /* SelectStateTableViewCell.swift in Sources */,
 				7A821C0C208499D000454BEC /* Member.swift in Sources */,
 				7AB01F70208732D7009B93DF /* SWRevealViewController.m in Sources */,
@@ -641,6 +665,7 @@
 				7A69E3FF20883A2700E1F0D6 /* MyReservationTableViewCell.swift in Sources */,
 				7A632498209D7A0E0075D282 /* SelectTimeZoneTableViewCell.swift in Sources */,
 				7AF21565208D7DAC003A6790 /* RatingControl.swift in Sources */,
+				7AD7FEA620AE90FA0041F231 /* RatingController.swift in Sources */,
 				7A69E405208B081500E1F0D6 /* MyOrderHistoryTableViewCell.swift in Sources */,
 				C0344CD52091A1E500DA4911 /* ForgetPasswordViewController.swift in Sources */,
 				C0B6D5C120A9479500FF4EEE /* CategoryEventCell.swift in Sources */,
@@ -653,13 +678,16 @@
 				C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */,
 				C0FE2B6220A2FC95002FE0AB /* SearchViewController.swift in Sources */,
 				C0B6D5B920A9464F00FF4EEE /* PastEventTableViewController.swift in Sources */,
+				7AD7FEA420AE5AF70041F231 /* VenueModel.swift in Sources */,
 				7A63248A209D5A690075D282 /* SelectTitleTableViewController.swift in Sources */,
 				7A632490209D795D0075D282 /* SelectAgeGroupTableViewCell.swift in Sources */,
 				7A63248C209D5B900075D282 /* SelectTitleTableViewCell.swift in Sources */,
 				C0CF5029205CA6A9001E8163 /* On_The_House.xcdatamodeld in Sources */,
+				C08095D920AC156000C6E54C /* TermAndConditionViewController.swift in Sources */,
 				C04BA60E209998BD0077B076 /* DateFormat.swift in Sources */,
 				C0E682F52099C0450085329D /* PreferencePageTableViewController.swift in Sources */,
 				7A632492209D79BA0075D282 /* SelectStateTableViewController.swift in Sources */,
+				7AD7FEA220AD722B0041F231 /* MyCurrentReservationDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

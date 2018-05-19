@@ -14,7 +14,6 @@ class MyOrderHistoryTableViewController: UITableViewController {
     var offerToken:OfferModel?
     var pastReservations :[[String: Any]] = [[:]]
     var memberID = ""
-    var noReservation = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +22,6 @@ class MyOrderHistoryTableViewController: UITableViewController {
             self.memberID = member_id
         }
         self.loadMyReservations()
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,31 +36,41 @@ class MyOrderHistoryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(self.pastReservations.count == 0){
-            return 1
-        }
         return self.pastReservations.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyOrderHisCell", for: indexPath) as! MyOrderHistoryTableViewCell
-        if(noReservation){
-            cell.lbEventName.text = "You have no past reservation!"
-            cell.lbEventVenue.text = ""
-            cell.lbRating.text = ""
-            cell.lbVenueLabel.text = ""
+        cell.lbVenueLabel.text = "Venue:"
+        cell.lbEventName.text = pastReservations[indexPath.row]["event_name"] as? String
+        cell.lbEventVenue.text = pastReservations[indexPath.row]["venue_name"] as? String
+        if ((pastReservations[indexPath.row]["has_rated"] as? Int) == 1){
+            cell.lbRating.text = "You have rated this event!"
         }else{
-            cell.lbVenueLabel.text = "Venue:"
-            cell.lbEventName.text = pastReservations[indexPath.row]["event_name"] as? String
-            cell.lbEventVenue.text = pastReservations[indexPath.row]["venue_name"] as? String
-            if ((pastReservations[indexPath.row]["has_rated"] as? Int) == 1){
-                cell.lbRating.text = "You has rated this event!"
-            }else{
-                cell.lbRating.text = "Please rate this event!"
-            }
+            cell.lbRating.text = "Please rate this event!"
         }
         return cell
+    }
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "myPastReservationDetail"){
+            let detailView = segue.destination as! MyCurrentReservationDetailViewController
+            let indexPath = self.tableView.indexPathForSelectedRow
+            if(self.pastReservations).count != 0{
+                detailView.eventName = (self.pastReservations[(indexPath?.row)!]["event_name"] as? String)!
+                detailView.eventDate = (self.pastReservations[(indexPath?.row)!]["date"] as? String)!
+                detailView.ticketQty = (self.pastReservations[(indexPath?.row)!]["num_tickets"] as? String)!
+                detailView.venueName = (self.pastReservations[(indexPath?.row)!]["venue_name"] as? String)!
+                detailView.venueID = (self.pastReservations[(indexPath?.row)!]["venue_id"] as? String)!
+                detailView.eventID = (self.pastReservations[(indexPath?.row)!]["event_id"] as? String)!
+                detailView.canRate = (self.pastReservations[(indexPath?.row)!]["can_rate"] as? Int)!
+                detailView.hasRated = (self.pastReservations[(indexPath?.row)!]["has_rated"] as? Int)!
+            }
+            detailView.canCancel = 0
+            detailView.isExpired = true
+        }
     }
     
     func loadMyReservations(){
@@ -79,9 +81,6 @@ class MyOrderHistoryTableViewController: UITableViewController {
                 if let status = jsonDictionary?["status"] as? String{
                     if status == "success"{
                         self.pastReservations = (jsonDictionary?["reservations"] as? [[String: Any]])!
-                        if(self.pastReservations.count != 0){
-                            self.noReservation = false
-                        }
                         DispatchQueue.main.async{
                             self.tableView.reloadData()
                         }
