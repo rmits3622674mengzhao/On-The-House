@@ -12,9 +12,9 @@ class RatingViewController: UIViewController {
     var eventID:String?
     var memberID:String?
     var rating:Int?
-    var comments:String?
     var hasRated:Int?
 
+    @IBOutlet weak var tfComments: UITextField!
     @IBOutlet weak var lbThankYou: UILabel!
     @IBOutlet weak var commentsTextView: UITextView!
     @IBOutlet weak var ratingStack: RatingController!
@@ -24,11 +24,6 @@ class RatingViewController: UIViewController {
         if let member_id = UserDefaults.standard.string(forKey: "member_id")
         {
             self.memberID = member_id
-        }
-        if (commentsTextView.text != ""){
-            comments = commentsTextView.text
-        }else{
-            comments = ""
         }
         checkHasRated()
     }
@@ -65,7 +60,7 @@ class RatingViewController: UIViewController {
     }
     
     func rateEvent(){
-        let postBodys = "event_id=\(eventID!)&member_id=\(memberID!)&rating=\(ratingStack.starsRating)&comments=\(comments!)"
+        let postBodys = "event_id=\(eventID!)&member_id=\(memberID!)&rating=\(ratingStack.starsRating)&comments=\(commentsTextView.text!)"
         if let memberURL = URL(string: "http://ma.on-the-house.org/api/v1/event/rate"){
             let network = NetworkProcessor(url: memberURL)
             network.PostJSONFromURL(postString: postBodys) { (jsonDictionary) in

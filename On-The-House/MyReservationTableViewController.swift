@@ -15,7 +15,6 @@ class MyReservationTableViewController: UITableViewController{
     var Reservations :[[String: Any]] = [[:]]
     var Venue : [String:Any] = [:]
     var memberID = ""
-    var noReservation = true
     var venueToken:VenueModel?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,24 +38,15 @@ class MyReservationTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(self.Reservations.count == 0){
-            return 1
-        }
         return self.Reservations.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyEventCell", for: indexPath) as! MyReservationTableViewCell
-        if(noReservation){
-            cell.nameCell.text = "You have no current reservation!"
-            cell.lbVenueName.text = ""
-            cell.lbVenueLabel.text = ""
-        }else{
-            cell.lbVenueLabel.text = "Venue:"
-            cell.nameCell.text = Reservations[indexPath.row]["event_name"] as? String
-            cell.lbVenueName.text = Reservations[indexPath.row]["venue_name"] as? String
-        }
+        cell.lbVenueLabel.text = "Venue:"
+        cell.nameCell.text = Reservations[indexPath.row]["event_name"] as? String
+        cell.lbVenueName.text = Reservations[indexPath.row]["venue_name"] as? String
         return cell
     }
     
@@ -86,9 +76,6 @@ class MyReservationTableViewController: UITableViewController{
                 if let status = jsonDictionary?["status"] as? String{
                     if status == "success"{
                         self.Reservations = (jsonDictionary?["reservations"] as? [[String: Any]])!
-                        if(self.Reservations.count != 0){
-                            self.noReservation = false
-                        }
                         DispatchQueue.main.async{
                             self.tableView.reloadData()
                         }
