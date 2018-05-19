@@ -98,6 +98,10 @@ class Member {
         self.status = statusInput
     }
     
+    func setErrorMessage(erroMsg:[String]){
+        self.message = erroMsg
+    }
+    
     //    func append(parentStr: String, childStr: String) -> String {
     //        return "\(parentStr)&childStr=\(childStr)"
     //    }

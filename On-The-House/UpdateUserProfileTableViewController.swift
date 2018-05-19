@@ -30,7 +30,6 @@ class UpdateUserProfileTableViewController: UITableViewController {
     @IBOutlet weak var switchPaidMarketing: UISwitch!
     @IBOutlet weak var lbPaidMarketing: UILabel!
     
-    var memberToken:Member?
     var selectedCategories: [Int]?
     
     override func viewDidLoad() {
@@ -150,24 +149,23 @@ class UpdateUserProfileTableViewController: UITableViewController {
                                              "paid_marketing": paidMarketing,
                                              "categories":categories]
             
-            NetworkProcessor.post(command: "api/v1/member/\(member_id)", parameter: parameter1, compeletion: { (member) in
-                self.memberToken = member
-                if member?.status == "success"{
+            NetworkProcessor.post(command: "api/v1/member/\(member_id)", parameter: parameter1, compeletion: { (successed,errorMsg) in
+                if(successed) {
                     print("successfully updated profile")
-                    UserDefaults.standard.set(self.memberToken?.nickname, forKey: "nickname")
-                    UserDefaults.standard.set(self.memberToken?.title, forKey: "title")
-                    UserDefaults.standard.set(self.memberToken?.first_name, forKey: "first_name")
-                    UserDefaults.standard.set(self.memberToken?.last_name, forKey: "last_name")
-                    UserDefaults.standard.set(self.memberToken?.age, forKey: "age")
-                    UserDefaults.standard.set(self.memberToken?.email, forKey: "email")
-                    UserDefaults.standard.set(self.memberToken?.phone, forKey: "phone")
-                    UserDefaults.standard.set(self.memberToken?.address1, forKey: "address1")
-                    UserDefaults.standard.set(self.memberToken?.address2, forKey: "address2")
-                    UserDefaults.standard.set(self.memberToken?.city, forKey: "city")
-                    UserDefaults.standard.set(self.memberToken?.zone_id, forKey: "zone_id")
-                    UserDefaults.standard.set(self.memberToken?.zip, forKey: "zip")
-                    UserDefaults.standard.set(self.memberToken?.timezone_id, forKey: "timezone_id")
-                    UserDefaults.standard.set(self.memberToken?.country_id, forKey: "country_id")
+                    UserDefaults.standard.set(nickName, forKey: "nickname")
+                    UserDefaults.standard.set(title, forKey: "title")
+                    UserDefaults.standard.set(firstName, forKey: "first_name")
+                    UserDefaults.standard.set(lastName, forKey: "last_name")
+                    UserDefaults.standard.set(age, forKey: "age")
+                    UserDefaults.standard.set(email, forKey: "email")
+                    UserDefaults.standard.set(phone, forKey: "phone")
+                    UserDefaults.standard.set(address1, forKey: "address1")
+                    UserDefaults.standard.set(address2, forKey: "address2")
+                    UserDefaults.standard.set(city, forKey: "city")
+                    UserDefaults.standard.set(zoneID, forKey: "zone_id")
+                    UserDefaults.standard.set(zip, forKey: "zip")
+                    UserDefaults.standard.set(timezoneID, forKey: "timezone_id")
+                    UserDefaults.standard.set("13", forKey: "country_id")
                     UserDefaults.standard.set(focusGroup, forKey: "focus_groups")
                     UserDefaults.standard.set(paidMarketing, forKey: "paid_marketing")
                     UserDefaults.standard.set(newsLetters, forKey: "newsletters")
@@ -178,13 +176,20 @@ class UpdateUserProfileTableViewController: UITableViewController {
                     OperationQueue.main.addOperation {
                         self.present(successfullyMsg, animated: true, completion: nil)
                     }
-                    
                 }else{
-                    print("Fail to load json")
+                    let error:String = errorMsg.compactMap({$0}).joined(separator: ",")
+                    print(errorMsg)
+                    if error != ""{
+                        OperationQueue.main.addOperation {
+                            self.showAlert(msgMessage: error)
+                        }
+                    }
                 }
             })
         }
     }
+
+    
     func showAlert(msgMessage:String){
         let alert = UIAlertController(title: "Error", message: msgMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -200,27 +205,6 @@ class UpdateUserProfileTableViewController: UITableViewController {
         if(isValidEmail(testStr:tfEmail.text!) == false || tfEmail.text == ""){
             self.showAlert(msgMessage: "Invalid Email address!")
             return false
-        }else if(tfNickName.text == ""){
-            self.showAlert(msgMessage: "Please enter your nickname!")
-            return false
-        }else if(tfFirstName.text == ""){
-            self.showAlert(msgMessage: "Please enter your first name!")
-            return false
-        }else if(tfLastName.text == ""){
-            self.showAlert(msgMessage: "Please enter your last name!")
-            return false
-        }else if(tfLastName.text == ""){
-            self.showAlert(msgMessage: "Please enter your last name!")
-            return false
-        }else if(tfAddress1.text == ""){
-            self.showAlert(msgMessage: "Please enter your address!")
-            return false
-        }else if(tfCity.text == ""){
-            self.showAlert(msgMessage: "Please enter your city!")
-            return false
-        }else if(tfPostcode.text == ""){
-            self.showAlert(msgMessage: "Please enter your poscode!")
-            return false
         }else if(lbTitle.text == "Select Title"){
             self.showAlert(msgMessage: "Please select your title!")
             return false
@@ -231,7 +215,6 @@ class UpdateUserProfileTableViewController: UITableViewController {
             self.showAlert(msgMessage: "Please select your prefered categories!")
             return false
         }
-        
         return true
     }
     override func didReceiveMemoryWarning() {
