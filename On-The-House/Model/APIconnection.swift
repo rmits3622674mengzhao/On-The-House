@@ -36,6 +36,7 @@ class APIconnection {
         let ourPrice : String
         let admin : String
         let membershipLevel: String
+        let competition: Bool
         let adminFee: String
         
         enum CodingKeys : String, CodingKey {
@@ -48,6 +49,7 @@ class APIconnection {
             case admin = "our_price_heading"
             case membershipLevel = "membership_levels"
             case adminFee = "our_price_string"
+            case competition = "is_competition"
         }
     }
     
@@ -148,7 +150,7 @@ class APIconnection {
                         if let data = try? Data(contentsOf: i.image)
                         {
                             let image: UIImage = UIImage(data: data)!
-                            let offer1 = OfferModel(id: i.id, name: i.name, photo: image, description: i.description, rate: i.rate, ourPrice: i.ourPrice, admin: i.admin, membershipLevel: i.membershipLevel, adminFee: i.adminFee)
+                            let offer1 = OfferModel(id: i.id, name: i.name, photo: image, description: i.description, rate: i.rate, ourPrice: i.ourPrice, admin: i.admin, membershipLevel: i.membershipLevel, adminFee: i.adminFee, competition: i.competition)
                             self.offer.append(offer1)
                         }
                     }
