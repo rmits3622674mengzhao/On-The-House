@@ -140,6 +140,7 @@ class OfferTableViewController: UITableViewController {
     func getConnect(tempPage:String){
         //         Post request
         let urlString: String = "http://ma.on-the-house.org/api/v1/events/current"
+            
         guard let URLreq = URL(string: urlString) else {
             print("Error: cannot create URL")
             return
@@ -149,6 +150,7 @@ class OfferTableViewController: UITableViewController {
         generatePostBody(genePage:tempPage)
         let postString = getPostString(params: postBody)
         postRequest.httpBody = postString.data(using: .utf8)
+        
         
         let session = URLSession.shared
         let semaphore = DispatchSemaphore(value: 0)
@@ -170,10 +172,16 @@ class OfferTableViewController: UITableViewController {
             }
             if checkStatus.status == "success"{
                 // parse the result as JSON
-                guard let receivedData = try? JSONDecoder().decode(JsonRec.self, from: responseData) else{
-                    print("Could not get JSON from responseData as dictionary")
+                
+                // TODO
+                guard
+                    
+                let receivedData = try? JSONDecoder().decode(JsonRec.self, from: responseData)
+                    
+                else{
+                   print("Could not get JSON from responseData as dictionary")
                     return
-                }
+               }
                 if receivedData.status == "success"{
                     self.MAXPAGE = receivedData.events_total
                     for i in receivedData.events{
@@ -188,6 +196,7 @@ class OfferTableViewController: UITableViewController {
             }
             semaphore.signal()
         }
+            
         task.resume()
         _ = semaphore.wait(timeout: .distantFuture)
     }

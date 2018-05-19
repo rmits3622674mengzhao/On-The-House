@@ -8,7 +8,9 @@
 
 import UIKit
 
-class HamburgerMenuTableViewController: UITableViewController {
+class HamburgerMenuTableViewController: UITableViewController{
+  
+    
     
     @IBOutlet weak var cellLogout: UITableViewCell!
     @IBOutlet weak var cellLogin: UITableViewCell!

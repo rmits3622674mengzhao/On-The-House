@@ -912,7 +912,7 @@
             </objects>
             <point key="canvasLocation" x="4823" y="-1724"/>
         </scene>
-        <!--Preference Page Table View Controller-->
+        <!--preference-->
         <scene sceneID="bzc-QY-Ztv">
             <objects>
                 <tableViewController id="EAr-uf-8ik" customClass="PreferencePageTableViewController" customModule="On_The_House" customModuleProvider="target" sceneMemberID="viewController">
@@ -952,6 +952,13 @@
                             <outlet property="delegate" destination="EAr-uf-8ik" id="Tq2-jT-Rsf"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="preference" id="SCu-fo-yI7">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="HuD-XO-HBq">
+                            <connections>
+                                <segue destination="oF7-4h-Sie" kind="push" identifier="preferenceBack" id="Rdr-gd-cH5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xjY-je-d9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -970,7 +977,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tx1-Py-sOJ">
-                                <rect key="frame" x="16" y="94" width="343" height="466"/>
+                                <rect key="frame" x="16" y="50" width="343" height="466"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OWO-fR-0gl">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -1085,6 +1092,7 @@
                                         </state>
                                         <connections>
                                             <action selector="createAccount:" destination="oF7-4h-Sie" eventType="touchUpInside" id="5NP-Re-q0Z"/>
+                                            <segue destination="2fP-jt-ydV" kind="show" id="w6o-gP-806"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1131,7 +1139,7 @@
                         <outlet property="LastNameBox" destination="XC3-8p-PfO" id="xkv-kY-E9d"/>
                         <outlet property="PasswordBox" destination="Yfu-co-IEx" id="XW7-Eu-dZW"/>
                         <outlet property="PostCodeBox" destination="XI3-Rw-CL1" id="taK-8u-uQi"/>
-                        <outlet property="QuetioansLable" destination="xby-kg-xzn" id="vrF-3a-ptV"/>
+                        <outlet property="PreferenceLabel" destination="xby-kg-xzn" id="LWK-hm-Weq"/>
                         <outlet property="StateLable" destination="VEc-mq-hfX" id="bhi-H3-165"/>
                         <outlet property="UserNameBox" destination="OWO-fR-0gl" id="aee-Rf-0Ai"/>
                         <outlet property="myView" destination="QVW-Rr-bNX" id="gah-2m-RVq"/>
@@ -2394,7 +2402,7 @@
                                         <rect key="frame" x="0.0" y="641" width="343" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lVJ-GH-06J" id="3kj-b8-fUs">
-                                            <rect key="frame" x="0.0" y="0.0" width="317" height="44.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="309" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zT5-mv-ddI">
@@ -3119,16 +3127,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="JJs-YS-TNi">
-                                <rect key="frame" x="32" y="144" width="311" height="394"/>
+                                <rect key="frame" x="32" y="144" width="311" height="443"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am going to at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1x-9Z-Y1t">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qf-J3-M7c">
-                                        <rect key="frame" x="0.0" y="60.5" width="311" height="31"/>
+                                        <rect key="frame" x="0.0" y="69" width="311" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="DATE">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3138,13 +3146,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am looking for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4o-S2-7Zc">
-                                        <rect key="frame" x="0.0" y="121.5" width="311" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="137.5" width="311" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVE-Ze-xxo">
-                                        <rect key="frame" x="0.0" y="182" width="311" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="206.5" width="311" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="CATEGORY">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3154,13 +3162,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am at  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVy-Nj-U28">
-                                        <rect key="frame" x="0.0" y="242.5" width="311" height="31"/>
+                                        <rect key="frame" x="0.0" y="275.5" width="311" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M8-E8-K7y">
-                                        <rect key="frame" x="0.0" y="303.5" width="311" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="344" width="311" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="STATE">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3170,7 +3178,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVQ-l4-gZj">
-                                        <rect key="frame" x="0.0" y="364" width="311" height="30"/>
+                                        <rect key="frame" x="0.0" y="413" width="311" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="APPLY">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3372,9 +3380,11 @@
         <image name="ticket" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="04E-fz-99L"/>
+        <segue reference="3rW-gD-5je"/>
+        <segue reference="vjq-6L-zPV"/>
+        <segue reference="Rdr-gd-cH5"/>
         <segue reference="AgR-MU-B0I"/>
-        <segue reference="YkG-Mi-roD"/>
+        <segue reference="uHE-dH-SyO"/>
         <segue reference="iLZ-sQ-ox2"/>
         <segue reference="r3G-eh-jyG"/>
     </inferredMetricsTieBreakers>

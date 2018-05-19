@@ -28,6 +28,7 @@ class SelectTitleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SelectTitleTableViewController.title.count
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as! SelectTitleTableViewCell
         cell.lbTitle.text = SelectTitleTableViewController.title[indexPath.row]
