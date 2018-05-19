@@ -105,25 +105,57 @@ class OfferTableViewController: UITableViewController {
         }else{
             cell.MemberLabel.isHidden = false
         }
+        if offerEvents.competition == true {
+            cell.CompetitionLabel.isHidden = false
+            cell.loginBtn.isHidden = true
+            cell.ticketBtn.isHidden = true
+            cell.upgradeBtn.isHidden = true
+        }else{
+            cell.CompetitionLabel.isHidden = true
+        }
+        
          islogedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
         if let membershipName = UserDefaults.standard.string(forKey:"membership_level_name"), let logincheck = islogedIn{
-            if logincheck  && membershipName == "Bronze"{
-                print(membershipName)
-            cell.loginBtn.isHidden = true
-                if offerEvents.membershipLevel.contains("Bronze"){
+            if logincheck{
+               if membershipName == "Bronze"{
+                if offerEvents.competition == true{
+                    cell.ticketBtn.isHidden = true
                     cell.upgradeBtn.isHidden = true
-                }else{cell.ticketBtn.isHidden = true}
-        }else if logincheck  && membershipName == "Gold"{
-            cell.loginBtn.isHidden = true
-            cell.upgradeBtn.isHidden = true
-            
-            }else {
+                    cell.loginBtn.isHidden = true
+                    cell.competeBtn.isHidden = false
+                }else if offerEvents.competition == false{
+                    if offerEvents.membershipLevel.contains("Bronze"){
+                        cell.upgradeBtn.isHidden = true
+                        cell.loginBtn.isHidden = true
+                        cell.competeBtn.isHidden = true
+                        cell.ticketBtn.isHidden = false
+                    }else{
+                        cell.ticketBtn.isHidden = true
+                        cell.loginBtn.isHidden = true
+                        cell.competeBtn.isHidden = true
+                        cell.upgradeBtn.isHidden = false
+                    }
+                }}else if membershipName == "Gold"{
+                if offerEvents.competition == true{
+                    cell.ticketBtn.isHidden = true
+                    cell.upgradeBtn.isHidden = true
+                    cell.loginBtn.isHidden = true
+                    cell.competeBtn.isHidden = false
+                }else if offerEvents.competition == false{
+                    cell.ticketBtn.isHidden = false
+                    cell.upgradeBtn.isHidden = true
+                    cell.loginBtn.isHidden = true
+                    cell.competeBtn.isHidden = true
+                }
+                
+            }}else {
+                cell.competeBtn.isHidden = true
                 cell.ticketBtn.isHidden = true
                 cell.upgradeBtn.isHidden = true
-            }
+                cell.loginBtn.isHidden = false
             
         }
-       
+        }
         return cell
         
     }

@@ -17,10 +17,11 @@ class OfferEventCell: UITableViewCell {
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
     
+    @IBOutlet weak var CompetitionLabel: UILabel!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var ticketBtn: UIButton!
     @IBOutlet weak var upgradeBtn: UIButton!
-    
+    @IBOutlet weak var competeBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

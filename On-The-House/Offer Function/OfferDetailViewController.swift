@@ -27,7 +27,10 @@ class OfferDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         getTrailer()
-        OurPriceLabel.text = "OurPrice*:"
+        if offerDetail.competition == true{
+            
+            
+        }else{  OurPriceLabel.text = "OurPrice*:"
         ourPrice.text = offerDetail.ourPrice
         Member.text = offerDetail.membershipLevel
         Admin.text = offerDetail.admin
@@ -35,7 +38,7 @@ class OfferDetailViewController: UIViewController {
         Name.text = offerDetail.name
         Rate.rating = offerDetail.rate
         EventImage.image = offerDetail.photo
-    }
+        }}
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

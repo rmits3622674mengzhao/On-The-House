@@ -22,8 +22,9 @@ class OfferModel{
     var membershipLevel:String
     var adminFee:String
     var rate:Int
+    var competition: Bool
     
-    init(id: String, name:String, photo:UIImage, description: String, rate:Int, ourPrice:String,admin:String,membershipLevel:String,adminFee:String){
+    init(id: String, name:String, photo:UIImage, description: String, rate:Int, ourPrice:String,admin:String,membershipLevel:String,adminFee:String,competition:Bool){
         self.id = id
         self.name = name
         self.photo = photo
@@ -33,6 +34,7 @@ class OfferModel{
         self.admin = admin
         self.membershipLevel = membershipLevel
         self.adminFee = adminFee
+        self.competition = competition
     }
     
     init(id: String, name: String,  photo:UIImage, description:String, rate:Int) {
@@ -44,6 +46,8 @@ class OfferModel{
         self.admin = ""
         self.adminFee = ""
         self.membershipLevel = ""
+        self.competition = false
+       
     }
 }
 

@@ -177,13 +177,14 @@ class UpdateUserProfileTableViewController: UITableViewController {
                         self.present(successfullyMsg, animated: true, completion: nil)
                     }
                 }else{
-                    let error:String = errorMsg.compactMap({$0}).joined(separator: ",")
+                   /*let error:String = errorMsg.compactMap({$0}).joined(separator: ",")
                     print(errorMsg)
                     if error != ""{
                         OperationQueue.main.addOperation {
                             self.showAlert(msgMessage: error)
                         }
-                    }
+                    }*/
+                    print("ERROR")
                 }
             })
         }
