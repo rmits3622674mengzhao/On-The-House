@@ -42,7 +42,7 @@ class NetworkProcessor
                         if let data = data{
                             do {
                                 let jsonDictionary =  try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-                                
+                                print("responseString = \(jsonDictionary)")
                                 completion(jsonDictionary as? [String:Any])
                             }catch let error as NSError{
                                 print("\(error.localizedDescription)")
@@ -103,7 +103,7 @@ class NetworkProcessor
     static var postStatus: String = ""
     static var errorMesg: String = ""
     //HTTP post method- universal return error messages from the server
-    static func post(command: String, parameter: [String: Any], compeletion: @escaping (Member?) -> Void){
+    static func post(command: String, parameter: [String: Any], compeletion: @escaping (Bool, [String]) -> Void){
         let url = "https://ma.on-the-house.org/" + command
         Alamofire.request(url, method: .post, parameters: parameter).responseJSON { (response) in
             switch response.result {
@@ -111,14 +111,7 @@ class NetworkProcessor
                 self.postStatus = JSON(response.data!)["status"].string!
                 if self.postStatus == "success"
                 {
-                    let json = JSON(response.data!)
-                    if let memberDictionary = json["member"].dictionaryObject as? [String:Any]{
-                        let member = Member(memberDiction: memberDictionary)
-                        member.status = self.postStatus
-                        compeletion(member)
-                    }else{
-                        compeletion(nil)
-                    }
+                    compeletion(true,["Success"])
                 }
                 else
                 {
@@ -130,11 +123,11 @@ class NetworkProcessor
                     for m in mesg {
                         message.append(m.string!)
                     }
-                    compeletion(nil)
+                    compeletion(false,message)
                 }
             case .failure(_):
                 print("connection faild")
-                compeletion(nil)
+                compeletion(false,["connection faild"])
             }
         }
     }
