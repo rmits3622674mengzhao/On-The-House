@@ -4,7 +4,6 @@ import os
 class OfferTableViewController: UITableViewController {
     
     let urlString: String = "http://ma.on-the-house.org/api/v1/events/current"
-    let urlString2: String = "http://ma.on-the-house.org/api/v1/member/membership"
     let apiConnection = APIconnection()
     var dateItem = [String]()
     var refresher:UIRefreshControl!
@@ -51,7 +50,6 @@ class OfferTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         islogedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
-
         sideMenus()
         if loadPage == 1{
             apiConnection.getConnect(urlString: urlString, postBody: generatePostBody(genePage: String(loadPage)), method: "currentEvent")
@@ -150,17 +148,7 @@ class OfferTableViewController: UITableViewController {
             }
             let selectedCellImage = apiConnection.offer[indexPath.row]
             detailViewController.offerDetail = selectedCellImage
-     /*   case "upgrade":
-            os_log("Member Upgrade.", log: OSLog.default, type: .debug)
-            guard let chooseViewController = segue.destination as? ChangePasswordViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            
-        case "purchase":
-            os_log("Purchase.", log: OSLog.default, type: .debug)
-            guard let chooseViewController = segue.destination as? TicketPageTableViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            } */
+    
         default:
             print("Can't find the identifer")
             break

@@ -653,6 +653,9 @@
                                                             <state key="normal" title="Log in">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <segue destination="2fP-jt-ydV" kind="show" id="PFG-1w-9W8"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJN-jf-mJ2">
                                                             <rect key="frame" x="0.0" y="31" width="60" height="1"/>
@@ -3510,7 +3513,7 @@
         <segue reference="umL-bg-FCW"/>
         <segue reference="zNb-3I-6PB"/>
         <segue reference="iLZ-sQ-ox2"/>
-        <segue reference="m0n-dz-YVn"/>
+        <segue reference="PFG-1w-9W8"/>
         <segue reference="BVc-DD-Czp"/>
     </inferredMetricsTieBreakers>
 </document>
