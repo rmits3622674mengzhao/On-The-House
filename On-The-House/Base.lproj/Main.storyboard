@@ -634,8 +634,8 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VPs-Fy-o5A">
                                                     <rect key="frame" x="224" y="0.0" width="60" height="32"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Se-1B-Ii7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="16"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Se-1B-Ii7">
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="1"/>
                                                             <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="5q9-XD-58R"/>
@@ -647,8 +647,15 @@
                                                                 <segue destination="Shs-Hr-UJo" kind="show" id="cJV-ry-tan"/>
                                                             </connections>
                                                         </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZd-yf-6nu">
+                                                            <rect key="frame" x="0.0" y="1" width="60" height="30"/>
+                                                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <state key="normal" title="Log in">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJN-jf-mJ2">
-                                                            <rect key="frame" x="0.0" y="16" width="60" height="16"/>
+                                                            <rect key="frame" x="0.0" y="31" width="60" height="1"/>
                                                             <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="Upgrade">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -660,6 +667,7 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="CJN-jf-mJ2" firstAttribute="height" secondItem="1Se-1B-Ii7" secondAttribute="height" id="9q5-fZ-AJl"/>
+                                                        <constraint firstItem="aZd-yf-6nu" firstAttribute="width" secondItem="1Se-1B-Ii7" secondAttribute="width" id="TIQ-mW-iDc"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -709,6 +717,7 @@
                                     <outlet property="ImageView" destination="VQj-dS-hYN" id="Quq-SD-gLc"/>
                                     <outlet property="MemberLabel" destination="7KA-6v-iJQ" id="WEw-ef-WX7"/>
                                     <outlet property="NameLabel" destination="zFd-cX-rMb" id="RRA-9k-2SN"/>
+                                    <outlet property="loginBtn" destination="aZd-yf-6nu" id="2YN-pt-knA"/>
                                     <outlet property="ratingControl" destination="WKU-mA-GaQ" id="fMy-z8-3dL"/>
                                     <outlet property="ticketBtn" destination="1Se-1B-Ii7" id="sbK-Ci-61S"/>
                                     <outlet property="upgradeBtn" destination="CJN-jf-mJ2" id="gJC-F8-G4o"/>
@@ -3496,7 +3505,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="04E-fz-99L"/>
-        <segue reference="yfU-qZ-2d1"/>
+        <segue reference="PTI-Am-zus"/>
         <segue reference="cJV-ry-tan"/>
         <segue reference="umL-bg-FCW"/>
         <segue reference="zNb-3I-6PB"/>

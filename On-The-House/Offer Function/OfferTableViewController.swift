@@ -4,12 +4,14 @@ import os
 class OfferTableViewController: UITableViewController {
     
     let urlString: String = "http://ma.on-the-house.org/api/v1/events/current"
+    let urlString2: String = "http://ma.on-the-house.org/api/v1/member/membership"
     let apiConnection = APIconnection()
     var dateItem = [String]()
     var refresher:UIRefreshControl!
     var catagoryItem = [String]()
     var stateItem = [String]()
     var loadPage = 1 as Int
+     var islogedIn:Bool?
     @IBOutlet weak var menuButton: UIBarButtonItem!
     func sideMenus() {
         
@@ -48,6 +50,8 @@ class OfferTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        islogedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
+
         sideMenus()
         if loadPage == 1{
             apiConnection.getConnect(urlString: urlString, postBody: generatePostBody(genePage: String(loadPage)), method: "currentEvent")
@@ -97,24 +101,35 @@ class OfferTableViewController: UITableViewController {
         cell.NameLabel.text = offerEvents.name
         cell.ImageView.image = offerEvents.photo
         cell.ratingControl.rating  = offerEvents.rate
-        //cell.UpgticketBut.addTarget(self, action: #selector(segueToNextView(_:)), for: .touchUpInside)
+        
         if offerEvents.membershipLevel.contains("Bronze") {
             cell.MemberLabel.isHidden = true
         }else{
             cell.MemberLabel.isHidden = false
         }
-        if let membershipName = UserDefaults.standard.string(forKey:"membership_level_name"){
-            if membershipName == "Bronze" && offerEvents.membershipLevel.contains("Bronze") {
+         islogedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        if let membershipName = UserDefaults.standard.string(forKey:"membership_level_name"), let logincheck = islogedIn{
+            if logincheck  && membershipName == "Bronze"{
                 print(membershipName)
+            cell.loginBtn.isHidden = true
+                if offerEvents.membershipLevel.contains("Bronze"){
+                    cell.upgradeBtn.isHidden = true
+                }else{cell.ticketBtn.isHidden = true}
+        }else if logincheck  && membershipName == "Gold"{
+            cell.loginBtn.isHidden = true
             cell.upgradeBtn.isHidden = true
             
-        }else{
-            cell.ticketBtn.isHidden = true
+            }else {
+                cell.ticketBtn.isHidden = true
+                cell.upgradeBtn.isHidden = true
+            }
             
-            }}
+        }
+       
         return cell
         
     }
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //      Get the new view controller using segue.destinationViewController.

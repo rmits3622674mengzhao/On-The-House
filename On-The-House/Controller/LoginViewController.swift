@@ -36,7 +36,6 @@ class LoginViewController : UIViewController {
             //let postBody = "email=nazisang@gmail.com&password=summer1993"
             //print(postBodys)
             let memberService = MemberService()
-            
             memberService.login(postBody: postBodys) { (member) in
                 self.memberToken = member
                 if member?.status == "success"{
