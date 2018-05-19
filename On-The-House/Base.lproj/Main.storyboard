@@ -1044,7 +1044,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Back"/>
                                         <connections>
-                                            <segue destination="rcY-gV-Avd" kind="presentation" id="BVc-DD-Czp"/>
+                                            <action selector="backToPr:" destination="vmT-BG-c2B" eventType="touchUpInside" id="acW-Oe-QAz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1860,14 +1860,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iS-2I-bSN">
-                                                    <rect key="frame" x="16" y="11" width="36" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axa-4N-Bot">
+                                                    <rect key="frame" x="15" y="0.0" width="360" height="50"/>
+                                                    <state key="normal" title="Terms And Conditions">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="vmT-BG-c2B" kind="show" id="CSZ-yJ-ydS"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="axa-4N-Bot" firstAttribute="leading" secondItem="Byg-Gk-E2O" secondAttribute="leading" constant="15" id="Nl0-ol-X43"/>
+                                                <constraint firstItem="axa-4N-Bot" firstAttribute="top" secondItem="Byg-Gk-E2O" secondAttribute="top" id="ncF-t9-vkK"/>
+                                                <constraint firstAttribute="bottom" secondItem="axa-4N-Bot" secondAttribute="bottom" id="uw8-xZ-Bmd"/>
+                                                <constraint firstAttribute="trailing" secondItem="axa-4N-Bot" secondAttribute="trailing" id="vxG-fe-Wsz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="W3p-gc-27i">
@@ -3509,11 +3517,11 @@
     <inferredMetricsTieBreakers>
         <segue reference="04E-fz-99L"/>
         <segue reference="PTI-Am-zus"/>
+        <segue reference="CSZ-yJ-ydS"/>
         <segue reference="cJV-ry-tan"/>
         <segue reference="umL-bg-FCW"/>
         <segue reference="zNb-3I-6PB"/>
         <segue reference="iLZ-sQ-ox2"/>
-        <segue reference="PFG-1w-9W8"/>
-        <segue reference="BVc-DD-Czp"/>
+        <segue reference="m0n-dz-YVn"/>
     </inferredMetricsTieBreakers>
 </document>
