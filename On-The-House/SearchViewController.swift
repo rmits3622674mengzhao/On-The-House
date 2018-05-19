@@ -11,6 +11,8 @@ import os
 
 class SearchViewController: UIViewController{
     
+    let urlString: String = "http://ma.on-the-house.org/api/v1/events/current"
+    let apiConnection = APIconnection()
     let formatter = DateFormatter()
     let defaults = UserDefaults.standard
     var catagoryItem = [String]()
@@ -19,7 +21,6 @@ class SearchViewController: UIViewController{
     var stateKey = [String]()
     var dateKey = [String]()
     var dateItem :String!
-    
     
     
     @IBOutlet weak var dateButton: UIButton!
@@ -59,18 +60,22 @@ class SearchViewController: UIViewController{
         case"SEshow":
             os_log("Show searched events.", log: OSLog.default, type: .debug)
             
-            let searchedController = segue.destination as? UINavigationController
-            guard
-                let nextView = searchedController?.topViewController as? OfferTableViewController else {
-                    fatalError("Unexpected destination: \(segue.destination)")
-            }
             getKeys()
-            nextView.stateItem = stateKey
-            nextView.catagoryItem = categoryKey
-            nextView.dateItem = dateKey
-            let domain = Bundle.main.bundleIdentifier!
-            UserDefaults.standard.removePersistentDomain(forName: domain)
-            UserDefaults.standard.synchronize()
+            apiConnection.getConnect(urlString: urlString, postBody: getCheckPostbody(), method: "checkStatus")
+            // check if any events can be searched and returned
+            if apiConnection.errorStatus == true{
+                let searchedController = segue.destination as? UINavigationController
+                guard
+                    let nextView = searchedController?.topViewController as? OfferTableViewController else {
+                        fatalError("Unexpected destination: \(segue.destination)")
+                }
+                nextView.stateItem = stateKey
+                nextView.catagoryItem = categoryKey
+                nextView.dateItem = dateKey
+                
+            }else{
+                showAlert(msgMessage: "There are cunrrent no event")
+            }
         default:
             print("Can't find the identifer")
             break
@@ -92,7 +97,7 @@ class SearchViewController: UIViewController{
                 stateKey.append(String(statekey))
             }
         }
-        if dateItem != ""{
+        if dateItem != nil{
             switch dateItem{
             case "Today":
                 dateKey = getCurrentDate()
@@ -107,6 +112,29 @@ class SearchViewController: UIViewController{
                 break
             }
         }
+    }
+    
+    func getCheckPostbody() ->[String: String]{
+        var tempPostBody = [String: String]()
+        tempPostBody["page"] = "1"
+        tempPostBody["limit"] = "10"
+        if dateKey.count == 1{
+            tempPostBody["date"] = "range"
+            tempPostBody["date_from"] = dateKey[0]
+            tempPostBody["date_to"] = dateKey[0]
+        }
+        if dateKey.count>1{
+            tempPostBody["date"] = "range"
+            tempPostBody["date_from"] = dateKey[0]
+            tempPostBody["date_to"] = dateKey[1]
+        }
+        for i in stateKey{
+            tempPostBody["zone_id[]"] = i
+        }
+        for j in categoryKey{
+            tempPostBody["category_id[]"] = j
+        }
+        return tempPostBody
     }
     
     override func viewDidLoad() {
@@ -189,5 +217,13 @@ class SearchViewController: UIViewController{
         
     }
     
+    func showAlert(msgMessage:String){
+        let alert = UIAlertController(title: "Error", message: msgMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 

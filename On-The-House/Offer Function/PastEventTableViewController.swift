@@ -10,45 +10,24 @@ import UIKit
 import os
 
 class PastEventTableViewController: UITableViewController {
-    
+    let urlString: String = "http://ma.on-the-house.org/api/v1/events/past"
+    let apiConnection = APIconnection()
     var postBody = [String: String]()
     var refresher:UIRefreshControl!
-    var PastOffer = [OfferModel]()
     var loadPage = 1 as Int
-    var MAXPAGE = 100000 as Int
-    // to implement the structure of resonpse json
-    struct JsonRec : Decodable{
-        let status : String
-        let events: [Events]
-        let events_total : Int
-        
-        enum CodingKeys : String, CodingKey{
-            case status = "status"
-            case events = "events"
-            case events_total = "events_total"
-            
-        }
-    }
     
-    struct Events : Decodable{
-        let id : String
-        let name:String
-        let description:String
-        let rate: Int
-        
-        enum CodingKeys : String, CodingKey {
-            case id = "id"
-            case name = "name"
-            case description = "description"
-            case rate = "rating"
-        }
+    // generate post body
+    func generatePostBody(genePage:String) ->[String: String] {
+        var tempPostBody = [String: String]()
+        tempPostBody["page"] = genePage
+        tempPostBody["limit"] = "10"
+        return tempPostBody
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if loadPage == 1{
-            getConnect(tempPage: String(loadPage))
+            apiConnection.getConnect(urlString: urlString, postBody: generatePostBody(genePage: String(loadPage)), method: "pastEvent")
         }
         refresher = UIRefreshControl()
         refresher.attributedTitle = NSAttributedString(string: "Pull to refresh!")
@@ -61,83 +40,15 @@ class PastEventTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    // generate post string
-    func getPostString(params:[String:Any]) -> String
-    {
-        var data = [String]()
-        for(key, value) in params
-        {
-            data.append(key + "=\(value)")
-        }
-        return data.map { String($0) }.joined(separator: "&")
-    }
     func getFreser(){
-        if loadPage * 10 < MAXPAGE{
+        if loadPage * 10 < apiConnection.MAXPAGE{
             loadPage = loadPage+1
-            getConnect(tempPage: String(loadPage))
+            apiConnection.getConnect(urlString: urlString, postBody: generatePostBody(genePage: String(loadPage)), method: "pastEvent")
             tableView.reloadData()
         }else{
             refresher.attributedTitle = NSAttributedString(string: "No new data!")
         }
         refresher.endRefreshing()
-    }
-    
-    // to get past events
-    func getConnect(tempPage:String){
-        //         Post request
-        let urlString: String = "http://ma.on-the-house.org/api/v1/events/past"
-        guard let URLreq = URL(string: urlString) else {
-            print("Error: cannot create URL")
-            return
-        }
-        var postRequest = URLRequest(url: URLreq)
-        postRequest.httpMethod = "POST"
-        let postBody = [
-            "page" :tempPage,
-            "limit"  : "10",
-            ]
-        let postString = getPostString(params: postBody)
-        postRequest.httpBody = postString.data(using: .utf8)
-        
-        let session = URLSession.shared
-        let semaphore = DispatchSemaphore(value: 0)
-        let task = session.dataTask(with: postRequest) {
-            (data, response, error) in
-            guard error == nil else {
-                print("Error: calling POST!")
-                return
-            }
-            guard let responseData = data else {
-                print("Error: did not receive data")
-                return
-            }
-            // parse the result as JSON
-            guard let receivedData = try? JSONDecoder().decode(JsonRec.self, from: responseData) else{
-                print("Could not get JSON from responseData as dictionary")
-                return
-            }
-            if receivedData.status == "success"{
-                self.MAXPAGE = receivedData.events_total
-                for i in receivedData.events{
-                    // to get description without trailer url
-                    var tempStr="" as String
-                    let splitedArray = i.description.split(separator: "\r\n")
-                    for i in splitedArray{
-                        if (i == "Tralier" || i == "Tralier"){
-                            break
-                        }else{
-                            tempStr = tempStr+i
-                        }
-                    }
-                    let offer1 = OfferModel(id: i.id, name: i.name, photo: #imageLiteral(resourceName: "Logo"), description: tempStr, rate: i.rate)
-                    self.PastOffer.append(offer1)
-                    
-                }
-            }
-            semaphore.signal()
-        }
-        task.resume()
-        _ = semaphore.wait(timeout: .distantFuture)
     }
     
     override func didReceiveMemoryWarning() {
@@ -153,12 +64,8 @@ class PastEventTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (PastOffer.count == 0)
-        {
-            print("Error: failed to load data!")
-        }
         // #warning Incomplete implementation, return the number of rows
-        return PastOffer.count
+        return apiConnection.offer.count
     }
     
     
@@ -167,7 +74,7 @@ class PastEventTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PastEventCell else{
             fatalError("The dequeued cell is not an instance of PastEventCell.")
         }
-        let pastEvents = PastOffer[indexPath.row]
+        let pastEvents = apiConnection.offer[indexPath.row]
         cell.PastEventName.text = pastEvents.name
         cell.PastEventDescription.text = pastEvents.description
         cell.PastEventRatingControl.rating = pastEvents.rate
@@ -191,7 +98,7 @@ class PastEventTableViewController: UITableViewController {
             guard let indexPath = tableView.indexPath(for: selectedEventCell) else {
                 fatalError("The selected cell is not being displayed by the table")
             }
-            let selectedCell = PastOffer[indexPath.row]
+            let selectedCell = apiConnection.offer[indexPath.row]
             detailViewController.pastOfferDetail = selectedCell
             
         default:
