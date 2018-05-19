@@ -10,7 +10,8 @@ class OfferTableViewController: UITableViewController {
     var catagoryItem = [String]()
     var stateItem = [String]()
     var loadPage = 1 as Int
-     var islogedIn:Bool?
+    var islogedIn:Bool?
+    var MAXPAGE = 100000 as Int
     @IBOutlet weak var menuButton: UIBarButtonItem!
     func sideMenus() {
         
@@ -21,6 +22,62 @@ class OfferTableViewController: UITableViewController {
             revealViewController().rightViewRevealWidth = 160
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+    }
+    var offer = [OfferModel]()
+    // to implement the structure of resonpse json
+    struct JsonRec : Decodable{
+        let status : String
+        let events: [Events]
+        let events_total : Int
+        
+        enum CodingKeys : String, CodingKey{
+            case status = "status"
+            case events = "events"
+            case events_total = "events_total"
+        }
+    }
+    
+    struct Events : Decodable{
+        let id : String
+        let name:String
+        let image: URL
+        let description:String
+        let rate: Int
+        let ourPrice : String
+        let admin : String
+        let membershipLevel: String
+        let adminFee: String
+        
+        enum CodingKeys : String, CodingKey {
+            case id = "id"
+            case name = "name"
+            case image = "image_url"
+            case description = "description"
+            case rate = "rating"
+            case ourPrice = "full_price_string"
+            case admin = "our_price_heading"
+            case membershipLevel = "membership_levels"
+            case adminFee = "our_price_string"
+        }
+    }
+    
+    struct JsonError : Decodable{
+        let status : String
+        enum CodingKeys : String, CodingKey{
+            case status = "status"
+        }
+    }
+    
+    
+    // generate post string
+    func getPostString(params:[String:Any]) -> String
+    {
+        var data = [String]()
+        for(key, value) in params
+        {
+            data.append(key + "=\(value)")
+        }
+        return data.map { String($0) }.joined(separator: "&")
     }
     
     // generate post body
@@ -75,7 +132,7 @@ class OfferTableViewController: UITableViewController {
         refresher.endRefreshing()
         
     }
-<<<<<<< HEAD
+
     
     // to get current events
     func getConnect(tempPage:String){
@@ -141,8 +198,7 @@ class OfferTableViewController: UITableViewController {
         task.resume()
         _ = semaphore.wait(timeout: .distantFuture)
     }
-=======
->>>>>>> 3969463f4a08845f04cf8f6b3d68e47d20366804
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

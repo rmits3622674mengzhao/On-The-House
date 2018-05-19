@@ -518,7 +518,7 @@
 				TargetAttributes = {
 					C0CF501C205CA6A9001E8163 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 995AXJMK72;
+						DevelopmentTeam = 99WQ5J646X;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
@@ -844,7 +844,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 995AXJMK72;
+				DEVELOPMENT_TEAM = 99WQ5J646X;
 				INFOPLIST_FILE = "On-The-House/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "au.edu.rmit.s3428088.On-The-House";
@@ -863,7 +863,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 995AXJMK72;
+				DEVELOPMENT_TEAM = 99WQ5J646X;
 				INFOPLIST_FILE = "On-The-House/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "au.edu.rmit.s3428088.On-The-House";
