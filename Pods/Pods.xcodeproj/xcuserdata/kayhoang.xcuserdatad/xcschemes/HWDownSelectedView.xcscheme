@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "51934175E8299DE1D9CCDCA3B15823A7"
+               BlueprintIdentifier = "63F6FC611D2E85BBB6E8CEA9A0FB68EC"
                BlueprintName = "HWDownSelectedView"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libHWDownSelectedView.a">
+               BuildableName = "HWDownSelectedView.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
