@@ -25,7 +25,9 @@ class RegisterViewController : UIViewController, UIPickerViewDataSource, UITable
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         StateLable.text = statechoices[row]
-        //  zoneIndex=row
+        UserDefaults.standard.set("false", forKey: "registerFinished")
+        UserDefaults.standard.set(StateLable.text, forKey: "stateLabelCia")
+     
     }
     
     
@@ -184,7 +186,9 @@ class RegisterViewController : UIViewController, UIPickerViewDataSource, UITable
         UserDefaults.standard.set("", forKey: "passwordBoxXia")
         UserDefaults.standard.set("", forKey: "confirmPasswordboxXia")
         UserDefaults.standard.set("", forKey: "postCodeBoxXia")
-        UserDefaults.standard.set("Where did you hear about On The House", forKey: "preference")
+        UserDefaults.standard.set("WHERE DID YOU HEAR ABOUT THIS APP", forKey: "preference")
+        UserDefaults.standard.set("STATE", forKey: "stateLabelCia")
+        
     }
     
     override func viewDidLoad(){
@@ -199,6 +203,7 @@ class RegisterViewController : UIViewController, UIPickerViewDataSource, UITable
         PasswordBox.placeholder="PASSWORD"
         ConfirmPasswordBox.placeholder="CONFIRM PASSWORD"
         PostCodeBox.placeholder="POST CODE"
+        
         
         UserNameBox.addTarget(self, action: #selector(self.UserNameBoxDidChange(_:)), for: UIControlEvents.editingChanged)
         
@@ -223,6 +228,8 @@ class RegisterViewController : UIViewController, UIPickerViewDataSource, UITable
             ConfirmPasswordBox.text = UserDefaults.standard.string(forKey: "confirmPasswordboxXia")
             PostCodeBox.text = UserDefaults.standard.string(forKey: "postCodeBoxXia")
             PreferenceLabel.text = UserDefaults.standard.string(forKey: "preference")
+            StateLable.text = UserDefaults.standard.string(forKey: "stateLabelCia")
+            
         }else{
             UserNameBox.placeholder = "USER NAME"
             FirstNameBox.placeholder="FIRST NAME"
@@ -231,7 +238,8 @@ class RegisterViewController : UIViewController, UIPickerViewDataSource, UITable
             PasswordBox.placeholder="PASSWORD"
             ConfirmPasswordBox.placeholder="CONFIRM PASSWORD"
             PostCodeBox.placeholder="POST CODE"
-            PreferenceLabel.text = "Where did you hear about On The House"
+            PreferenceLabel.text = "WHERE DID YOU HEAR ABOUT THIS APP"
+            StateLable.text = "STATE"
         }
         
         
