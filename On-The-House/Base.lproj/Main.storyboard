@@ -3665,6 +3665,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="39"/>
 =======
@@ -3679,11 +3680,15 @@
 =======
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="38.5"/>
 >>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
+=======
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="38.5"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qf-J3-M7c">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3702,6 +3707,9 @@
 =======
                                         <rect key="frame" x="0.0" y="68.5" width="311" height="39.5"/>
 >>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
+=======
+                                        <rect key="frame" x="0.0" y="68.5" width="311" height="39.5"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="DATE">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3711,6 +3719,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am looking for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4o-S2-7Zc">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3730,10 +3739,15 @@
                                         <rect key="frame" x="0.0" y="138" width="311" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
 >>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
+=======
+                                        <rect key="frame" x="0.0" y="138" width="311" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVE-Ze-xxo">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3754,6 +3768,9 @@
 =======
                                         <rect key="frame" x="0.0" y="206.5" width="311" height="38.5"/>
 >>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
+=======
+                                        <rect key="frame" x="0.0" y="206.5" width="311" height="38.5"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="CATEGORY">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3763,6 +3780,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am at  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVy-Nj-U28">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3782,10 +3800,15 @@
                                         <rect key="frame" x="0.0" y="275" width="311" height="39.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
 >>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
+=======
+                                        <rect key="frame" x="0.0" y="275" width="311" height="39.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M8-E8-K7y">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3803,6 +3826,9 @@
 =======
                                         <rect key="frame" x="0.0" y="303" width="311" height="31"/>
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
+=======
+                                        <rect key="frame" x="0.0" y="344.5" width="311" height="38.5"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
 =======
                                         <rect key="frame" x="0.0" y="344.5" width="311" height="38.5"/>
 >>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
@@ -4027,6 +4053,7 @@
         <segue reference="8St-WI-qnd"/>
         <segue reference="04E-fz-99L"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <segue reference="PTI-Am-zus"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4035,6 +4062,11 @@
         <segue reference="l9Y-6q-Zu3"/>
         <segue reference="P0I-c8-QDn"/>
         <segue reference="zC7-d6-hE7"/>
+=======
+        <segue reference="CSZ-yJ-ydS"/>
+        <segue reference="cJV-ry-tan"/>
+        <segue reference="umL-bg-FCW"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
 =======
         <segue reference="CSZ-yJ-ydS"/>
         <segue reference="cJV-ry-tan"/>
