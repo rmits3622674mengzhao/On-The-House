@@ -1173,7 +1173,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IBO-y5-fLp">
-                                <rect key="frame" x="20" y="128" width="335" height="479"/>
+                                <rect key="frame" x="20" y="84" width="335" height="523"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6YU-mG-74U">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
@@ -1220,7 +1220,7 @@
                                         </constraints>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="knR-2w-mVG">
-                                        <rect key="frame" x="0.0" y="120" width="335" height="359"/>
+                                        <rect key="frame" x="0.0" y="120" width="335" height="403"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1375,7 +1375,7 @@
             </objects>
             <point key="canvasLocation" x="4823" y="-1724"/>
         </scene>
-        <!--Preference Page Table View Controller-->
+        <!--Title-->
         <scene sceneID="bzc-QY-Ztv">
             <objects>
                 <tableViewController id="EAr-uf-8ik" customClass="PreferencePageTableViewController" customModule="On_The_House" customModuleProvider="target" sceneMemberID="viewController">
@@ -1415,6 +1415,15 @@
                             <outlet property="delegate" destination="EAr-uf-8ik" id="Tq2-jT-Rsf"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="Hee-mZ-ML8">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="7Pq-N5-1ND">
+                            <connections>
+                                <segue destination="oF7-4h-Sie" kind="push" identifier="preferenceBack" id="bVr-el-CjX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xjY-je-d9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1494,7 +1503,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tx1-Py-sOJ">
-                                <rect key="frame" x="16" y="94" width="343" height="458"/>
+                                <rect key="frame" x="16" y="50" width="343" height="458"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OWO-fR-0gl">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -1575,7 +1584,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Cs-gt-Hqy">
                                         <rect key="frame" x="0.0" y="344" width="343" height="24"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW DID YOU HEAR ABOUT ON THE HOUSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xby-kg-xzn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW DID YOU HEAR ABOUT ON THE HOUSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xby-kg-xzn">
                                                 <rect key="frame" x="0.0" y="0.0" width="263" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <nil key="textColor"/>
@@ -1625,6 +1634,7 @@
                                         </state>
                                         <connections>
                                             <action selector="createAccount:" destination="oF7-4h-Sie" eventType="touchUpInside" id="5NP-Re-q0Z"/>
+                                            <segue destination="2fP-jt-ydV" kind="show" id="Bvo-Bw-6Us"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1670,7 +1680,7 @@
                         <outlet property="LastNameBox" destination="XC3-8p-PfO" id="xkv-kY-E9d"/>
                         <outlet property="PasswordBox" destination="Yfu-co-IEx" id="XW7-Eu-dZW"/>
                         <outlet property="PostCodeBox" destination="XI3-Rw-CL1" id="taK-8u-uQi"/>
-                        <outlet property="QuetioansLable" destination="xby-kg-xzn" id="vrF-3a-ptV"/>
+                        <outlet property="PreferenceLabel" destination="xby-kg-xzn" id="vZE-vg-MjQ"/>
                         <outlet property="StateLable" destination="VEc-mq-hfX" id="bhi-H3-165"/>
                         <outlet property="UserNameBox" destination="OWO-fR-0gl" id="aee-Rf-0Ai"/>
                         <outlet property="myView" destination="QVW-Rr-bNX" id="gah-2m-RVq"/>
@@ -3934,15 +3944,17 @@
         <image name="ticket" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3rW-gD-5je"/>
         <segue reference="8St-WI-qnd"/>
         <segue reference="04E-fz-99L"/>
         <segue reference="PTI-Am-zus"/>
-        <segue reference="CSZ-yJ-ydS"/>
+        <segue reference="bVr-el-CjX"/>
+        <segue reference="l9Y-6q-Zu3"/>
         <segue reference="P0I-c8-QDn"/>
         <segue reference="zC7-d6-hE7"/>
         <segue reference="zNb-3I-6PB"/>
         <segue reference="AsC-WB-om8"/>
         <segue reference="iLZ-sQ-ox2"/>
-        <segue reference="PFG-1w-9W8"/>
+        <segue reference="r3G-eh-jyG"/>
     </inferredMetricsTieBreakers>
 </document>

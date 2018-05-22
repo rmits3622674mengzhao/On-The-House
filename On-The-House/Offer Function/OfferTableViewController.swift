@@ -191,7 +191,7 @@ class OfferTableViewController: UITableViewController {
     }
     
     @IBAction func compete(){
-        let alert = UIAlertController(title: "Competition Event",message: nil ,preferredStyle: .alert)
+        let alert = UIAlertController(title: "Competition Event",message: "1111111" ,preferredStyle: .alert)
         alert.addTextField(configurationHandler: inputTextField)
         
         let okAction = UIAlertAction(title: "Submit", style: .default, handler: self.okHandler)
