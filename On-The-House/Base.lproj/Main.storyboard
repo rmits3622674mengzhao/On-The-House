@@ -3689,8 +3689,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am going to at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1x-9Z-Y1t">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="39"/>
+=======
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="31"/>
+>>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
 =======
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="31"/>
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
@@ -3704,8 +3708,12 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qf-J3-M7c">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                                         <rect key="frame" x="0.0" y="69" width="311" height="38.5"/>
+=======
+                                        <rect key="frame" x="0.0" y="61" width="311" height="30"/>
+>>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
 =======
                                         <rect key="frame" x="0.0" y="61" width="311" height="30"/>
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
@@ -3723,10 +3731,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am looking for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4o-S2-7Zc">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                                         <rect key="frame" x="0.0" y="137.5" width="311" height="39"/>
                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
 =======
+=======
+>>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
 =======
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
                                         <rect key="frame" x="0.0" y="121" width="311" height="31"/>
@@ -3738,10 +3749,14 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVE-Ze-xxo">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                                         <rect key="frame" x="0.0" y="206.5" width="311" height="39"/>
 
 
+=======
+                                        <rect key="frame" x="0.0" y="182" width="311" height="31"/>
+>>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
 =======
                                         <rect key="frame" x="0.0" y="182" width="311" height="31"/>
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
@@ -3759,10 +3774,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am at  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVy-Nj-U28">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                                         <rect key="frame" x="0.0" y="275.5" width="311" height="38.5"/>
                               <fontDescription key="fontDescription" type="system" pointSize="18"/>
 =======
+=======
+>>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
 =======
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
                                         <rect key="frame" x="0.0" y="243" width="311" height="30"/>
@@ -3774,10 +3792,14 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M8-E8-K7y">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                                         <rect key="frame" x="0.0" y="344" width="311" height="39"/>
 
 
+=======
+                                        <rect key="frame" x="0.0" y="303" width="311" height="31"/>
+>>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
 =======
                                         <rect key="frame" x="0.0" y="303" width="311" height="31"/>
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
@@ -4008,6 +4030,7 @@
         <segue reference="PTI-Am-zus"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <segue reference="bVr-el-CjX"/>
         <segue reference="l9Y-6q-Zu3"/>
         <segue reference="P0I-c8-QDn"/>
@@ -4016,11 +4039,16 @@
 =======
 =======
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
+=======
+>>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
         <segue reference="CSZ-yJ-ydS"/>
         <segue reference="cJV-ry-tan"/>
         <segue reference="zC7-d6-hE7"/>
         <segue reference="YkG-Mi-roD"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
+=======
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
 =======
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
