@@ -11,6 +11,7 @@ class OfferTableViewController: UITableViewController {
     var stateItem = [String]()
     var loadPage = 1 as Int
      var islogedIn:Bool?
+    var inputTextField: UITextField?
     @IBOutlet weak var menuButton: UIBarButtonItem!
     func sideMenus() {
         
@@ -58,6 +59,8 @@ class OfferTableViewController: UITableViewController {
         refresher.attributedTitle = NSAttributedString(string: "Pull to refresh!")
         refresher.addTarget(self, action: #selector(OfferTableViewController.getFreser), for: UIControlEvents.valueChanged)
         tableView.addSubview(refresher)
+        
+        
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -185,6 +188,27 @@ class OfferTableViewController: UITableViewController {
             print("Can't find the identifer")
             break
         }
+    }
+    
+    @IBAction func compete(){
+        let alert = UIAlertController(title: "Competition Event",message: "1111111" ,preferredStyle: .alert)
+        alert.addTextField(configurationHandler: inputTextField)
+        
+        let okAction = UIAlertAction(title: "Submit", style: .default, handler: self.okHandler)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+       
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        self.present(alert, animated: true)
+    }
+    
+    func inputTextField(textFild: UITextField){
+        inputTextField = textFild
+        inputTextField?.placeholder = "Write your answer here"
+    }
+    func okHandler(alert:UIAlertAction!){
+        let offerDetailViewController = OfferDetailViewController()
+        self.navigationController?.pushViewController(offerDetailViewController, animated: true)
     }
     
     @IBAction func ShareButton(_ sender: Any) {

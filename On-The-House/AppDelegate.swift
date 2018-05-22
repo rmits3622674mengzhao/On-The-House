@@ -5,6 +5,7 @@
 //  Created by beier nie on 17/3/18.
 //  Copyright © 2018 RMIT. All rights reserved.
 //
+
 import UIKit
 import CoreData
 
@@ -15,9 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        PayPalMobile .initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "access_token$production$ppkqf9k6pyrv68fj$862e5c7e5dc3849bce60e7484dc963b6",
-                                                                PayPalEnvironmentSandbox: "irenameister@gmail.com"])
-        
+        // Override point for customization after application launch.
         return true
     }
 
