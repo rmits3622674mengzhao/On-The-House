@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BB4C761899A69CB3D4DE4A3 /* libPods-On-The-House.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9E4CC6B18334656D373CD1 /* libPods-On-The-House.a */; };
 		7A632480209D3CA80075D282 /* UpdateUserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63247F209D3CA80075D282 /* UpdateUserProfileTableViewController.swift */; };
 		7A632482209D3F360075D282 /* PreferedCategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A632481209D3F360075D282 /* PreferedCategoriesTableViewCell.swift */; };
 		7A632484209D3F9D0075D282 /* SelectPreferedCategoriesInProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A632483209D3F9D0075D282 /* SelectPreferedCategoriesInProfileTableViewController.swift */; };
@@ -26,15 +27,6 @@
 		7A821C0F2084AD1E00454BEC /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A821C0E2084AD1E00454BEC /* MemberService.swift */; };
 		7A821C112084B2D400454BEC /* NetworkProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A821C102084B2D400454BEC /* NetworkProcessor.swift */; };
 		7A821C132084B62F00454BEC /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A821C122084B62F00454BEC /* AlertController.swift */; };
-		7AA0D47C20B04B33009C8A2C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA0D47B20B04B33009C8A2C /* Accelerate.framework */; };
-		7AA0D47E20B04B3B009C8A2C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA0D47D20B04B3B009C8A2C /* AudioToolbox.framework */; };
-		7AA0D48020B04B43009C8A2C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA0D47F20B04B43009C8A2C /* AVFoundation.framework */; };
-		7AA0D48220B04B4A009C8A2C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA0D48120B04B4A009C8A2C /* CoreLocation.framework */; };
-		7AA0D48420B04B4F009C8A2C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA0D48320B04B4F009C8A2C /* CoreMedia.framework */; };
-		7AA0D48620B04B57009C8A2C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA0D48520B04B57009C8A2C /* MessageUI.framework */; };
-		7AA0D48820B04B5F009C8A2C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA0D48720B04B5F009C8A2C /* MobileCoreServices.framework */; };
-		7AA0D48A20B04B6E009C8A2C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA0D48920B04B6E009C8A2C /* SystemConfiguration.framework */; };
-		7AA0D48C20B04B76009C8A2C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA0D48B20B04B76009C8A2C /* SafariServices.framework */; };
 		7AB01F70208732D7009B93DF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB01F6E208732D6009B93DF /* SWRevealViewController.m */; };
 		7AB01F7320882DB0009B93DF /* MyReservationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB01F7220882DB0009B93DF /* MyReservationTableViewController.swift */; };
 		7AB4CF25208C68AE00402FB1 /* HamburgerMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4CF24208C68AE00402FB1 /* HamburgerMenuTableViewController.swift */; };
@@ -44,8 +36,8 @@
 		7AD7FEA820AE92350041F231 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEA720AE92350041F231 /* RatingViewController.swift */; };
 		7AD7FEAC20AEC4B60041F231 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7FEAB20AEC4B60041F231 /* ReviewTableViewCell.swift */; };
 		7AF21565208D7DAC003A6790 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF21564208D7DAC003A6790 /* RatingControl.swift */; };
-		B66E6CD42E80BF6A6E3696AA /* Pods_On_The_House.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF42658DE9BC2F21B61C851 /* Pods_On_The_House.framework */; };
 		C0344CD52091A1E500DA4911 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */; };
+		C035771420B295E100785AE8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C035771320B295E100785AE8 /* SearchViewController.swift */; };
 		C04BA60E209998BD0077B076 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA60D209998BD0077B076 /* DateFormat.swift */; };
 		C04BA610209998D70077B076 /* DataTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA60F209998D70077B076 /* DataTransition.swift */; };
 		C04BA612209999570077B076 /* MyMembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA611209999570077B076 /* MyMembershipViewController.swift */; };
@@ -81,7 +73,6 @@
 		C0F94DBC2076171200C5938B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DBB2076171200C5938B /* RegisterViewController.swift */; };
 		C0F94DBE2076182600C5938B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DBD2076182600C5938B /* LoginViewController.swift */; };
 		C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DC520761A8200C5938B /* Offermodel.swift */; };
-		C0FE2B6220A2FC95002FE0AB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */; };
 		E7A2DE32207DD8BE000B8CE8 /* CurrentEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -136,15 +127,6 @@
 		7A821C0E2084AD1E00454BEC /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
 		7A821C102084B2D400454BEC /* NetworkProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProcessor.swift; sourceTree = "<group>"; };
 		7A821C122084B62F00454BEC /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
-		7AA0D47B20B04B33009C8A2C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		7AA0D47D20B04B3B009C8A2C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		7AA0D47F20B04B43009C8A2C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		7AA0D48120B04B4A009C8A2C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		7AA0D48320B04B4F009C8A2C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		7AA0D48520B04B57009C8A2C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		7AA0D48720B04B5F009C8A2C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		7AA0D48920B04B6E009C8A2C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		7AA0D48B20B04B76009C8A2C /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		7AB01F6E208732D6009B93DF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = SOURCE_ROOT; };
 		7AB01F6F208732D6009B93DF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
 		7AB01F7220882DB0009B93DF /* MyReservationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationTableViewController.swift; sourceTree = "<group>"; };
@@ -155,8 +137,9 @@
 		7AD7FEA720AE92350041F231 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		7AD7FEAB20AEC4B60041F231 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		7AF21564208D7DAC003A6790 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = Model/RatingControl.swift; sourceTree = "<group>"; };
-		BCF42658DE9BC2F21B61C851 /* Pods_On_The_House.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_On_The_House.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA9E4CC6B18334656D373CD1 /* libPods-On-The-House.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-On-The-House.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForgetPasswordViewController.swift; path = Controller/ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		C035771320B295E100785AE8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C04BA60D209998BD0077B076 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		C04BA60F209998D70077B076 /* DataTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransition.swift; sourceTree = "<group>"; };
 		C04BA611209999570077B076 /* MyMembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyMembershipViewController.swift; path = Controller/MyMembershipViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +162,7 @@
 		C0B6D5C220A947B900FF4EEE /* DateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewController.swift; sourceTree = "<group>"; };
 		C0B6D5C420A947DC00FF4EEE /* DateEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEventCell.swift; sourceTree = "<group>"; };
 		C0CF501D205CA6A9001E8163 /* On-The-House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On-The-House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0CF5020205CA6A9001E8163 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "On-The-House/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		C0CF5020205CA6A9001E8163 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0CF5022205CA6A9001E8163 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C0CF5025205CA6A9001E8163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0CF5028205CA6A9001E8163 /* On_The_House.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = On_The_House.xcdatamodel; sourceTree = "<group>"; };
@@ -199,7 +182,6 @@
 		C0F94DBB2076171200C5938B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controller/RegisterViewController.swift; sourceTree = "<group>"; };
 		C0F94DBD2076182600C5938B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controller/LoginViewController.swift; sourceTree = "<group>"; };
 		C0F94DC520761A8200C5938B /* Offermodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Offermodel.swift; path = Model/Offermodel.swift; sourceTree = "<group>"; };
-		C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C4472D925F512B50D88D2682 /* Pods-On-The-House.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On-The-House.release.xcconfig"; path = "Pods/Target Support Files/Pods-On-The-House/Pods-On-The-House.release.xcconfig"; sourceTree = "<group>"; };
 		E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,16 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AA0D48C20B04B76009C8A2C /* SafariServices.framework in Frameworks */,
-				7AA0D48A20B04B6E009C8A2C /* SystemConfiguration.framework in Frameworks */,
-				7AA0D48820B04B5F009C8A2C /* MobileCoreServices.framework in Frameworks */,
-				7AA0D48620B04B57009C8A2C /* MessageUI.framework in Frameworks */,
-				7AA0D48420B04B4F009C8A2C /* CoreMedia.framework in Frameworks */,
-				7AA0D48220B04B4A009C8A2C /* CoreLocation.framework in Frameworks */,
-				7AA0D48020B04B43009C8A2C /* AVFoundation.framework in Frameworks */,
-				7AA0D47E20B04B3B009C8A2C /* AudioToolbox.framework in Frameworks */,
-				7AA0D47C20B04B33009C8A2C /* Accelerate.framework in Frameworks */,
-				B66E6CD42E80BF6A6E3696AA /* Pods_On_The_House.framework in Frameworks */,
+				0BB4C761899A69CB3D4DE4A3 /* libPods-On-The-House.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,16 +306,7 @@
 		A202AF54964728C977D48C96 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7AA0D48B20B04B76009C8A2C /* SafariServices.framework */,
-				7AA0D48920B04B6E009C8A2C /* SystemConfiguration.framework */,
-				7AA0D48720B04B5F009C8A2C /* MobileCoreServices.framework */,
-				7AA0D48520B04B57009C8A2C /* MessageUI.framework */,
-				7AA0D48320B04B4F009C8A2C /* CoreMedia.framework */,
-				7AA0D48120B04B4A009C8A2C /* CoreLocation.framework */,
-				7AA0D47F20B04B43009C8A2C /* AVFoundation.framework */,
-				7AA0D47D20B04B3B009C8A2C /* AudioToolbox.framework */,
-				7AA0D47B20B04B33009C8A2C /* Accelerate.framework */,
-				BCF42658DE9BC2F21B61C851 /* Pods_On_The_House.framework */,
+				BA9E4CC6B18334656D373CD1 /* libPods-On-The-House.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -359,13 +323,12 @@
 		C0B6D5AD20A9431D00FF4EEE /* Offer Function */ = {
 			isa = PBXGroup;
 			children = (
-				C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */,
 				C0B6D5AE20A9437D00FF4EEE /* OfferTableViewController.swift */,
 				C0B6D5B020A943FD00FF4EEE /* OfferDetailViewController.swift */,
 				C0B6D5B220A9443C00FF4EEE /* OfferEventCell.swift */,
+				C0B6D5B820A9464F00FF4EEE /* PastEventTableViewController.swift */,
 				C0B6D5B420A944A200FF4EEE /* PastOfferDetailViewController.swift */,
 				C0B6D5B620A944E200FF4EEE /* PastEventCell.swift */,
-				C0B6D5B820A9464F00FF4EEE /* PastEventTableViewController.swift */,
 			);
 			name = "Offer Function";
 			sourceTree = "<group>";
@@ -459,11 +422,11 @@
 				C0FE2B6020A2FC62002FE0AB /* Search Function */,
 				7A632485209D567B0075D282 /* Hamburger Menu */,
 				C0F94DBB2076171200C5938B /* RegisterViewController.swift */,
+				C0E682F42099C0450085329D /* PreferencePageTableViewController.swift */,
 				C0F94DBD2076182600C5938B /* LoginViewController.swift */,
 				E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */,
 				7A821C122084B62F00454BEC /* AlertController.swift */,
 				C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */,
-				C0E682F42099C0450085329D /* PreferencePageTableViewController.swift */,
 				C0E682F62099C77E0085329D /* PreferenceEventCell.swift */,
 				C08095D820AC156000C6E54C /* TermAndConditionViewController.swift */,
 			);
@@ -473,6 +436,7 @@
 		C0FE2B6020A2FC62002FE0AB /* Search Function */ = {
 			isa = PBXGroup;
 			children = (
+				C035771320B295E100785AE8 /* SearchViewController.swift */,
 				C0B6D5BA20A9470600FF4EEE /* StatePageTableViewController.swift */,
 				C0B6D5BC20A9472E00FF4EEE /* StateEvenetCell.swift */,
 				C0B6D5BE20A9476000FF4EEE /* CategoryPageTableViewController.swift */,
@@ -494,8 +458,8 @@
 				C0CF5019205CA6A9001E8163 /* Sources */,
 				C0CF501A205CA6A9001E8163 /* Frameworks */,
 				C0CF501B205CA6A9001E8163 /* Resources */,
+				B699CF293F5A9A3882025F2F /* [CP] Copy Pods Resources */,
 				C0F94DB72072234300C5938B /* Embed Frameworks */,
-				204347775C08CB0EF0705838 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -549,7 +513,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = RMIT;
 				TargetAttributes = {
 					C0CF501C205CA6A9001E8163 = {
@@ -638,26 +602,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		204347775C08CB0EF0705838 /* [CP] Embed Pods Frameworks */ = {
+		B699CF293F5A9A3882025F2F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-On-The-House/Pods-On-The-House-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/HWDownSelectedView/HWDownSelectedView.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${SRCROOT}/Pods/Target Support Files/Pods-On-The-House/Pods-On-The-House-resources.sh",
+				"${PODS_ROOT}/HWDownSelectedView/HWDownSelectedTF/Resources/arrow_up@2x.png",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HWDownSelectedView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow_up@2x.png",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-On-The-House/Pods-On-The-House-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-On-The-House/Pods-On-The-House-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -705,6 +665,7 @@
 				7A69E3FF20883A2700E1F0D6 /* MyReservationTableViewCell.swift in Sources */,
 				7A632498209D7A0E0075D282 /* SelectTimeZoneTableViewCell.swift in Sources */,
 				7AF21565208D7DAC003A6790 /* RatingControl.swift in Sources */,
+				C035771420B295E100785AE8 /* SearchViewController.swift in Sources */,
 				7AD7FEA620AE90FA0041F231 /* RatingController.swift in Sources */,
 				7A69E405208B081500E1F0D6 /* MyOrderHistoryTableViewCell.swift in Sources */,
 				C0344CD52091A1E500DA4911 /* ForgetPasswordViewController.swift in Sources */,
@@ -716,7 +677,6 @@
 				C0B6D5C520A947DC00FF4EEE /* DateEventCell.swift in Sources */,
 				C0B6D5BB20A9470600FF4EEE /* StatePageTableViewController.swift in Sources */,
 				C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */,
-				C0FE2B6220A2FC95002FE0AB /* SearchViewController.swift in Sources */,
 				C0B6D5B920A9464F00FF4EEE /* PastEventTableViewController.swift in Sources */,
 				7AD7FEA420AE5AF70041F231 /* VenueModel.swift in Sources */,
 				7A63248A209D5A690075D282 /* SelectTitleTableViewController.swift in Sources */,
@@ -792,23 +752,15 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -851,23 +803,15 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
