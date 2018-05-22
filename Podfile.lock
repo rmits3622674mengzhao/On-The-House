@@ -13,7 +13,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - HWDownSelectedView (~> 1.0.1)
-  - PayPal-iOS-SDK (~> 2.18)
+  - PayPal-iOS-SDK
   - SwiftyJSON
 
 SPEC REPOS:
@@ -31,6 +31,6 @@ SPEC CHECKSUMS:
   PayPal-iOS-SDK: 10654cd111e911a9807bddb96fae81aacb8e9915
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: f0e9921803d9b5f4b1e4a9e0c71ab83f3a43d7cb
+PODFILE CHECKSUM: 8550a8ef70eb310f6d17119d480f4ca17804d9ed
 
 COCOAPODS: 1.5.0

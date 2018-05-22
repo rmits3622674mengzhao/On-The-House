@@ -1,0 +1,6 @@
+framework module HWDownSelectedView {
+  umbrella header "HWDownSelectedView-umbrella.h"
+
+  export *
+  module * { export * }
+}
