@@ -326,9 +326,9 @@
 				C0B6D5AE20A9437D00FF4EEE /* OfferTableViewController.swift */,
 				C0B6D5B020A943FD00FF4EEE /* OfferDetailViewController.swift */,
 				C0B6D5B220A9443C00FF4EEE /* OfferEventCell.swift */,
-				C0B6D5B820A9464F00FF4EEE /* PastEventTableViewController.swift */,
 				C0B6D5B420A944A200FF4EEE /* PastOfferDetailViewController.swift */,
 				C0B6D5B620A944E200FF4EEE /* PastEventCell.swift */,
+				C0B6D5B820A9464F00FF4EEE /* PastEventTableViewController.swift */,
 			);
 			name = "Offer Function";
 			sourceTree = "<group>";
@@ -422,11 +422,11 @@
 				C0FE2B6020A2FC62002FE0AB /* Search Function */,
 				7A632485209D567B0075D282 /* Hamburger Menu */,
 				C0F94DBB2076171200C5938B /* RegisterViewController.swift */,
-				C0E682F42099C0450085329D /* PreferencePageTableViewController.swift */,
 				C0F94DBD2076182600C5938B /* LoginViewController.swift */,
 				E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */,
 				7A821C122084B62F00454BEC /* AlertController.swift */,
 				C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */,
+				C0E682F42099C0450085329D /* PreferencePageTableViewController.swift */,
 				C0E682F62099C77E0085329D /* PreferenceEventCell.swift */,
 				C08095D820AC156000C6E54C /* TermAndConditionViewController.swift */,
 			);
@@ -436,13 +436,13 @@
 		C0FE2B6020A2FC62002FE0AB /* Search Function */ = {
 			isa = PBXGroup;
 			children = (
-				C035771320B295E100785AE8 /* SearchViewController.swift */,
 				C0B6D5BA20A9470600FF4EEE /* StatePageTableViewController.swift */,
 				C0B6D5BC20A9472E00FF4EEE /* StateEvenetCell.swift */,
 				C0B6D5BE20A9476000FF4EEE /* CategoryPageTableViewController.swift */,
 				C0B6D5C020A9479500FF4EEE /* CategoryEventCell.swift */,
 				C0B6D5C220A947B900FF4EEE /* DateTableViewController.swift */,
 				C0B6D5C420A947DC00FF4EEE /* DateEventCell.swift */,
+				C035771320B295E100785AE8 /* SearchViewController.swift */,
 			);
 			path = "Search Function";
 			sourceTree = "<group>";
