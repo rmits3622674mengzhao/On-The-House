@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-//var zoneIndex: Int = 0
-
-class RegisterViewController : UIViewController, UIPickerViewDataSource, UITableViewDelegate{
+var zoneIndex: Int = 0
+class RegisterViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -25,10 +25,9 @@ class RegisterViewController : UIViewController, UIPickerViewDataSource, UITable
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         StateLable.text = statechoices[row]
-        UserDefaults.standard.set("false", forKey: "registerFinished")
-        UserDefaults.standard.set(StateLable.text, forKey: "stateLabelCia")
-        
+        zoneIndex=row
     }
+    
     
     
     
@@ -59,45 +58,17 @@ class RegisterViewController : UIViewController, UIPickerViewDataSource, UITable
     @IBOutlet weak var ConfirmPasswordBox: UITextField!
     @IBOutlet weak var PostCodeBox: UITextField!
     @IBOutlet weak var StateLable: UILabel!
-    @IBOutlet weak var PreferenceLabel: UILabel!
-    
+    @IBOutlet weak var QuetioansLable: UILabel!
     
     var statechoices = ["Australian Capital Territory", "New South Wales", "North Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
     
-    @objc func UserNameBoxDidChange(_ UserNameBox: UITextField) {
-        UserDefaults.standard.set("false", forKey: "registerFinished")
-        UserDefaults.standard.set(UserNameBox.text, forKey: "userNameBoxXia")
-    }
+    var stateId = ["210", "211", "212", "213", "214", "215", "216", "217"]
     
-    @objc func FirstNameBoxDidChange(_ UserNameBox: UITextField) {
-        UserDefaults.standard.set("false", forKey: "registerFinished")
-        UserDefaults.standard.set(UserNameBox.text, forKey: "firstNameBoxXia")
-    }
+    var timezone = ["103", "108", "101", "102", "100", "105", "106", "92"]
     
-    @objc func LastNameBoxDidChange(_ UserNameBox: UITextField) {
-        UserDefaults.standard.set("false", forKey: "registerFinished")
-        UserDefaults.standard.set(UserNameBox.text, forKey: "lastNameBoxXia")
-    }
     
-    @objc func EmailBoxDidChange(_ UserNameBox: UITextField) {
-        UserDefaults.standard.set("false", forKey: "registerFinished")
-        UserDefaults.standard.set(UserNameBox.text, forKey: "emailBoxXia")
-    }
     
-    @objc func PasswordBoxDidChange(_ UserNameBox: UITextField) {
-        UserDefaults.standard.set("false", forKey: "registerFinished")
-        UserDefaults.standard.set(UserNameBox.text, forKey: "passwordBoxXia")
-    }
     
-    @objc func ConfirmPasswordBoxDidChange(_ UserNameBox: UITextField) {
-        UserDefaults.standard.set("false", forKey: "registerFinished")
-        UserDefaults.standard.set(UserNameBox.text, forKey: "confirmPasswordboxXia")
-    }
-    
-    @objc func PostCodeBoxDidChange(_ UserNameBox: UITextField) {
-        UserDefaults.standard.set("false", forKey: "registerFinished")
-        UserDefaults.standard.set(UserNameBox.text, forKey: "postCodeBoxXia")
-    }
     
     
     
@@ -105,54 +76,56 @@ class RegisterViewController : UIViewController, UIPickerViewDataSource, UITable
     
     var status:Bool?;
     //PostCodeBox.placeholder="POST CODE"
-    
-    
-    @IBAction func createAccount(_ sender: Any) {
-        if let usernameT = UserNameBox.text, let firstNameT = FirstNameBox.text, let lastNameT = LastNameBox.text,let emailT = EmailBox.text, let passwordT = PasswordBox.text,  let passwordconfirmT = ConfirmPasswordBox.text,let zipId = PostCodeBox.text, let stateT = StateLable.text , let preferenceT =  PreferenceLabel.text {
-            if stateT != "STATE"{
-                let postBodys = "nickname=\(usernameT)&first_name=\(firstNameT)&last_name=\(lastNameT)&email=\(emailT)&password=\(passwordT)&password_confirm=\(passwordconfirmT)&question_id=\(DataTransition.questions[preferenceT])&zone_id=\(DataTransition.states[stateT])&country_id=13&timezone_id=\(DataTransition.statetimezone[stateT])&zip=\(zipId)&terms=1"
-                self.sendRequest(postBodys: postBodys)
-            }else{
-                let postBodys = "nickname=\(usernameT)&first_name=\(firstNameT)&last_name=\(lastNameT)&email=\(emailT)&password=\(passwordT)&password_confirm=\(passwordconfirmT)&question_id=\(DataTransition.questions[preferenceT])&country_id=13&timezone_id=\(DataTransition.statetimezone[stateT])&zip=\(zipId)&terms=1"
-                
-                self.sendRequest(postBodys: postBodys)
+    func createApiCall(){
+        if let usernameT = UserNameBox.text, let firstNameT = FirstNameBox.text, let lastNameT = LastNameBox.text,let emailT = EmailBox.text, let passwordT = PasswordBox.text,  let passwordconfirmT = ConfirmPasswordBox.text,let zipId = PostCodeBox.text{
+            let postBodys = "nickname=\(usernameT)&first_name=\(firstNameT)&last_name=\(lastNameT)&email=\(emailT)&password=\(passwordT)&password_confirm=\(passwordconfirmT)&terms=1&zone_id=\(stateId[zoneIndex])&country_id=13&timezone_id=\(timezone[zoneIndex])&zip=\(zipId)"
+            
+            let memberService = MemberService()
+            memberService.createMember(member: postBodys) { (member) in
+                self.memberToken = member
+                print(member?.status)
+                if member?.status == "success"{
+                    self.status = true
+                }else{
+                    self.status = false
+                }
             }
+            
         }
     }
     
-    func sendRequest(postBodys: String) {
-        let memberService = MemberService()
-        memberService.createMember(member: postBodys) {(member) in
-            self.memberToken = member
-            print(member?.status)
+    
+    @IBAction func createAccount(_ sender: Any) {
+        if let usernameT = UserNameBox.text, let firstNameT = FirstNameBox.text, let lastNameT = LastNameBox.text,let emailT = EmailBox.text, let passwordT = PasswordBox.text,  let passwordconfirmT = ConfirmPasswordBox.text,let zipId = PostCodeBox.text{
+            let postBodys = "nickname=\(usernameT)&first_name=\(firstNameT)&last_name=\(lastNameT)&email=\(emailT)&password=\(passwordT)&password_confirm=\(passwordconfirmT)&terms=1&zone_id=\(stateId[zoneIndex]))&country_id=13&timezone_id=\(timezone[zoneIndex])&zip=\(zipId)"
             
-            UserDefaults.standard.set("true", forKey: "registerFinished")
-            self.resetUserDefault()
-            
-            if member?.status == "success"{
+            let memberService = MemberService()
+            memberService.createMember(member: postBodys) {(member) in
+                self.memberToken = member
+                print(member?.status)
+                if member?.status == "success"{
+                    self.status = true
+                }else{
+                    self.status = false
+                }
                 
-                self.status = true
-                
-            }else{
-                self.status = false
+                if self.status == true{
+                    let button2Alert: UIAlertView = UIAlertView(title: "Sign Up Successful", message: "Please log in",delegate: nil, cancelButtonTitle: "OK")
+                    
+                    button2Alert.show()
+                    
+                }else if self.status == false{
+                    
+                    print("hello",member?.message)
+                    
+                    let button2Alert: UIAlertView = UIAlertView(title: "Sorry", message: member?.message?.description,delegate: nil, cancelButtonTitle: "OK")
+                    button2Alert.show()
+                }else{
+                    print("status is nil")
+                }
             }
             
-            if self.status == true{
-                
-                
-                let button2Alert: UIAlertView = UIAlertView(title: "Sign Up Successful", message: "Please log in",delegate: nil, cancelButtonTitle: "OK")
-                
-                button2Alert.show()
-                
-            }else if self.status == false{
-                
-                let button2Alert: UIAlertView = UIAlertView(title: "Sorry", message: member?.message?.description,delegate: nil, cancelButtonTitle: "OK")
-                button2Alert.show()
-            }else{
-                print("status is nil")
-            }
         }
-        
     }
     
     @IBAction func stateSelect(_ sender: Any) {
@@ -176,26 +149,7 @@ class RegisterViewController : UIViewController, UIPickerViewDataSource, UITable
             self.view.layoutIfNeeded()
         }
     }
-    func resetUserDefault(){
-        self.PreferenceLabel.text = nil
-        self.StateLable.text = nil
-        UserDefaults.standard.set(nil, forKey: "userNameBoxXia")
-        UserDefaults.standard.set("", forKey: "firstNameBoxXia")
-        UserDefaults.standard.set("", forKey: "lastNameBoxXia")
-        UserDefaults.standard.set("", forKey: "emailBoxXia")
-        UserDefaults.standard.set("", forKey: "passwordBoxXia")
-        UserDefaults.standard.set("", forKey: "confirmPasswordboxXia")
-        UserDefaults.standard.set("", forKey: "postCodeBoxXia")
-        UserDefaults.standard.set("WHERE DID YOU HEAR ABOUT THIS APP", forKey: "preference")
-        UserDefaults.standard.set("STATE", forKey: "stateLabelCia")
-        
-    }
-    
     override func viewDidLoad(){
-        super.viewDidLoad()
-        
-        print(self.StateLable.text)
-        
         UserNameBox.placeholder="USER NAME"
         FirstNameBox.placeholder="FIRST NAME"
         LastNameBox.placeholder="LAST NAME"
@@ -205,53 +159,20 @@ class RegisterViewController : UIViewController, UIPickerViewDataSource, UITable
         PostCodeBox.placeholder="POST CODE"
         
         
-        UserNameBox.addTarget(self, action: #selector(self.UserNameBoxDidChange(_:)), for: UIControlEvents.editingChanged)
-        
-        FirstNameBox.addTarget(self, action: #selector(self.FirstNameBoxDidChange(_:)), for: UIControlEvents.editingChanged)
-        
-        LastNameBox.addTarget(self, action: #selector(self.LastNameBoxDidChange(_:)), for: UIControlEvents.editingChanged)
-        
-        EmailBox.addTarget(self, action: #selector(self.EmailBoxDidChange(_:)), for: UIControlEvents.editingChanged)
-        
-        PasswordBox.addTarget(self, action: #selector(self.PasswordBoxDidChange(_:)), for: UIControlEvents.editingChanged)
-        
-        ConfirmPasswordBox.addTarget(self, action: #selector(self.ConfirmPasswordBoxDidChange(_:)), for: UIControlEvents.editingChanged)
-        
-        PostCodeBox.addTarget(self, action: #selector(self.PostCodeBoxDidChange(_:)), for: UIControlEvents.editingChanged)
-        
-        if(UserDefaults.standard.string(forKey: "registerFinished") == "false"){
-            UserNameBox.text = UserDefaults.standard.string(forKey: "userNameBoxXia")
-            FirstNameBox.text = UserDefaults.standard.string(forKey: "firstNameBoxXia")
-            LastNameBox.text = UserDefaults.standard.string(forKey: "lastNameBoxXia")
-            EmailBox.text = UserDefaults.standard.string(forKey: "emailBoxXia")
-            PasswordBox.text = UserDefaults.standard.string(forKey: "passwordBoxXia")
-            ConfirmPasswordBox.text = UserDefaults.standard.string(forKey: "confirmPasswordboxXia")
-            PostCodeBox.text = UserDefaults.standard.string(forKey: "postCodeBoxXia")
-            PreferenceLabel.text = UserDefaults.standard.string(forKey: "preference")
-            StateLable.text = UserDefaults.standard.string(forKey: "stateLabelCia")
-            
-        }else{
-            UserNameBox.placeholder = "USER NAME"
-            FirstNameBox.placeholder="FIRST NAME"
-            LastNameBox.placeholder="LAST NAME"
-            EmailBox.placeholder="EMAIL ADRESS"
-            PasswordBox.placeholder="PASSWORD"
-            ConfirmPasswordBox.placeholder="CONFIRM PASSWORD"
-            PostCodeBox.placeholder="POST CODE"
-            PreferenceLabel.text = "WHERE DID YOU HEAR ABOUT THIS APP"
-            StateLable.text = "STATE"
-        }
         
         
         
-        if (UserDefaults.standard.string(forKey: "preference") != ""){
-            
-            PreferenceLabel.text = UserDefaults.standard.string(forKey: "preference")
-        }
+        
+        super.viewDidLoad()
+        
+        
+        
         
         
     }
     
-    
 }
+
+
+
 

@@ -21,23 +21,16 @@ class OfferDetailViewController: UIViewController {
     @IBOutlet weak var TicketButton: UIButton!
     @IBOutlet weak var EventImage: UIImageView!
     @IBOutlet weak var EventDescription: UITextView!
-    @IBOutlet weak var competeLabel: UILabel!
     var offerDetail:OfferModel!
     var videoUrl: URL!
+    
+    
     override func viewDidLoad() {
         getTrailer()
         if offerDetail.competition == true{
-        OurPriceLabel.isHidden = true
-        ourPrice.isHidden = true
-        Member.isHidden = true
-        Admin.isHidden = true
-        AdminFee.isHidden = true
-        Name.text = offerDetail.name
-        Rate.rating = offerDetail.rate
-        EventImage.image = offerDetail.photo
-        competeLabel.text = "This is a competition event"
-        }else{
-        OurPriceLabel.text = "OurPrice*:"
+            
+            
+        }else{  OurPriceLabel.text = "OurPrice*:"
         ourPrice.text = offerDetail.ourPrice
         Member.text = offerDetail.membershipLevel
         Admin.text = offerDetail.admin
@@ -51,6 +44,7 @@ class OfferDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     // to get description without trailer url and get the trailer url
     func getTrailer(){
         var tempStr="" as String

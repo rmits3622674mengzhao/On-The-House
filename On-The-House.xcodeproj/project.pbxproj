@@ -46,7 +46,6 @@
 		7AF21565208D7DAC003A6790 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF21564208D7DAC003A6790 /* RatingControl.swift */; };
 		B66E6CD42E80BF6A6E3696AA /* Pods_On_The_House.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF42658DE9BC2F21B61C851 /* Pods_On_The_House.framework */; };
 		C0344CD52091A1E500DA4911 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */; };
-		C035771420B295E100785AE8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C035771320B295E100785AE8 /* SearchViewController.swift */; };
 		C04BA60E209998BD0077B076 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA60D209998BD0077B076 /* DateFormat.swift */; };
 		C04BA610209998D70077B076 /* DataTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA60F209998D70077B076 /* DataTransition.swift */; };
 		C04BA612209999570077B076 /* MyMembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BA611209999570077B076 /* MyMembershipViewController.swift */; };
@@ -82,6 +81,7 @@
 		C0F94DBC2076171200C5938B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DBB2076171200C5938B /* RegisterViewController.swift */; };
 		C0F94DBE2076182600C5938B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DBD2076182600C5938B /* LoginViewController.swift */; };
 		C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F94DC520761A8200C5938B /* Offermodel.swift */; };
+		C0FE2B6220A2FC95002FE0AB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */; };
 		E7A2DE32207DD8BE000B8CE8 /* CurrentEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -157,7 +157,6 @@
 		7AF21564208D7DAC003A6790 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = Model/RatingControl.swift; sourceTree = "<group>"; };
 		BCF42658DE9BC2F21B61C851 /* Pods_On_The_House.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_On_The_House.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForgetPasswordViewController.swift; path = Controller/ForgetPasswordViewController.swift; sourceTree = "<group>"; };
-		C035771320B295E100785AE8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C04BA60D209998BD0077B076 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		C04BA60F209998D70077B076 /* DataTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransition.swift; sourceTree = "<group>"; };
 		C04BA611209999570077B076 /* MyMembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyMembershipViewController.swift; path = Controller/MyMembershipViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +199,7 @@
 		C0F94DBB2076171200C5938B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controller/RegisterViewController.swift; sourceTree = "<group>"; };
 		C0F94DBD2076182600C5938B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controller/LoginViewController.swift; sourceTree = "<group>"; };
 		C0F94DC520761A8200C5938B /* Offermodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Offermodel.swift; path = Model/Offermodel.swift; sourceTree = "<group>"; };
+		C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C4472D925F512B50D88D2682 /* Pods-On-The-House.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On-The-House.release.xcconfig"; path = "Pods/Target Support Files/Pods-On-The-House/Pods-On-The-House.release.xcconfig"; sourceTree = "<group>"; };
 		E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentEventCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -359,12 +359,13 @@
 		C0B6D5AD20A9431D00FF4EEE /* Offer Function */ = {
 			isa = PBXGroup;
 			children = (
+				C0FE2B6120A2FC95002FE0AB /* SearchViewController.swift */,
 				C0B6D5AE20A9437D00FF4EEE /* OfferTableViewController.swift */,
 				C0B6D5B020A943FD00FF4EEE /* OfferDetailViewController.swift */,
 				C0B6D5B220A9443C00FF4EEE /* OfferEventCell.swift */,
-				C0B6D5B820A9464F00FF4EEE /* PastEventTableViewController.swift */,
 				C0B6D5B420A944A200FF4EEE /* PastOfferDetailViewController.swift */,
 				C0B6D5B620A944E200FF4EEE /* PastEventCell.swift */,
+				C0B6D5B820A9464F00FF4EEE /* PastEventTableViewController.swift */,
 			);
 			name = "Offer Function";
 			sourceTree = "<group>";
@@ -458,11 +459,11 @@
 				C0FE2B6020A2FC62002FE0AB /* Search Function */,
 				7A632485209D567B0075D282 /* Hamburger Menu */,
 				C0F94DBB2076171200C5938B /* RegisterViewController.swift */,
-				C0E682F42099C0450085329D /* PreferencePageTableViewController.swift */,
 				C0F94DBD2076182600C5938B /* LoginViewController.swift */,
 				E7A2DE31207DD8BE000B8CE8 /* CurrentEventCell.swift */,
 				7A821C122084B62F00454BEC /* AlertController.swift */,
 				C0344CD42091A1E500DA4911 /* ForgetPasswordViewController.swift */,
+				C0E682F42099C0450085329D /* PreferencePageTableViewController.swift */,
 				C0E682F62099C77E0085329D /* PreferenceEventCell.swift */,
 				C08095D820AC156000C6E54C /* TermAndConditionViewController.swift */,
 			);
@@ -472,7 +473,6 @@
 		C0FE2B6020A2FC62002FE0AB /* Search Function */ = {
 			isa = PBXGroup;
 			children = (
-				C035771320B295E100785AE8 /* SearchViewController.swift */,
 				C0B6D5BA20A9470600FF4EEE /* StatePageTableViewController.swift */,
 				C0B6D5BC20A9472E00FF4EEE /* StateEvenetCell.swift */,
 				C0B6D5BE20A9476000FF4EEE /* CategoryPageTableViewController.swift */,
@@ -705,7 +705,6 @@
 				7A69E3FF20883A2700E1F0D6 /* MyReservationTableViewCell.swift in Sources */,
 				7A632498209D7A0E0075D282 /* SelectTimeZoneTableViewCell.swift in Sources */,
 				7AF21565208D7DAC003A6790 /* RatingControl.swift in Sources */,
-				C035771420B295E100785AE8 /* SearchViewController.swift in Sources */,
 				7AD7FEA620AE90FA0041F231 /* RatingController.swift in Sources */,
 				7A69E405208B081500E1F0D6 /* MyOrderHistoryTableViewCell.swift in Sources */,
 				C0344CD52091A1E500DA4911 /* ForgetPasswordViewController.swift in Sources */,
@@ -717,6 +716,7 @@
 				C0B6D5C520A947DC00FF4EEE /* DateEventCell.swift in Sources */,
 				C0B6D5BB20A9470600FF4EEE /* StatePageTableViewController.swift in Sources */,
 				C0F94DC620761A8300C5938B /* Offermodel.swift in Sources */,
+				C0FE2B6220A2FC95002FE0AB /* SearchViewController.swift in Sources */,
 				C0B6D5B920A9464F00FF4EEE /* PastEventTableViewController.swift in Sources */,
 				7AD7FEA420AE5AF70041F231 /* VenueModel.swift in Sources */,
 				7A63248A209D5A690075D282 /* SelectTitleTableViewController.swift in Sources */,

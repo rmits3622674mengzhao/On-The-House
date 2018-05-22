@@ -1045,9 +1045,6 @@
                                                             <state key="normal" title="Compete">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
-                                                            <connections>
-                                                                <action selector="compete" destination="A4M-RJ-btY" eventType="touchUpInside" id="RwD-JZ-ieQ"/>
-                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJN-jf-mJ2">
                                                             <rect key="frame" x="0.0" y="31" width="100" height="1"/>
@@ -1152,11 +1149,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VeT-v4-D6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="5rM-5i-Zyl">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
             </objects>
             <point key="canvasLocation" x="2744.8000000000002" y="-1818.440779610195"/>
         </scene>
@@ -1375,7 +1367,7 @@
             </objects>
             <point key="canvasLocation" x="4823" y="-1724"/>
         </scene>
-        <!--Title-->
+        <!--Preference Page Table View Controller-->
         <scene sceneID="bzc-QY-Ztv">
             <objects>
                 <tableViewController id="EAr-uf-8ik" customClass="PreferencePageTableViewController" customModule="On_The_House" customModuleProvider="target" sceneMemberID="viewController">
@@ -1415,15 +1407,6 @@
                             <outlet property="delegate" destination="EAr-uf-8ik" id="Tq2-jT-Rsf"/>
                         </connections>
                     </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="Hee-mZ-ML8">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="7Pq-N5-1ND">
-                            <connections>
-                                <segue destination="oF7-4h-Sie" kind="push" identifier="preferenceBack" id="bVr-el-CjX"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xjY-je-d9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1503,7 +1486,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tx1-Py-sOJ">
-                                <rect key="frame" x="16" y="50" width="343" height="458"/>
+                                <rect key="frame" x="16" y="94" width="343" height="458"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OWO-fR-0gl">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -1584,7 +1567,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Cs-gt-Hqy">
                                         <rect key="frame" x="0.0" y="344" width="343" height="24"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW DID YOU HEAR ABOUT ON THE HOUSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xby-kg-xzn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW DID YOU HEAR ABOUT ON THE HOUSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xby-kg-xzn">
                                                 <rect key="frame" x="0.0" y="0.0" width="263" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <nil key="textColor"/>
@@ -1634,7 +1617,6 @@
                                         </state>
                                         <connections>
                                             <action selector="createAccount:" destination="oF7-4h-Sie" eventType="touchUpInside" id="5NP-Re-q0Z"/>
-                                            <segue destination="2fP-jt-ydV" kind="show" id="Bvo-Bw-6Us"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1680,7 +1662,7 @@
                         <outlet property="LastNameBox" destination="XC3-8p-PfO" id="xkv-kY-E9d"/>
                         <outlet property="PasswordBox" destination="Yfu-co-IEx" id="XW7-Eu-dZW"/>
                         <outlet property="PostCodeBox" destination="XI3-Rw-CL1" id="taK-8u-uQi"/>
-                        <outlet property="PreferenceLabel" destination="xby-kg-xzn" id="vZE-vg-MjQ"/>
+                        <outlet property="QuetioansLable" destination="xby-kg-xzn" id="vrF-3a-ptV"/>
                         <outlet property="StateLable" destination="VEc-mq-hfX" id="bhi-H3-165"/>
                         <outlet property="UserNameBox" destination="OWO-fR-0gl" id="aee-Rf-0Ai"/>
                         <outlet property="myView" destination="QVW-Rr-bNX" id="gah-2m-RVq"/>
@@ -3448,10 +3430,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="1031.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCD-Zi-OTd" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1062"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1031.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2Fa-cj-aEQ">
-                                                <rect key="frame" x="42" y="20" width="290" height="1022"/>
+                                                <rect key="frame" x="42" y="20" width="290" height="991.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qxn-ov-pke">
                                                         <rect key="frame" x="0.0" y="0.0" width="290" height="100"/>
@@ -3504,7 +3486,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gik-SN-ady">
-                                                        <rect key="frame" x="0.0" y="300" width="290" height="182"/>
+                                                        <rect key="frame" x="0.0" y="300" width="290" height="151.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="FBd-Zo-N6Y">
                                                                 <rect key="frame" x="0.0" y="0.0" width="290" height="111.5"/>
@@ -3554,15 +3536,8 @@
                                                                     <constraint firstItem="pc5-8G-Hkj" firstAttribute="centerY" secondItem="FBd-Zo-N6Y" secondAttribute="centerY" id="8VH-yx-q8J"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="competite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqi-eb-I0z">
-                                                                <rect key="frame" x="0.0" y="121.5" width="290" height="20.5"/>
-                                                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="q41-Yp-hE7">
-                                                                <rect key="frame" x="0.0" y="152" width="290" height="30"/>
+                                                                <rect key="frame" x="0.0" y="121.5" width="290" height="30"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cW8-8z-KEh">
                                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -3600,7 +3575,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="EventDescription" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x7C-6W-pii">
-                                                        <rect key="frame" x="0.0" y="502" width="290" height="300"/>
+                                                        <rect key="frame" x="0.0" y="471.5" width="290" height="300"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="300" id="czA-nX-bXK"/>
@@ -3609,7 +3584,7 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gat-0J-r22">
-                                                        <rect key="frame" x="0.0" y="822" width="290" height="200"/>
+                                                        <rect key="frame" x="0.0" y="791.5" width="290" height="200"/>
                                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="K3A-Ob-SNE"/>
@@ -3663,7 +3638,6 @@
                         <outlet property="ShareButton" destination="lRG-0W-Snn" id="0TY-il-U0Z"/>
                         <outlet property="TicketButton" destination="BhV-xo-20e" id="jma-Hl-KKS"/>
                         <outlet property="WebVideoPlayer" destination="gat-0J-r22" id="z7p-zk-bsw"/>
-                        <outlet property="competeLabel" destination="Jqi-eb-I0z" id="xCT-RY-plj"/>
                         <outlet property="ourPrice" destination="CJI-ht-pbD" id="eo8-9L-kMG"/>
                     </connections>
                 </viewController>
@@ -3690,6 +3664,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="39"/>
 =======
@@ -3701,11 +3676,15 @@
 =======
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="31"/>
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
+=======
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="38.5"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qf-J3-M7c">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3720,6 +3699,9 @@
 =======
                                         <rect key="frame" x="0.0" y="61" width="311" height="30"/>
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
+=======
+                                        <rect key="frame" x="0.0" y="68.5" width="311" height="39.5"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="DATE">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3729,6 +3711,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am looking for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4o-S2-7Zc">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3743,10 +3726,15 @@
                                         <rect key="frame" x="0.0" y="121" width="311" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
+=======
+                                        <rect key="frame" x="0.0" y="138" width="311" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVE-Ze-xxo">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3763,6 +3751,9 @@
 =======
                                         <rect key="frame" x="0.0" y="182" width="311" height="31"/>
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
+=======
+                                        <rect key="frame" x="0.0" y="206.5" width="311" height="38.5"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="CATEGORY">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3772,6 +3763,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am at  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVy-Nj-U28">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3786,10 +3778,15 @@
                                         <rect key="frame" x="0.0" y="243" width="311" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
+=======
+                                        <rect key="frame" x="0.0" y="275" width="311" height="39.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6M8-E8-K7y">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3806,6 +3803,9 @@
 =======
                                         <rect key="frame" x="0.0" y="303" width="311" height="31"/>
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
+=======
+                                        <rect key="frame" x="0.0" y="344.5" width="311" height="38.5"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="STATE">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -4024,9 +4024,9 @@
         <image name="ticket" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3rW-gD-5je"/>
         <segue reference="8St-WI-qnd"/>
         <segue reference="04E-fz-99L"/>
+<<<<<<< HEAD
         <segue reference="PTI-Am-zus"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4035,6 +4035,11 @@
         <segue reference="l9Y-6q-Zu3"/>
         <segue reference="P0I-c8-QDn"/>
         <segue reference="zC7-d6-hE7"/>
+=======
+        <segue reference="CSZ-yJ-ydS"/>
+        <segue reference="cJV-ry-tan"/>
+        <segue reference="umL-bg-FCW"/>
+>>>>>>> parent of 7d9ea07... Merge pull request #6 from rmits3622674mengzhao/New-search
         <segue reference="zNb-3I-6PB"/>
 =======
 =======
@@ -4054,6 +4059,6 @@
 >>>>>>> parent of 07d9cac... make upgrade membership payment with paypal
         <segue reference="AsC-WB-om8"/>
         <segue reference="iLZ-sQ-ox2"/>
-        <segue reference="r3G-eh-jyG"/>
+        <segue reference="PFG-1w-9W8"/>
     </inferredMetricsTieBreakers>
 </document>

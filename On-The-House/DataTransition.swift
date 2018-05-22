@@ -17,7 +17,7 @@ class DataTransition {
     static let questions:[String: Int] = ["If Google Search, what did you search for?" : 1,"Friend" : 2, "Newsletter": 3, "Twitter": 4, "Facebook" : 5, "LinkedIN" : 6, "Forum" : 7, "If Blog, what blog was it?": 22, "Footy Funatics": 26, "Toorak Times": 27, "Only Melbourne Website": 28, "Yelp" :29 , "Good Weekend website" : 30
         
     ]
-    static let statetimezone:[String : Int] = ["New South Wales" : 108, "Northern Territory": 101, "Queensland" : 102, "South Australia": 100, "Tasmania": 105, "Victoria": 106, "Western Australia": 92, "Australian Capital Territory": 103]
+    
     static let categories:[String: Int] = ["Adult Industry": 28, "Arts & Craft": 22, "Ballet" : 9, "Cabaret" : 17, "CD (Product)": 37, "Children": 26, "Cirus and Physical Theatre": 16, "Comedy": 5, "Dance": 6, "DVD (Product)": 35, "Family": 32, "Festival": 15, "Film": 3, "Health and Fitness": 30, "Magic" : 38, "Miscellaneous":7, "Music": 4, "Musical":2, "Networking, Seminars, Workshops": 27, "Opera":8, "Operetta": 18, "Reiki Course": 20, "Speaking Engagement": 34, "Sport": 33, "Studio Audience": 31, "Theatre": 1, "Vaudeville": 19
     ]
     
